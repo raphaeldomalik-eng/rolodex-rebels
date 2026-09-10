@@ -6,7 +6,6 @@ export const navItems = [
   ["Why Us", "/why-us"],
   ["Services", "/services"],
   ["Who We Help", "/who-we-help"],
-  ["Results", "/results"],
   ["Insights", "/insights"],
 ];
 
