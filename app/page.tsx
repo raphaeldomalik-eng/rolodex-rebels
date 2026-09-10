@@ -1,9 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { JsonLd } from "./json-ld";
+import { pageMetadata, websiteJsonLd } from "./seo";
 import { SiteFooter, SiteHeader } from "./site-chrome";
 import liveCrowd from "../public/live-crowd.jpg";
 import artistStage from "../public/artist-stage.jpg";
 import grassrootsFlyering from "../public/grassroots-flyering.jpg";
 import rebelsMark from "../public/rolodex-rebels-mark.png";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Music Marketing Agency UK | Rolodex Rebels",
+  description: "Rolodex Rebels is a UK music marketing agency helping artists, labels, managers, promoters, venues and festivals grow audiences, launch music and sell tickets.",
+  path: "/",
+});
 
 const meanings = [
   {
@@ -26,16 +36,16 @@ const meanings = [
 const audiences = [
   ["Artists", "Launch your music, grow a real fanbase and keep moving between releases and shows.", "/who-we-help/artists"],
   ["Labels & Managers", "Give every campaign the strategy, reach, creative thinking and follow-through it deserves.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, sell tickets and turn today’s crowd into tomorrow’s audience.", "/who-we-help/live-music"],
+  ["Promoters, Venues & Festivals", "Build demand, sell tickets and turn today’s crowd into tomorrow’s audience.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 const pillars = [
-  ["Get Heard", "PR, release campaigns, storytelling, creators, content and fan communications."],
-  ["Get Seen", "Search, paid media, digital campaigns, social visibility and targeted exposure."],
-  ["Build Your Audience", "Audience insight, fan acquisition, segmentation, email and retention."],
-  ["Sell The Show", "Ticket growth, tour marketing, promoter and festival campaigns, RSVP and guests."],
-  ["Grassroots", "Street teams, leaflets, posters, hand-to-hand flyering, campus and local activation."],
-  ["Digital & Creative", "Websites, landing pages, SEO, content, campaign assets and infrastructure."],
+  ["Get Heard", "PR, release campaigns, storytelling, creators, content and fan communications.", "/services/get-heard"],
+  ["Get Seen", "Search, paid media, digital campaigns, social visibility and targeted exposure.", "/services/get-seen"],
+  ["Build Your Audience", "Audience insight, fan acquisition, segmentation, email and retention.", "/services/build-your-audience"],
+  ["Sell The Show", "Ticket growth, tour marketing, promoter and festival campaigns, RSVP and guests.", "/services/sell-the-show"],
+  ["Grassroots", "Street teams, leaflets, posters, hand-to-hand flyering, campus and local activation.", "/services/grassroots"],
+  ["Digital & Creative", "Websites, landing pages, SEO, content, campaign assets and infrastructure.", "/services/digital-creative"],
 ];
 
 const smartServices = [
@@ -61,6 +71,7 @@ function Arrow() {
 export default function Home() {
   return (
     <main>
+      <JsonLd data={websiteJsonLd} />
       <SiteHeader />
 
       <section className="hero" aria-labelledby="hero-title">
@@ -73,12 +84,13 @@ export default function Home() {
             <span className="pink">get results!</span>
           </h1>
           <p className="hero-intro">
-            Built on decades of PR and grassroots experience, we create joined-up
-            campaigns for artists, releases and live music — from the streets to the screens.
+            Rolodex Rebels is a UK music marketing agency helping artists, labels, managers,
+            promoters, venues and festivals grow audiences, launch music, increase visibility
+            and sell tickets. Built on decades of PR and grassroots experience — from the streets to the screens.
           </p>
           <div className="hero-actions">
-            <a className="button button-pink" href="/start-a-project">Let&apos;s make some noise</a>
-            <a className="text-link light-link" href="/results">See our results <Arrow /></a>
+            <Link className="button button-pink" href="/start-a-project">Let&apos;s make some noise</Link>
+            <Link className="text-link light-link" href="/results">See our results <Arrow /></Link>
           </div>
         </div>
         <div className="hero-art">
@@ -139,18 +151,18 @@ export default function Home() {
           <p className="large-copy">Whether you are launching a release, building an artist, filling a venue or growing a festival, we shape the campaign around the result you need.</p>
           <div className="audience-list">
             {audiences.map(([title, copy, href], index) => (
-              <a href={href} className="audience-row" key={title}>
+              <Link href={href} className="audience-row" key={title}>
                 <span className="row-number">0{index + 1}</span>
                 <span><strong>{title}</strong><small>{copy}</small></span>
                 <Arrow />
-              </a>
+              </Link>
             ))}
           </div>
           <div className="goal-cloud" aria-label="Choose your goal">
             {[
               "Launch my music", "Build my audience", "Improve my digital presence",
               "Sell more tickets", "Market my tour", "Activate on the ground",
-            ].map((goal) => <a href="/start-a-project" key={goal}>{goal}</a>)}
+            ].map((goal) => <Link href="/start-a-project" key={goal}>{goal}</Link>)}
           </div>
         </div>
       </section>
@@ -164,16 +176,16 @@ export default function Home() {
           <p>Start with what you want to achieve. We&apos;ll build the right mix of strategy, creativity, reach and activation around it.</p>
         </div>
         <div className="pillar-grid">
-          {pillars.map(([title, copy], index) => (
-            <a className="pillar-card" href={`/services/${title.toLowerCase().replace(/ /g, "-").replace("&", "and")}`} key={title}>
+          {pillars.map(([title, copy, href], index) => (
+            <Link className="pillar-card" href={href} key={title}>
               <span className="pillar-number">0{index + 1}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
               <Arrow />
-            </a>
+            </Link>
           ))}
         </div>
-        <a className="button button-dark" href="/services">See everything we do</a>
+        <Link className="button button-dark" href="/services">See everything we do</Link>
       </section>
 
       <section className="streets section-pad" aria-labelledby="streets-title">
@@ -184,7 +196,7 @@ export default function Home() {
         <div className="streets-body">
           <p className="large-copy">Real momentum rarely comes from one channel.</p>
           <p>We connect PR, creative, digital discovery, audience growth, ticket campaigns and grassroots activation around one objective. Every part has a job. Every response teaches us something. Every campaign should make the next one stronger.</p>
-          <a className="text-link light-link" href="/why-us">See how we work <Arrow /></a>
+          <Link className="text-link light-link" href="/why-us">See how we work <Arrow /></Link>
         </div>
         <div className="campaign-flow" aria-label="Campaign journey">
           {[
@@ -208,8 +220,8 @@ export default function Home() {
             ].map((item) => <span key={item}>{item}</span>)}
           </div>
           <div className="button-row">
-            <a className="button button-dark" href="/start-a-project">Plan a grassroots campaign</a>
-            <a className="text-link" href="/services/grassroots">Explore grassroots <Arrow /></a>
+            <Link className="button button-dark" href="/start-a-project">Plan a grassroots campaign</Link>
+            <Link className="text-link" href="/services/grassroots">Explore grassroots <Arrow /></Link>
           </div>
         </div>
         <figure className="grassroots-photo media-frame">
@@ -239,7 +251,7 @@ export default function Home() {
         <div className="no-jargon">
           <p>No data theatre. No jargon.</p>
           <strong>Just better decisions, stronger campaigns and audiences that keep growing.</strong>
-          <a className="button button-pink" href="/start-a-project">Build a smarter campaign</a>
+          <Link className="button button-pink" href="/start-a-project">Build a smarter campaign</Link>
         </div>
       </section>
 
@@ -250,15 +262,15 @@ export default function Home() {
         </div>
         <div className="ways-grid">
           {ways.map(([title, copy, label], index) => (
-            <a href="/start-a-project" className="way-card" key={title}>
+            <Link href="/start-a-project" className="way-card" key={title}>
               <div><span>0{index + 1}</span><small>{label}</small></div>
               <h3>{title}</h3>
               <p>{copy}</p>
               <Arrow />
-            </a>
+            </Link>
           ))}
         </div>
-        <a className="text-link" href="/services">View all services <Arrow /></a>
+        <Link className="text-link" href="/services">View all services <Arrow /></Link>
       </section>
 
       <section className="results section-pad" aria-labelledby="results-title">
@@ -266,7 +278,7 @@ export default function Home() {
           <p className="eyebrow light">Proven results</p>
           <h2 id="results-title">Noise is good.<br /><span>Results are better.</span></h2>
           <p>The strongest campaigns do more than generate activity. They change what happens next.</p>
-          <a className="button button-pink" href="/results">See the results</a>
+          <Link className="button button-pink" href="/results">See the results</Link>
         </div>
         <div className="results-standard">
           <p className="eyebrow light">Our evidence standard</p>
@@ -286,7 +298,7 @@ export default function Home() {
         <h2 id="final-title">Let&apos;s get your<br /><span>message out!</span></h2>
         <p>Tell us what you&apos;re launching, growing or trying to sell. We&apos;ll help shape the right campaign — without making you decode a long menu of services.</p>
         <div className="button-row center">
-          <a className="button button-dark" href="/start-a-project">Start a project</a>
+          <Link className="button button-dark" href="/start-a-project">Start a project</Link>
           <a className="text-link" href="mailto:joanne@rolodexrebels.co.uk">Email Rolodex Rebels <Arrow /></a>
         </div>
       </section>

@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./site-chrome";
+import { JsonLd } from "./json-ld";
+import { breadcrumbJsonLd, type BreadcrumbItem } from "./seo";
 import rebelsMark from "../public/rolodex-rebels-mark.png";
 
 export function Arrow() {
@@ -12,15 +14,18 @@ export function InternalPage({
   eyebrow,
   title,
   intro,
+  breadcrumbs,
   children,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro: string;
+  breadcrumbs: BreadcrumbItem[];
   children: ReactNode;
 }) {
   return (
     <main className="inner-site">
+      <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <SiteHeader />
       <section className="inner-hero">
         <div className="inner-hero-copy">

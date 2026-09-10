@@ -43,7 +43,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <span>© 2026 Rolodex Rebels</span>
-        <Link href="/privacy">Privacy &amp; cookies</Link>
+        <span><Link href="/privacy">Privacy</Link> · <Link href="/cookies">Cookies</Link></span>
         <span>Photography: Jonathan Ikemura / Unsplash · Mico Medel / Pexels · Fabian Centeno / Unsplash</span>
       </div>
     </footer>

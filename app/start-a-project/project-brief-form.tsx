@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
+import { trackEvent } from "../analytics-events";
 import { submitProjectBrief, type ProjectBriefState } from "./actions";
 import { budgetOptions, goalOptions } from "./brief-options";
 
@@ -8,6 +9,21 @@ const initialState: ProjectBriefState = { status: "idle", message: "" };
 
 export function ProjectBriefForm() {
   const [state, formAction, isPending] = useActionState(submitProjectBrief, initialState);
+  const started = useRef(false);
+  const trackedSuccess = useRef(false);
+
+  useEffect(() => {
+    if (state.status === "success" && !trackedSuccess.current) {
+      trackedSuccess.current = true;
+      trackEvent("project_form_submitted", { form_name: "project_brief" });
+    }
+  }, [state.status]);
+
+  function recordStart() {
+    if (started.current) return;
+    started.current = true;
+    trackEvent("project_form_started", { form_name: "project_brief" });
+  }
 
   return (
     <section className="project-form-section" aria-labelledby="project-brief-title">
@@ -22,7 +38,7 @@ export function ProjectBriefForm() {
         </ol>
       </div>
 
-      <form className="project-brief-form" action={formAction}>
+      <form className="project-brief-form" action={formAction} onFocusCapture={recordStart}>
         <div className="form-trap" aria-hidden="true">
           <label>Leave this field blank<input name="website" tabIndex={-1} autoComplete="off" /></label>
         </div>
