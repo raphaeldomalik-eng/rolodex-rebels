@@ -1,4 +1,9 @@
+import Image from "next/image";
 import { SiteFooter, SiteHeader } from "./site-chrome";
+import liveCrowd from "../public/live-crowd.jpg";
+import artistStage from "../public/artist-stage.jpg";
+import grassrootsFlyering from "../public/grassroots-flyering.jpg";
+import rebelsMark from "../public/rolodex-rebels-mark.png";
 
 const meanings = [
   {
@@ -78,10 +83,18 @@ export default function Home() {
         </div>
         <div className="hero-art">
           <figure className="hero-photo">
-            <img src="/live-crowd.jpg" alt="Crowd facing a brightly lit live music stage" />
+            <Image
+              src={liveCrowd}
+              alt="Crowd facing a brightly lit live music stage"
+              fill
+              sizes="(max-width: 760px) 62vw, (max-width: 1100px) 42vw, 36vw"
+              fetchPriority="high"
+              loading="eager"
+              placeholder="blur"
+            />
             <figcaption>Live music / real connection</figcaption>
           </figure>
-          <img className="hero-mark" src="/rolodex-rebels-mark.png" alt="" />
+          <Image className="hero-mark" src={rebelsMark} alt="" sizes="(max-width: 760px) 27vw, 16vw" />
           <span className="stamp stamp-one">Independent</span>
           <span className="stamp stamp-two">Music first</span>
           <div className="slash slash-one" aria-hidden="true" />
@@ -117,7 +130,7 @@ export default function Home() {
 
       <section className="audience section-pad" aria-labelledby="audience-title">
         <div className="audience-photo media-frame">
-          <img src="/artist-stage.jpg" alt="Guitarist performing on a dark stage" />
+          <Image src={artistStage} alt="Guitarist performing on a dark stage" fill sizes="(max-width: 760px) 100vw, 38vw" placeholder="blur" />
           <span className="photo-label">Music is the starting point</span>
         </div>
         <div className="audience-copy">
@@ -200,7 +213,7 @@ export default function Home() {
           </div>
         </div>
         <figure className="grassroots-photo media-frame">
-          <img src="/grassroots-flyering.jpg" alt="Street promoter holding a stack of flyers" />
+          <Image src={grassrootsFlyering} alt="Street promoter holding a stack of flyers" fill sizes="(max-width: 760px) 100vw, 44vw" placeholder="blur" />
           <figcaption>
             <strong>Real people. Real places.</strong>
             <span>Field evidence and campaign coverage where available.</span>
@@ -268,7 +281,7 @@ export default function Home() {
       </section>
 
       <section className="final-cta section-pad" aria-labelledby="final-title">
-        <img src="/rolodex-rebels-mark.png" alt="" />
+        <Image src={rebelsMark} alt="" sizes="(max-width: 760px) 50vw, 480px" />
         <p className="eyebrow">Ready to be heard?</p>
         <h2 id="final-title">Let&apos;s get your<br /><span>message out!</span></h2>
         <p>Tell us what you&apos;re launching, growing or trying to sell. We&apos;ll help shape the right campaign — without making you decode a long menu of services.</p>
