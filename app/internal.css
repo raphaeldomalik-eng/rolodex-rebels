@@ -69,9 +69,38 @@
 .contact-card { min-height: 420px; padding: clamp(30px, 4vw, 58px); background: var(--paper); }
 .contact-card h2 { overflow-wrap: anywhere; margin-top: 48px; font-size: clamp(42px, 5vw, 78px); line-height: .9; }
 .contact-card > p:not(.eyebrow) { max-width: 650px; margin: 24px 0 38px; font-size: 17px; line-height: 1.55; }
-.brief-list { margin-bottom: clamp(84px, 10vw, 150px); }
-.brief-list > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
-.brief-list span { padding: 24px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: 26px; text-transform: uppercase; }
+.project-form-section { display: grid; grid-template-columns: minmax(280px, .68fr) minmax(0, 1.32fr); margin-bottom: clamp(84px, 10vw, 150px); border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--pink); }
+.project-form-intro { position: relative; overflow: hidden; padding: clamp(34px, 5vw, 64px); color: var(--ink); background: var(--pink); }
+.project-form-intro::after { content: "RR"; position: absolute; right: -34px; bottom: -44px; color: rgba(255,255,255,.2); font-family: "Bebas", Impact, sans-serif; font-size: clamp(180px, 25vw, 360px); line-height: .7; pointer-events: none; }
+.project-form-intro > * { position: relative; z-index: 1; }
+.project-form-intro h2 { margin: 52px 0 24px; font-size: clamp(62px, 7vw, 110px); line-height: .82; }
+.project-form-intro > p:not(.eyebrow) { max-width: 440px; font-size: 18px; line-height: 1.55; }
+.project-form-intro ol { display: grid; gap: 0; margin: clamp(54px, 7vw, 90px) 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.project-form-intro li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 17px 0; border-bottom: 2px solid var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: 20px; letter-spacing: .04em; text-transform: uppercase; }
+.project-form-intro li span { font-size: 14px; }
+.project-brief-form { padding: clamp(34px, 5vw, 64px); background: var(--paper); }
+.project-brief-form fieldset { margin: 0; padding: 0; border: 0; }
+.project-brief-form fieldset + fieldset { margin-top: 54px; padding-top: 50px; border-top: 3px solid var(--ink); }
+.project-brief-form legend { margin-bottom: 28px; padding: 0; font-family: "Bebas", Impact, sans-serif; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: .035em; text-transform: uppercase; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+.project-brief-form label { display: grid; align-content: start; gap: 9px; font-family: "Bebas", Impact, sans-serif; font-size: 18px; letter-spacing: .055em; text-transform: uppercase; }
+.project-brief-form label > span { color: var(--pink); }
+.form-field-wide { grid-column: 1 / -1; }
+.project-brief-form input,
+.project-brief-form select,
+.project-brief-form textarea { width: 100%; min-height: 54px; padding: 13px 14px; color: var(--ink); background: var(--white); border: 2px solid var(--ink); border-radius: 0; font: 16px/1.4 Arial, Helvetica, sans-serif; text-transform: none; transition: border-color .15s ease, box-shadow .15s ease; }
+.project-brief-form textarea { resize: vertical; }
+.project-brief-form input::placeholder,
+.project-brief-form textarea::placeholder { color: #77736f; opacity: 1; }
+.project-brief-form input:focus,
+.project-brief-form select:focus,
+.project-brief-form textarea:focus { outline: 0; border-color: var(--pink); box-shadow: 5px 5px 0 var(--pink); }
+.form-submit-row { display: grid; grid-template-columns: auto minmax(180px, 1fr); align-items: center; gap: 28px; margin-top: 34px; }
+.form-submit { color: var(--white); background: var(--ink); border-color: var(--ink); box-shadow: 7px 7px 0 var(--pink); cursor: pointer; }
+.form-submit:hover { color: var(--ink); background: var(--pink); border-color: var(--pink); }
+.form-submit:focus-visible { outline: 3px solid var(--pink); outline-offset: 5px; }
+.form-submit-row p { max-width: 460px; margin: 0; color: #5c5854; font-size: 14px; line-height: 1.45; }
+.form-status { min-height: 24px; margin: 20px 0 0; font-weight: 700; }
 .policy-copy { max-width: 900px; margin: clamp(84px, 10vw, 150px) 0; }
 .policy-copy h2 { margin: 50px 0 12px; font-size: clamp(38px, 4vw, 62px); line-height: .95; }
 .policy-copy p { font-size: 18px; line-height: 1.65; }
@@ -94,12 +123,17 @@
   .insight-list article { grid-template-columns: 70px 1fr; }
   .insight-list p { grid-column: 2; }
   .contact-grid { grid-template-columns: 1fr; }
+  .project-form-section { grid-template-columns: 1fr; }
+  .project-form-intro ol { margin-top: 44px; }
 }
 
 @media (max-width: 640px) {
   .inner-hero { min-height: auto; padding-top: 132px; }
   .inner-logo-slab { width: 82%; }
-  .feature-grid, .feature-grid.four-up, .route-grid, .brief-list > div { grid-template-columns: 1fr; }
+  .feature-grid, .feature-grid.four-up, .route-grid, .form-grid { grid-template-columns: 1fr; }
+  .form-field-wide { grid-column: auto; }
+  .form-submit-row { grid-template-columns: 1fr; }
+  .form-submit { justify-self: stretch; justify-content: space-between; }
   .feature-grid article { min-height: 220px; }
   .route-grid > a { min-height: 280px; }
   .insight-list article { grid-template-columns: 52px 1fr; gap: 18px; }

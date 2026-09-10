@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { SiteFooter, SiteHeader } from "./site-chrome";
 
 export function Arrow() {
@@ -34,7 +35,7 @@ export function InternalPage({
       <section className="inner-cta">
         <p className="eyebrow">Ready to make some noise?</p>
         <h2>LET&apos;S GET YOUR <span>MESSAGE OUT!</span></h2>
-        <a className="button button-dark" href="/start-a-project">Start a project <Arrow /></a>
+        <Link className="button button-dark" href="/start-a-project">Start a project <Arrow /></Link>
       </section>
       <SiteFooter />
     </main>
