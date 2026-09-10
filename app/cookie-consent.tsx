@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const CONSENT_KEY = "rr-analytics-consent";
@@ -26,6 +25,32 @@ export function CookieConsent() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer.push(args));
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500,
+    });
+    window.gtag("js", new Date());
+    window.gtag("config", "G-EZSJL5TG8N");
+
+    if (window.localStorage.getItem(CONSENT_KEY) === "granted") {
+      window.gtag("consent", "update", { analytics_storage: "granted" });
+    }
+
+    if (!document.querySelector('script[data-google-analytics="rolodex-rebels"]')) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-EZSJL5TG8N";
+      script.dataset.googleAnalytics = "rolodex-rebels";
+      document.head.appendChild(script);
+    }
+  }, []);
+
   function choose(nextConsent: Exclude<Consent, null>) {
     window.localStorage.setItem(CONSENT_KEY, nextConsent);
     setConsent(nextConsent);
@@ -38,23 +63,6 @@ export function CookieConsent() {
   const showBanner = consent === null || isOpen;
 
   return <>
-    <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZSJL5TG8N" strategy="afterInteractive" />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  analytics_storage: 'denied',
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  wait_for_update: 500
-});
-gtag('js', new Date());
-gtag('config', 'G-EZSJL5TG8N');
-if (window.localStorage.getItem('${CONSENT_KEY}') === 'granted') {
-  gtag('consent', 'update', { analytics_storage: 'granted' });
-}`}
-    </Script>
     {showBanner && <aside className="consent-banner" aria-label="Cookie preferences">
       <div><strong>Cookies and privacy</strong><p>We use Google Analytics to understand visits and improve this site. Analytics storage is denied until you choose “Accept analytics”. <a href="/privacy">Read our privacy notice</a>.</p></div>
       <div className="consent-actions"><button type="button" className="consent-reject" onClick={() => choose("denied")}>Reject analytics</button><button type="button" className="consent-accept" onClick={() => choose("granted")}>Accept analytics</button></div>
