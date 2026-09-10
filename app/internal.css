@@ -1,0 +1,108 @@
+.inner-site .site-header { position: absolute; }
+.inner-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(270px, .65fr);
+  align-items: center;
+  gap: clamp(44px, 7vw, 110px);
+  min-height: 78svh;
+  padding: clamp(150px, 16vw, 210px) clamp(22px, 5.5vw, 90px) clamp(76px, 9vw, 130px);
+  color: var(--white);
+  background: var(--ink);
+  border-bottom: 14px solid var(--pink);
+}
+.inner-hero-copy { max-width: 980px; }
+.inner-hero h1,
+.inner-content h2,
+.inner-content h3,
+.inner-cta h2 {
+  margin: 0;
+  font-family: "Bebas", Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.inner-hero h1 { max-width: 980px; font-size: clamp(62px, 8.2vw, 142px); line-height: .83; letter-spacing: -.025em; }
+.inner-hero h1 span, .inner-cta h2 span { color: var(--pink); }
+.inner-hero-copy > p:last-child { max-width: 760px; margin: 32px 0 0; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.48; }
+.inner-logo-slab {
+  position: relative;
+  padding: clamp(16px, 2.4vw, 34px);
+  color: var(--ink);
+  background: var(--white);
+  border: 3px solid var(--white);
+  box-shadow: 14px 14px 0 var(--pink);
+  transform: rotate(2deg);
+}
+.inner-logo-slab img { width: 100%; }
+.inner-logo-slab span { display: block; margin-top: 16px; font-family: "Bebas", Impact, sans-serif; font-size: clamp(18px, 2vw, 28px); letter-spacing: .08em; text-align: center; }
+.inner-content { padding: 0 clamp(22px, 5.5vw, 90px); }
+.inner-split { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: clamp(42px, 8vw, 130px); padding: clamp(82px, 10vw, 150px) 0; }
+.inner-split h2 { max-width: 690px; font-size: clamp(52px, 6vw, 96px); line-height: .9; }
+.body-copy { max-width: 760px; }
+.body-copy p { margin: 0 0 24px; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.58; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); margin-bottom: clamp(84px, 10vw, 150px); }
+.feature-grid.four-up { grid-template-columns: repeat(4, 1fr); }
+.feature-grid article { min-height: 260px; padding: 26px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.feature-grid article > span, .route-grid > a > span, .evidence-grid article > span, .insight-list article > span { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 52px; line-height: 1; }
+.feature-grid h3 { margin-top: 42px; font-size: clamp(28px, 2.4vw, 38px); line-height: .95; }
+.feature-grid p { margin: 16px 0 0; font-size: 16px; line-height: 1.55; }
+.dark-panel, .pink-panel { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: clamp(40px, 8vw, 120px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1); padding: clamp(72px, 8vw, 120px) clamp(22px, 5.5vw, 90px); }
+.dark-panel { color: var(--white); background: var(--ink); }
+.pink-panel { color: var(--ink); background: var(--pink); }
+.dark-panel h2, .pink-panel h2 { font-size: clamp(54px, 6vw, 100px); line-height: .88; }
+.dark-panel > p, .pink-panel > p:last-child { max-width: 720px; margin: 0; font-size: clamp(18px, 1.55vw, 23px); line-height: 1.56; }
+.route-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin: clamp(84px, 10vw, 150px) 0; border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
+.route-grid.three-up { grid-template-columns: repeat(3, 1fr); }
+.route-grid > a { min-height: 330px; padding: clamp(24px, 3vw, 42px); border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transition: color .2s, background .2s; }
+.route-grid > a:hover { color: var(--white); background: var(--ink); }
+.route-grid h2 { max-width: 590px; margin-top: 44px; font-size: clamp(42px, 4.5vw, 72px); line-height: .9; }
+.route-grid p { max-width: 600px; margin: 18px 0 34px; font-size: 17px; line-height: 1.5; }
+.route-grid strong { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; }
+.evidence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: clamp(84px, 10vw, 150px) 0; background: var(--ink); border: 3px solid var(--ink); }
+.evidence-grid article { min-height: 360px; padding: clamp(28px, 3.5vw, 50px); background: var(--paper); }
+.evidence-grid h2 { margin-top: 68px; font-size: clamp(42px, 4vw, 66px); line-height: .9; }
+.evidence-grid p { margin: 20px 0 0; font-size: 17px; line-height: 1.55; }
+.insight-list { margin: clamp(84px, 10vw, 150px) 0; border-top: 3px solid var(--ink); }
+.insight-list article { display: grid; grid-template-columns: 90px minmax(260px, .8fr) 1fr; align-items: center; gap: clamp(24px, 5vw, 80px); padding: 30px 0; border-bottom: 3px solid var(--ink); }
+.insight-list h2 { font-size: clamp(34px, 4vw, 58px); line-height: .95; }
+.insight-list p { max-width: 620px; margin: 0; font-size: 16px; line-height: 1.5; }
+.contact-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 3px; margin: clamp(84px, 10vw, 150px) 0; background: var(--ink); border: 3px solid var(--ink); }
+.contact-card { min-height: 420px; padding: clamp(30px, 4vw, 58px); background: var(--paper); }
+.contact-card h2 { overflow-wrap: anywhere; margin-top: 48px; font-size: clamp(42px, 5vw, 78px); line-height: .9; }
+.contact-card > p:not(.eyebrow) { max-width: 650px; margin: 24px 0 38px; font-size: 17px; line-height: 1.55; }
+.brief-list { margin-bottom: clamp(84px, 10vw, 150px); }
+.brief-list > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
+.brief-list span { padding: 24px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: 26px; text-transform: uppercase; }
+.policy-copy { max-width: 900px; margin: clamp(84px, 10vw, 150px) 0; }
+.policy-copy h2 { margin: 50px 0 12px; font-size: clamp(38px, 4vw, 62px); line-height: .95; }
+.policy-copy p { font-size: 18px; line-height: 1.65; }
+.policy-copy a { color: var(--pink); text-decoration: underline; }
+.back-link { display: inline-block; margin: -70px 0 90px; color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; }
+.inner-cta { position: relative; overflow: hidden; padding: clamp(82px, 10vw, 150px) clamp(22px, 5.5vw, 90px); text-align: center; background: var(--pink); }
+.inner-cta::after { content: "RR"; position: absolute; right: -2vw; bottom: -8vw; color: rgba(255,255,255,.16); font-family: "Bebas", Impact, sans-serif; font-size: 34vw; line-height: .7; }
+.inner-cta > * { position: relative; z-index: 1; }
+.inner-cta h2 { max-width: 1040px; margin: 0 auto; font-size: clamp(62px, 9vw, 148px); line-height: .82; }
+.inner-cta h2 span { color: var(--white); }
+.inner-cta .button { margin-top: 44px; }
+
+@media (max-width: 980px) {
+  .inner-hero { grid-template-columns: 1fr; }
+  .inner-logo-slab { width: min(360px, 70%); }
+  .inner-split, .dark-panel, .pink-panel { grid-template-columns: 1fr; }
+  .feature-grid.four-up { grid-template-columns: repeat(2, 1fr); }
+  .route-grid.three-up { grid-template-columns: 1fr; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .insight-list article { grid-template-columns: 70px 1fr; }
+  .insight-list p { grid-column: 2; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .inner-hero { min-height: auto; padding-top: 132px; }
+  .inner-logo-slab { width: 82%; }
+  .feature-grid, .feature-grid.four-up, .route-grid, .brief-list > div { grid-template-columns: 1fr; }
+  .feature-grid article { min-height: 220px; }
+  .route-grid > a { min-height: 280px; }
+  .insight-list article { grid-template-columns: 52px 1fr; gap: 18px; }
+  .insight-list article > span { font-size: 40px; }
+  .inner-cta h2 { font-size: clamp(56px, 18vw, 90px); }
+}
