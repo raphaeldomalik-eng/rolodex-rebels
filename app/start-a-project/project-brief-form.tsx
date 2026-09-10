@@ -1,66 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useActionState } from "react";
+import { submitProjectBrief, type ProjectBriefState } from "./actions";
+import { budgetOptions, goalOptions } from "./brief-options";
 
-const goalOptions = [
-  "Launch my music",
-  "Build my audience",
-  "Improve my digital presence",
-  "Sell more tickets",
-  "Run a guest or industry campaign",
-  "Activate audiences on the ground",
-  "Something else",
-];
-
-const budgetOptions = [
-  "Still working it out",
-  "Under £1,000",
-  "£1,000–£2,500",
-  "£2,500–£5,000",
-  "£5,000–£10,000",
-  "£10,000+",
-];
-
-function value(data: FormData, name: string) {
-  return String(data.get(name) ?? "").trim() || "Not supplied";
-}
+const initialState: ProjectBriefState = { status: "idle", message: "" };
 
 export function ProjectBriefForm() {
-  const [status, setStatus] = useState("");
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const projectName = value(data, "project");
-    const body = [
-      "Hi Rolodex Rebels,",
-      "",
-      "I’d like to start a project.",
-      "",
-      "CONTACT",
-      `Name: ${value(data, "name")}`,
-      `Email: ${value(data, "email")}`,
-      `Artist / company / event: ${projectName}`,
-      "",
-      "THE BRIEF",
-      `Goal: ${value(data, "goal")}`,
-      `Key date: ${value(data, "keyDate")}`,
-      `Audience: ${value(data, "audience")}`,
-      `Locations: ${value(data, "locations")}`,
-      `Current activity: ${value(data, "activity")}`,
-      `Budget range: ${value(data, "budget")}`,
-      "",
-      "WHAT SUCCESS LOOKS LIKE",
-      value(data, "success"),
-      "",
-      "Thanks,",
-      value(data, "name"),
-    ].join("\n");
-
-    const subject = `Project brief — ${projectName}`;
-    setStatus("Your email app should open with your brief ready to send.");
-    window.location.href = `mailto:joanne@rolodexrebels.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  const [state, formAction, isPending] = useActionState(submitProjectBrief, initialState);
 
   return (
     <section className="project-form-section" aria-labelledby="project-brief-title">
@@ -75,21 +22,24 @@ export function ProjectBriefForm() {
         </ol>
       </div>
 
-      <form className="project-brief-form" onSubmit={handleSubmit}>
+      <form className="project-brief-form" action={formAction}>
+        <div className="form-trap" aria-hidden="true">
+          <label>Leave this field blank<input name="website" tabIndex={-1} autoComplete="off" /></label>
+        </div>
         <fieldset>
           <legend>First, who are we talking to?</legend>
           <div className="form-grid">
             <label>
               Your name <span aria-hidden="true">*</span>
-              <input name="name" autoComplete="name" required />
+              <input name="name" autoComplete="name" maxLength={100} required />
             </label>
             <label>
               Your email <span aria-hidden="true">*</span>
-              <input name="email" type="email" autoComplete="email" required />
+              <input name="email" type="email" autoComplete="email" maxLength={254} required />
             </label>
             <label className="form-field-wide">
               Artist, company or event
-              <input name="project" autoComplete="organization" />
+              <input name="project" autoComplete="organization" maxLength={160} />
             </label>
           </div>
         </fieldset>
@@ -110,15 +60,15 @@ export function ProjectBriefForm() {
             </label>
             <label>
               Audience
-              <input name="audience" placeholder="Who needs to see or hear this?" />
+              <input name="audience" maxLength={500} placeholder="Who needs to see or hear this?" />
             </label>
             <label>
               Locations
-              <input name="locations" placeholder="Cities, regions or online" />
+              <input name="locations" maxLength={500} placeholder="Cities, regions or online" />
             </label>
             <label className="form-field-wide">
               What is already in motion?
-              <textarea name="activity" rows={4} placeholder="PR, social, ads, street activity, ticket sales…" />
+              <textarea name="activity" rows={4} maxLength={3000} placeholder="PR, social, ads, street activity, ticket sales…" />
             </label>
             <label>
               Budget range
@@ -129,16 +79,21 @@ export function ProjectBriefForm() {
             </label>
             <label className="form-field-wide">
               What would a great result look like? <span aria-hidden="true">*</span>
-              <textarea name="success" rows={5} required placeholder="The outcome that would make this campaign a win" />
+              <textarea name="success" rows={5} maxLength={5000} required placeholder="The outcome that would make this campaign a win" />
             </label>
           </div>
         </fieldset>
 
         <div className="form-submit-row">
-          <button className="button form-submit" type="submit">Open my project email <span aria-hidden="true">↗</span></button>
-          <p>This opens your email app with the brief ready to send. Your details stay on this device until you send it.</p>
+          <button className="button form-submit" type="submit" disabled={isPending}>
+            {isPending ? "Sending brief…" : "Send project brief"} <span aria-hidden="true">↗</span>
+          </button>
+          <p>Your brief is sent directly to Rolodex Rebels. Prefer email? <a href="mailto:joanne@rolodexrebels.co.uk">Email Joanne</a>.</p>
         </div>
-        <p className="form-status" aria-live="polite">{status}</p>
+        <p className={`form-status ${state.status}`} aria-live="polite" role={state.status === "error" ? "alert" : "status"}>
+          {state.message}
+          {state.status === "error" && <> <a href="mailto:joanne@rolodexrebels.co.uk">Email Joanne directly.</a></>}
+        </p>
       </form>
     </section>
   );
