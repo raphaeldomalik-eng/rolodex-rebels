@@ -22,7 +22,7 @@
 }
 .inner-hero h1 { max-width: 980px; font-size: clamp(62px, 8.2vw, 142px); line-height: .83; letter-spacing: -.025em; }
 .inner-hero h1 span, .inner-cta h2 span { color: var(--pink); }
-.inner-hero-copy > p:last-child { max-width: 760px; margin: 32px 0 0; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.48; }
+.inner-hero-copy > p:last-child { max-width: 64ch; margin: 32px 0 0; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.56; font-weight: 400; }
 .inner-logo-slab {
   position: relative;
   padding: clamp(16px, 2.4vw, 34px);
@@ -37,44 +37,44 @@
 .inner-content { padding: 0 clamp(22px, 5.5vw, 90px); }
 .inner-split { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); gap: clamp(42px, 8vw, 130px); padding: clamp(82px, 10vw, 150px) 0; }
 .inner-split h2 { max-width: 690px; font-size: clamp(52px, 6vw, 96px); line-height: .9; }
-.body-copy { max-width: 760px; }
-.body-copy p { margin: 0 0 24px; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.58; }
+.body-copy { max-width: 66ch; }
+.body-copy p { margin: 0 0 24px; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.64; font-weight: 400; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); margin-bottom: clamp(84px, 10vw, 150px); }
 .feature-grid.four-up { grid-template-columns: repeat(4, 1fr); }
 .feature-grid article { min-height: 260px; padding: 26px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
 .feature-grid article > span, .route-grid > a > span, .evidence-grid article > span, .insight-list article > span { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 52px; line-height: 1; }
 .feature-grid h3 { margin-top: 42px; font-size: clamp(28px, 2.4vw, 38px); line-height: .95; }
-.feature-grid p { margin: 16px 0 0; font-size: 16px; line-height: 1.55; }
+.feature-grid p { margin: 16px 0 0; font-size: 16px; line-height: 1.62; font-weight: 400; }
 .dark-panel, .pink-panel { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: clamp(40px, 8vw, 120px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1); padding: clamp(72px, 8vw, 120px) clamp(22px, 5.5vw, 90px); }
 .dark-panel { color: var(--white); background: var(--ink); }
 .pink-panel { color: var(--ink); background: var(--pink); }
 .dark-panel h2, .pink-panel h2 { font-size: clamp(54px, 6vw, 100px); line-height: .88; }
-.dark-panel > p, .pink-panel > p:last-child { max-width: 720px; margin: 0; font-size: clamp(18px, 1.55vw, 23px); line-height: 1.56; }
+.dark-panel > p, .pink-panel > p:last-child { max-width: 62ch; margin: 0; font-size: clamp(18px, 1.55vw, 23px); line-height: 1.62; font-weight: 400; }
 .route-grid { display: grid; grid-template-columns: repeat(2, 1fr); margin: clamp(84px, 10vw, 150px) 0; border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
 .route-grid.three-up { grid-template-columns: repeat(3, 1fr); }
 .route-grid > a { min-height: 330px; padding: clamp(24px, 3vw, 42px); border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transition: color .2s, background .2s; }
 .route-grid > a:hover { color: var(--white); background: var(--ink); }
 .route-grid h2 { max-width: 590px; margin-top: 44px; font-size: clamp(42px, 4.5vw, 72px); line-height: .9; }
-.route-grid p { max-width: 600px; margin: 18px 0 34px; font-size: 17px; line-height: 1.5; }
+.route-grid p { max-width: 56ch; margin: 18px 0 34px; font-size: 17px; line-height: 1.6; font-weight: 400; }
 .route-grid strong { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; }
 .evidence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: clamp(84px, 10vw, 150px) 0; background: var(--ink); border: 3px solid var(--ink); }
 .evidence-grid article { min-height: 360px; padding: clamp(28px, 3.5vw, 50px); background: var(--paper); }
 .evidence-grid h2 { margin-top: 68px; font-size: clamp(42px, 4vw, 66px); line-height: .9; }
-.evidence-grid p { margin: 20px 0 0; font-size: 17px; line-height: 1.55; }
+.evidence-grid p { max-width: 56ch; margin: 20px 0 0; font-size: 17px; line-height: 1.62; font-weight: 400; }
 .insight-list { margin: clamp(84px, 10vw, 150px) 0; border-top: 3px solid var(--ink); }
 .insight-list article { display: grid; grid-template-columns: 90px minmax(260px, .8fr) 1fr; align-items: center; gap: clamp(24px, 5vw, 80px); padding: 30px 0; border-bottom: 3px solid var(--ink); }
 .insight-list h2 { font-size: clamp(34px, 4vw, 58px); line-height: .95; }
-.insight-list p { max-width: 620px; margin: 0; font-size: 16px; line-height: 1.5; }
+.insight-list p { max-width: 62ch; margin: 0; font-size: 16px; line-height: 1.62; font-weight: 400; }
 .contact-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 3px; margin: clamp(84px, 10vw, 150px) 0; background: var(--ink); border: 3px solid var(--ink); }
 .contact-card { min-height: 420px; padding: clamp(30px, 4vw, 58px); background: var(--paper); }
 .contact-card h2 { overflow-wrap: anywhere; margin-top: 48px; font-size: clamp(42px, 5vw, 78px); line-height: .9; }
-.contact-card > p:not(.eyebrow) { max-width: 650px; margin: 24px 0 38px; font-size: 17px; line-height: 1.55; }
+.contact-card > p:not(.eyebrow) { max-width: 58ch; margin: 24px 0 38px; font-size: 17px; line-height: 1.62; font-weight: 400; }
 .project-form-section { display: grid; grid-template-columns: minmax(280px, .68fr) minmax(0, 1.32fr); margin-bottom: clamp(84px, 10vw, 150px); border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--pink); }
 .project-form-intro { position: relative; overflow: hidden; padding: clamp(34px, 5vw, 64px); color: var(--ink); background: var(--pink); }
 .project-form-intro::after { content: "RR"; position: absolute; right: -34px; bottom: -44px; color: rgba(255,255,255,.2); font-family: "Bebas", Impact, sans-serif; font-size: clamp(180px, 25vw, 360px); line-height: .7; pointer-events: none; }
 .project-form-intro > * { position: relative; z-index: 1; }
 .project-form-intro h2 { margin: 52px 0 24px; font-size: clamp(62px, 7vw, 110px); line-height: .82; }
-.project-form-intro > p:not(.eyebrow) { max-width: 440px; font-size: 18px; line-height: 1.55; }
+.project-form-intro > p:not(.eyebrow) { max-width: 42ch; font-size: 18px; line-height: 1.62; font-weight: 400; }
 .project-form-intro ol { display: grid; gap: 0; margin: clamp(54px, 7vw, 90px) 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
 .project-form-intro li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 17px 0; border-bottom: 2px solid var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: 20px; letter-spacing: .04em; text-transform: uppercase; }
 .project-form-intro li span { font-size: 14px; }
@@ -101,12 +101,12 @@
 .form-submit:hover { color: var(--ink); background: var(--pink); border-color: var(--pink); }
 .form-submit:focus-visible { outline: 3px solid var(--pink); outline-offset: 5px; }
 .form-submit:disabled { opacity: .62; cursor: wait; }
-.form-submit-row p { max-width: 460px; margin: 0; color: #5c5854; font-size: 14px; line-height: 1.45; }
+.form-submit-row p { max-width: 54ch; margin: 0; color: #5c5854; font-size: 14px; line-height: 1.58; font-weight: 400; }
 .form-submit-row p a, .form-status a { text-decoration: underline; text-underline-offset: 3px; }
 .form-status { min-height: 24px; margin: 20px 0 0; font-weight: 700; }
 .form-status.success { color: #176b3a; }
 .form-status.error { color: var(--pink-text); }
-.policy-copy { max-width: 900px; margin: clamp(84px, 10vw, 150px) 0; }
+.policy-copy { max-width: 72ch; margin: clamp(84px, 10vw, 150px) 0; }
 .policy-copy h2 { margin: 50px 0 12px; font-size: clamp(38px, 4vw, 62px); line-height: .95; }
 .policy-copy p { font-size: 18px; line-height: 1.65; }
 .policy-copy a { color: var(--pink); text-decoration: underline; }
