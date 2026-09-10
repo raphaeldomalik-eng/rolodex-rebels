@@ -7,6 +7,13 @@ const CONSENT_KEY = "rr-analytics-consent";
 
 type Consent = "granted" | "denied" | null;
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export function CookieConsent() {
   const [consent, setConsent] = useState<Consent>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -23,22 +30,33 @@ export function CookieConsent() {
     window.localStorage.setItem(CONSENT_KEY, nextConsent);
     setConsent(nextConsent);
     setIsOpen(false);
+    window.gtag?.("consent", "update", {
+      analytics_storage: nextConsent === "granted" ? "granted" : "denied",
+    });
   }
 
   const showBanner = consent === null || isOpen;
 
   return <>
-    {consent === "granted" && <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZSJL5TG8N" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZSJL5TG8N" strategy="afterInteractive" />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  wait_for_update: 500
+});
 gtag('js', new Date());
-gtag('config', 'G-EZSJL5TG8N');`}
-      </Script>
-    </>}
+gtag('config', 'G-EZSJL5TG8N');
+if (window.localStorage.getItem('${CONSENT_KEY}') === 'granted') {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+}`}
+    </Script>
     {showBanner && <aside className="consent-banner" aria-label="Cookie preferences">
-      <div><strong>Cookies and privacy</strong><p>We use Google Analytics to understand visits and improve this site. It only loads if you choose “Accept analytics”. <a href="/privacy">Read our privacy notice</a>.</p></div>
+      <div><strong>Cookies and privacy</strong><p>We use Google Analytics to understand visits and improve this site. Analytics storage is denied until you choose “Accept analytics”. <a href="/privacy">Read our privacy notice</a>.</p></div>
       <div className="consent-actions"><button type="button" className="consent-reject" onClick={() => choose("denied")}>Reject analytics</button><button type="button" className="consent-accept" onClick={() => choose("granted")}>Accept analytics</button></div>
     </aside>}
     {consent !== null && !isOpen && <button className="cookie-settings" type="button" onClick={() => setIsOpen(true)}>Cookie settings</button>}
