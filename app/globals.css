@@ -54,7 +54,7 @@ p { text-wrap: pretty; }
   letter-spacing: .07em;
   text-transform: uppercase;
 }
-.primary-nav a { position: relative; font-size: 14px; }
+.primary-nav a { position: relative; font-size: 16px; letter-spacing: .035em; }
 .primary-nav a::after {
   content: "";
   position: absolute;
@@ -73,7 +73,8 @@ p { text-wrap: pretty; }
   color: var(--ink);
   background: var(--pink);
   border: 2px solid var(--pink);
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: .035em;
   box-shadow: 5px 5px 0 var(--white);
   transition: color .2s ease, background-color .2s ease, border-color .2s ease;
 }
