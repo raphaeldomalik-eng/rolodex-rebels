@@ -1,8 +1,7 @@
-export function GET() {
-  const key = process.env.INDEXNOW_KEY;
-  if (!key) return new Response("Not configured", { status: 404 });
+import { INDEXNOW_KEY } from "../indexnow";
 
-  return new Response(key, {
+export function GET() {
+  return new Response(INDEXNOW_KEY, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "public, max-age=3600",

@@ -10,11 +10,21 @@ export type CaseStudy = {
   published: string;
   modified?: string;
   image?: string;
+  images?: { src: string; alt: string; caption?: string }[];
+  clientType?: string;
+  campaignType?: string;
   context?: string;
   location?: string;
   timeframe?: string;
+  objective?: string;
+  channels?: string[];
+  grassrootsActivity?: string;
+  digitalActivity?: string;
+  audienceActivity?: string;
+  verifiedMetrics?: { label: string; value: string }[];
   lessons?: string;
   next?: string;
+  testimonial?: { quote: string; attribution: string };
 };
 
 export type InsightArticle = {

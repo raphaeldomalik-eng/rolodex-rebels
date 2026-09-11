@@ -33,12 +33,21 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <article><span>02</span><h2>What Rolodex Rebels did</h2><p>{study.work}</p></article>
         <article><span>03</span><h2>Result</h2><p>{study.result}</p></article>
       </section>
-      {(study.context || study.location || study.timeframe || study.lessons || study.next) && <section className="policy-copy">
+      {(study.clientType || study.campaignType || study.context || study.location || study.timeframe || study.objective || study.channels?.length || study.grassrootsActivity || study.digitalActivity || study.audienceActivity || study.verifiedMetrics?.length || study.lessons || study.next || study.testimonial) && <section className="policy-copy">
+        {study.clientType && <><h2>Client type</h2><p>{study.clientType}</p></>}
+        {study.campaignType && <><h2>Campaign type</h2><p>{study.campaignType}</p></>}
         {study.context && <><h2>Campaign context</h2><p>{study.context}</p></>}
         {study.location && <><h2>Location</h2><p>{study.location}</p></>}
         {study.timeframe && <><h2>Timeframe</h2><p>{study.timeframe}</p></>}
+        {study.objective && <><h2>Objective</h2><p>{study.objective}</p></>}
+        {Boolean(study.channels?.length) && <><h2>Channels used</h2><p>{study.channels?.join(", ")}</p></>}
+        {study.grassrootsActivity && <><h2>Grassroots activity</h2><p>{study.grassrootsActivity}</p></>}
+        {study.digitalActivity && <><h2>Digital activity</h2><p>{study.digitalActivity}</p></>}
+        {study.audienceActivity && <><h2>Audience activity</h2><p>{study.audienceActivity}</p></>}
+        {Boolean(study.verifiedMetrics?.length) && <><h2>Verified metrics</h2>{study.verifiedMetrics?.map((metric) => <p key={metric.label}><strong>{metric.label}:</strong> {metric.value}</p>)}</>}
         {study.lessons && <><h2>What we learned</h2><p>{study.lessons}</p></>}
         {study.next && <><h2>What happened next</h2><p>{study.next}</p></>}
+        {study.testimonial && <><h2>Testimonial</h2><blockquote><p>“{study.testimonial.quote}”</p><cite>{study.testimonial.attribution}</cite></blockquote></>}
       </section>}
       <nav className="related-links" aria-label="Related pages"><h2>EXPLORE THE CAMPAIGN.</h2><Link href={study.service.path}>{study.service.name} ↗</Link><Link href={study.audience.path}>{study.audience.name} ↗</Link><Link href="/start-a-project">Start a project ↗</Link></nav>
     </InternalPage>

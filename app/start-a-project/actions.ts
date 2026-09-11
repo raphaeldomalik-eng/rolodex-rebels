@@ -156,7 +156,9 @@ export async function submitProjectBrief(
   const validationError = validate(brief);
   if (validationError) return { status: "error", message: validationError };
 
-  const apiKey = process.env.SENDGRID_API_KEY;
+  // Keep the correctly named variable as the primary production contract while
+  // accepting the existing protected Vercel variable until it can be rotated.
+  const apiKey = process.env.SENDGRID_API_KEY ?? process.env.SEBDGRID_API_KEY;
   if (!apiKey) {
     console.error("Project brief email is unavailable: SENDGRID_API_KEY is not configured.");
     return { status: "error", message: "We couldn’t send your brief just now." };

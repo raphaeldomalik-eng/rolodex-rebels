@@ -1,12 +1,12 @@
 import { SITE_URL } from "../../seo";
+import { INDEXNOW_KEY, INDEXNOW_KEY_LOCATION } from "../../indexnow";
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 export async function POST(request: Request) {
-  const key = process.env.INDEXNOW_KEY;
   const secret = process.env.INDEXNOW_SECRET;
 
-  if (!key || !secret) {
+  if (!secret) {
     return Response.json({ error: "IndexNow is not configured." }, { status: 503 });
   }
 
@@ -49,8 +49,8 @@ export async function POST(request: Request) {
       headers: { "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify({
         host: "rolodexrebels.co.uk",
-        key,
-        keyLocation: `${SITE_URL}/indexnow-key.txt`,
+        key: INDEXNOW_KEY,
+        keyLocation: INDEXNOW_KEY_LOCATION,
         urlList: urls,
       }),
       cache: "no-store",
