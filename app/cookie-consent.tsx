@@ -31,7 +31,9 @@ export function CookieConsent() {
   function initialiseAnalytics() {
     if (window.rrAnalyticsInitialised) return;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer.push(args));
+    window.gtag = window.gtag || function gtag(..._args: unknown[]) {
+      window.dataLayer.push(arguments);
+    };
     window.gtag("consent", "default", {
       analytics_storage: "granted",
       ad_storage: "denied",
@@ -41,6 +43,11 @@ export function CookieConsent() {
     window.gtag("js", new Date());
     window.gtag("config", "G-EZSJL5TG8N");
     window.rrAnalyticsInitialised = true;
+    window.dispatchEvent(new Event("rr:analytics-ready"));
+  }
+
+  function confirmAnalyticsReady() {
+    initialiseAnalytics();
     window.dispatchEvent(new Event("rr:analytics-ready"));
   }
 
@@ -60,8 +67,8 @@ export function CookieConsent() {
     {consent === "granted" && (
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-EZSJL5TG8N"
-        strategy="lazyOnload"
-        onLoad={initialiseAnalytics}
+        strategy="afterInteractive"
+        onLoad={confirmAnalyticsReady}
       />
     )}
     {showBanner && <aside className="consent-banner" aria-label="Cookie preferences">
