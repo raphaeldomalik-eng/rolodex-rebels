@@ -21,7 +21,7 @@ export default function CookiesPage() {
       <h2>Essential storage</h2>
       <p>We save your analytics preference in your browser so the site can respect your choice and avoid asking on every visit. This preference is necessary for the cookie controls to work.</p>
       <h2>Optional analytics</h2>
-      <p>If you accept analytics, Google Analytics may use cookies or similar identifiers to measure visits, referral sources, pages viewed and useful actions such as project enquiries, email clicks and telephone clicks.</p>
+      <p>If you accept analytics, Google Analytics may use cookies or similar identifiers to measure visits, referral sources, pages viewed and useful actions such as project enquiries, email clicks and telephone clicks. Consent-based session storage also keeps limited campaign attribution, such as UTM tags and the page where an enquiry began, for the life of the browser tab.</p>
       <h2>Changing your choice</h2>
       <p>Use the “Cookie settings” button on any page to accept or reject analytics. Rejecting analytics does not stop you using the site or submitting a project enquiry.</p>
       <h2>More information</h2>

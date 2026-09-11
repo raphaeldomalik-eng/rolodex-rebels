@@ -1,5 +1,6 @@
 import { SITE_URL } from "../../seo";
 import { INDEXNOW_KEY, INDEXNOW_KEY_LOCATION } from "../../indexnow";
+import { indexablePathnames } from "../../indexable-routes";
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
@@ -33,14 +34,17 @@ export async function POST(request: Request) {
     if (typeof value !== "string") return false;
     try {
       const url = new URL(value, SITE_URL);
-      return url.origin === SITE_URL && url.search === "" && url.hash === "";
+      return url.origin === SITE_URL
+        && url.search === ""
+        && url.hash === ""
+        && indexablePathnames.has(url.pathname);
     } catch {
       return false;
     }
   }).map((value) => new URL(value, SITE_URL).toString());
 
   if (urls.length !== submittedUrls.length) {
-    return Response.json({ error: "Every URL must be a canonical Rolodex Rebels URL without a query string or fragment." }, { status: 400 });
+    return Response.json({ error: "Every URL must be an approved, indexable Rolodex Rebels URL without a query string or fragment." }, { status: 400 });
   }
 
   try {
