@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       <h1>Privacy notice</h1>
       <p className="policy-intro">Rolodex Rebels uses the information you provide through the project enquiry form to respond to your enquiry. We also use limited analytics, with your permission, to understand how people use the site.</p>
       <h2>What we collect</h2>
-      <p>When you submit a project enquiry, we collect the contact details and campaign information you choose to provide. If you accept analytics, Google Analytics 4 may also collect information such as pages viewed, approximate location, device/browser information, referral source, and interactions such as clicks.</p>
+      <p>When you submit a project enquiry, we collect the contact details and campaign information you choose to provide. If you accept analytics, Google Analytics 4 may also collect information such as pages viewed, approximate location, device/browser information, referral source, and interactions such as clicks. Limited campaign attribution — such as the landing page, enquiry source page, referrer and UTM campaign tags — may also be included with your project brief so we can understand which marketing led to the enquiry.</p>
       <h2>How project enquiries are used</h2>
       <p>Project enquiry information is sent to Rolodex Rebels through an email delivery service and used to understand your brief, respond to you and discuss relevant services. Please do not include sensitive personal information in the form.</p>
       <h2>Cookies and consent</h2>

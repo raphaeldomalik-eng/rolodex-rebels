@@ -1,6 +1,11 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
+import {
+  emptyMarketingAttribution,
+  getMarketingAttribution,
+  type MarketingAttribution,
+} from "../analytics-attribution";
 import { trackEvent } from "../analytics-events";
 import { submitProjectBrief, type ProjectBriefState } from "./actions";
 import { budgetOptions, goalOptions } from "./brief-options";
@@ -9,6 +14,7 @@ const initialState: ProjectBriefState = { status: "idle", message: "" };
 
 export function ProjectBriefForm() {
   const [state, formAction, isPending] = useActionState(submitProjectBrief, initialState);
+  const [attribution, setAttribution] = useState<MarketingAttribution>(emptyMarketingAttribution);
   const started = useRef(false);
   const trackedSuccess = useRef(false);
 
@@ -18,6 +24,20 @@ export function ProjectBriefForm() {
       trackEvent("project_form_submitted", { form_name: "project_brief" });
     }
   }, [state.status]);
+
+  useEffect(() => {
+    function updateAttribution() {
+      setAttribution(getMarketingAttribution() ?? emptyMarketingAttribution());
+    }
+
+    updateAttribution();
+    window.addEventListener("rr:analytics-ready", updateAttribution);
+    window.addEventListener("rr:consent-changed", updateAttribution);
+    return () => {
+      window.removeEventListener("rr:analytics-ready", updateAttribution);
+      window.removeEventListener("rr:consent-changed", updateAttribution);
+    };
+  }, []);
 
   function recordStart() {
     if (started.current) return;
@@ -39,6 +59,9 @@ export function ProjectBriefForm() {
       </div>
 
       <form className="project-brief-form" action={formAction} onFocusCapture={recordStart}>
+        {Object.entries(attribution).map(([name, value]) => (
+          <input key={name} type="hidden" name={name} value={value} />
+        ))}
         <div className="form-trap" aria-hidden="true">
           <label>Leave this field blank<input name="website" tabIndex={-1} autoComplete="off" /></label>
         </div>

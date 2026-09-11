@@ -1,6 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
+import {
+  initialiseMarketingAttribution,
+  recordEnquiryOrigin,
+  recordMarketingPageContext,
+} from "./analytics-attribution";
+import { hasAnalyticsConsent } from "./analytics-consent";
 import { trackEvent } from "./analytics-events";
 
 const aiSources = [
@@ -28,15 +34,17 @@ export function AnalyticsTracker() {
   useEffect(() => {
     function recordAiReferral() {
       const source = detectAiSource();
-      if (!source || window.sessionStorage.getItem("rr-ai-referral-recorded") === "true") return;
-      trackEvent("ai_referral_landing", { ai_source: source, landing_page: window.location.pathname });
-      if (window.gtag) window.sessionStorage.setItem("rr-ai-referral-recorded", "true");
+      if (!hasAnalyticsConsent() || !source || window.sessionStorage.getItem("rr-ai-referral-recorded") === "true") return;
+      if (trackEvent("ai_referral_landing", { ai_source: source, landing_page: window.location.pathname })) {
+        window.sessionStorage.setItem("rr-ai-referral-recorded", "true");
+      }
     }
 
     function recordCaseStudyView() {
       if (!window.location.pathname.startsWith("/results/") || window.sessionStorage.getItem("rr-case-study-view-recorded") === window.location.pathname) return;
-      trackEvent("results_case_study_view", { case_study_path: window.location.pathname });
-      if (window.gtag) window.sessionStorage.setItem("rr-case-study-view-recorded", window.location.pathname);
+      if (trackEvent("results_case_study_view", { case_study_path: window.location.pathname })) {
+        window.sessionStorage.setItem("rr-case-study-view-recorded", window.location.pathname);
+      }
     }
 
     function recordClick(event: MouseEvent) {
@@ -48,9 +56,10 @@ export function AnalyticsTracker() {
       const href = link.getAttribute("href") ?? "";
       const linkText = link.textContent?.trim().replace(/\s+/g, " ").slice(0, 100) ?? "";
       const currentPath = window.location.pathname;
+      recordMarketingPageContext(currentPath);
 
       function recordContactNavigation(name: "email_click" | "phone_click") {
-        if (!window.gtag) return;
+        if (!hasAnalyticsConsent() || !window.gtag) return;
 
         event.preventDefault();
         let hasNavigated = false;
@@ -74,6 +83,7 @@ export function AnalyticsTracker() {
       } else if (href.startsWith("tel:")) {
         recordContactNavigation("phone_click");
       } else if (href === "/start-a-project" || href.startsWith("/start-a-project?")) {
+        recordEnquiryOrigin(currentPath);
         trackEvent(currentPath.startsWith("/services/") ? "service_page_enquiry" : "start_project_cta", {
           source_page: currentPath,
           link_text: linkText,
@@ -92,6 +102,8 @@ export function AnalyticsTracker() {
       }
     }
 
+    initialiseMarketingAttribution();
+    recordMarketingPageContext();
     recordAiReferral();
     recordCaseStudyView();
     window.addEventListener("rr:analytics-ready", recordAiReferral);

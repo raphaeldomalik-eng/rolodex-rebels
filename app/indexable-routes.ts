@@ -1,0 +1,26 @@
+export const indexableRoutes = [
+  ["/", "weekly", 1],
+  ["/why-us", "monthly", 0.8],
+  ["/services", "monthly", 0.9],
+  ["/services/get-heard", "monthly", 0.8],
+  ["/services/get-seen", "monthly", 0.8],
+  ["/services/build-your-audience", "monthly", 0.8],
+  ["/services/sell-the-show", "monthly", 0.8],
+  ["/services/grassroots", "monthly", 0.8],
+  ["/services/digital-creative", "monthly", 0.8],
+  ["/services/music-pr", "monthly", 0.75],
+  ["/services/grassroots/music-street-teams", "monthly", 0.75],
+  ["/services/grassroots/flyer-distribution", "monthly", 0.75],
+  ["/services/festival-marketing", "monthly", 0.75],
+  ["/services/artist-website-design", "monthly", 0.75],
+  ["/services/event-festival-websites", "monthly", 0.75],
+  ["/who-we-help", "monthly", 0.8],
+  ["/who-we-help/artists", "monthly", 0.8],
+  ["/who-we-help/labels-managers", "monthly", 0.8],
+  ["/who-we-help/promoters-venues-festivals", "monthly", 0.8],
+  ["/start-a-project", "monthly", 0.8],
+  ["/privacy", "yearly", 0.2],
+  ["/cookies", "yearly", 0.2],
+] as const;
+
+export const indexablePathnames = new Set<string>(indexableRoutes.map(([path]) => path));

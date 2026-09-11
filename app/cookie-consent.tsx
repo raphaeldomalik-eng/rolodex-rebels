@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
-import { ANALYTICS_CONSENT_KEY } from "./analytics-events";
+import { clearMarketingAttribution, persistMarketingAttribution } from "./analytics-attribution";
+import { ANALYTICS_CONSENT_KEY } from "./analytics-consent";
 
 type Consent = "granted" | "denied" | null;
 
@@ -23,6 +24,7 @@ export function CookieConsent() {
     const timer = window.setTimeout(() => {
       const saved = window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
       if (saved === "granted") initialiseAnalytics();
+      if (saved === "denied") clearMarketingAttribution();
       if (saved === "granted" || saved === "denied") setConsent(saved);
     }, 0);
     return () => window.clearTimeout(timer);
@@ -43,22 +45,26 @@ export function CookieConsent() {
     window.gtag("js", new Date());
     window.gtag("config", "G-EZSJL5TG8N");
     window.rrAnalyticsInitialised = true;
+    persistMarketingAttribution();
     window.dispatchEvent(new Event("rr:analytics-ready"));
   }
 
   function confirmAnalyticsReady() {
     initialiseAnalytics();
+    persistMarketingAttribution();
     window.dispatchEvent(new Event("rr:analytics-ready"));
   }
 
   function choose(nextConsent: Exclude<Consent, null>) {
     window.localStorage.setItem(ANALYTICS_CONSENT_KEY, nextConsent);
     if (nextConsent === "granted") initialiseAnalytics();
+    if (nextConsent === "denied") clearMarketingAttribution();
     setConsent(nextConsent);
     setIsOpen(false);
     window.gtag?.("consent", "update", {
       analytics_storage: nextConsent === "granted" ? "granted" : "denied",
     });
+    window.dispatchEvent(new Event("rr:consent-changed"));
   }
 
   const showBanner = consent === null || isOpen;

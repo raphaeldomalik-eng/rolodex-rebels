@@ -1,8 +1,10 @@
 "use client";
 
-export const ANALYTICS_CONSENT_KEY = "rr-analytics-consent";
+import { marketingAttributionParameters } from "./analytics-attribution";
+import { hasAnalyticsConsent } from "./analytics-consent";
 
 export function trackEvent(name: string, parameters: Record<string, unknown> = {}) {
-  if (window.localStorage.getItem(ANALYTICS_CONSENT_KEY) !== "granted") return;
-  window.gtag?.("event", name, parameters);
+  if (!hasAnalyticsConsent() || !window.gtag) return false;
+  window.gtag("event", name, { ...marketingAttributionParameters(), ...parameters });
+  return true;
 }
