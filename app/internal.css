@@ -156,6 +156,40 @@
 .deeper-service-links nav { display: grid; border-top: 2px solid var(--white); }
 .deeper-service-links nav a { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; color: var(--white); border-bottom: 2px solid var(--white); font-family: "Bebas", Impact, sans-serif; font-size: clamp(23px, 2.4vw, 34px); line-height: 1; letter-spacing: .035em; text-transform: uppercase; }
 .deeper-service-links nav a span { color: var(--pink); }
+.event-lifecycle { margin: 0 0 clamp(84px, 10vw, 150px); }
+.event-section-heading { display: grid; grid-template-columns: minmax(300px, .95fr) minmax(280px, 1.05fr); align-items: end; gap: clamp(36px, 7vw, 110px); margin-bottom: clamp(38px, 5vw, 68px); }
+.event-section-heading h2 { font-size: clamp(58px, 7vw, 108px); line-height: .86; }
+.event-section-heading > p:last-child { max-width: 58ch; margin: 0; font-size: 18px; line-height: 1.62; }
+.event-lifecycle-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
+.event-lifecycle-grid article { padding: clamp(24px, 3vw, 42px); border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.event-lifecycle-grid article > span { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 48px; line-height: 1; }
+.event-lifecycle-grid h3 { margin: 34px 0 24px; font-size: clamp(34px, 3.6vw, 54px); line-height: .9; }
+.event-lifecycle-grid ul { margin: 0; padding: 0; list-style: none; }
+.event-lifecycle-grid li { padding: 10px 0; border-top: 1px solid var(--ink); font-size: 16px; line-height: 1.45; }
+.event-content-map { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(360px, 1.1fr); gap: clamp(42px, 7vw, 110px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1) clamp(84px, 10vw, 150px); padding: clamp(68px, 8vw, 112px) clamp(22px, 5.5vw, 90px); color: var(--white); background: var(--ink); }
+.event-content-map h2 { font-size: clamp(52px, 6vw, 92px); line-height: .88; }
+.event-content-map > div > p:last-child { max-width: 54ch; margin: 24px 0 0; font-size: 18px; line-height: 1.62; }
+.event-content-map ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: center; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--white); border-left: 2px solid var(--white); }
+.event-content-map li { min-height: 64px; padding: 14px; border-right: 2px solid var(--white); border-bottom: 2px solid var(--white); font-family: "Bebas", Impact, sans-serif; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.05; letter-spacing: .035em; text-transform: uppercase; }
+.event-outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: clamp(84px, 10vw, 150px); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); }
+.event-outcomes article { padding: clamp(30px, 4.2vw, 64px); border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.event-outcomes h2 { margin-top: 30px; font-size: clamp(46px, 5.2vw, 78px); line-height: .88; }
+.event-outcomes article > p:last-child { max-width: 62ch; margin: 28px 0 0; font-size: 17px; line-height: 1.64; }
+.event-audience-path { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(360px, 1fr); gap: clamp(42px, 8vw, 120px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1); padding: clamp(70px, 8vw, 118px) clamp(22px, 5.5vw, 90px); color: var(--ink); background: var(--pink); }
+.event-audience-path h2 { font-size: clamp(52px, 6vw, 94px); line-height: .88; }
+.event-audience-path > div > p:last-child { max-width: 58ch; margin: 26px 0 0; font-size: 18px; line-height: 1.62; }
+.event-audience-path ol { align-self: center; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
+.event-audience-path li { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 18px 0; border-bottom: 2px solid var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: clamp(22px, 2.2vw, 32px); line-height: 1; letter-spacing: .035em; text-transform: uppercase; }
+.event-audience-path li span { color: var(--ink); font-size: 16px; }
+.event-campaign-sites { padding-top: clamp(82px, 10vw, 150px); padding-bottom: clamp(82px, 10vw, 150px); }
+.compact-tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0; padding: 0; list-style: none; }
+.compact-tag-list li { padding: 8px 10px; color: var(--white); background: var(--ink); font-family: "Bebas", Impact, sans-serif; font-size: 17px; line-height: 1; letter-spacing: .045em; text-transform: uppercase; }
+.managed-digital-panel { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(360px, 1fr); gap: clamp(42px, 8vw, 120px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1) clamp(84px, 10vw, 150px); padding: clamp(70px, 8vw, 118px) clamp(22px, 5.5vw, 90px); color: var(--white); background: var(--ink); }
+.managed-digital-panel h2 { font-size: clamp(56px, 7vw, 106px); line-height: .86; }
+.managed-digital-panel > div > p:last-child { max-width: 58ch; margin: 26px 0 0; font-size: 18px; line-height: 1.62; }
+.managed-digital-panel ul { align-self: center; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--white); }
+.managed-digital-panel li { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 17px 0; border-bottom: 2px solid var(--white); font-family: "Bebas", Impact, sans-serif; font-size: clamp(20px, 2vw, 29px); line-height: 1.05; letter-spacing: .035em; text-transform: uppercase; }
+.managed-digital-panel li span { color: var(--pink); font-size: 16px; }
 .inner-cta { position: relative; overflow: hidden; padding: clamp(82px, 10vw, 150px) clamp(22px, 5.5vw, 90px); text-align: center; background: var(--pink); }
 .inner-cta::after { content: "RR"; position: absolute; right: -2vw; bottom: -8vw; color: rgba(255,255,255,.16); font-family: "Bebas", Impact, sans-serif; font-size: 34vw; line-height: .7; }
 .inner-cta > * { position: relative; z-index: 1; }
@@ -166,7 +200,7 @@
 @media (max-width: 980px) {
   .inner-hero { grid-template-columns: 1fr; }
   .inner-logo-slab { width: min(360px, 70%); }
-  .inner-split, .dark-panel, .pink-panel, .journey-panel, .commercial-connection, .deep-service-index > div:first-child, .deeper-service-links { grid-template-columns: 1fr; }
+  .inner-split, .dark-panel, .pink-panel, .journey-panel, .commercial-connection, .deep-service-index > div:first-child, .deeper-service-links, .event-section-heading, .event-content-map, .event-audience-path, .managed-digital-panel { grid-template-columns: 1fr; }
   .commercial-assurance { grid-template-columns: 1fr 1fr; }
   .commercial-assurance > p:last-child { grid-column: 1 / -1; }
   .deep-service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -198,4 +232,55 @@
   .inner-cta h2 { font-size: clamp(56px, 18vw, 90px); }
   .related-links { grid-template-columns: 1fr; }
   .case-gallery { grid-template-columns: 1fr; }
+  .event-websites-page .inner-hero { padding-bottom: 54px; }
+  .event-websites-page .inner-hero h1 { font-size: clamp(54px, 17vw, 72px); line-height: .84; }
+  .event-websites-page .inner-hero-copy > p:not(.eyebrow) { margin-top: 22px; font-size: 17px; line-height: 1.5; }
+  .event-websites-page .inner-logo-slab { display: none; }
+  .event-websites-page .inner-content { padding: 0 18px; }
+  .event-websites-page .commercial-intro { padding: 58px 0 52px; }
+  .event-websites-page .inner-split { gap: 28px; }
+  .event-websites-page .inner-split h2 { font-size: 46px; }
+  .event-websites-page .body-copy p { margin-bottom: 18px; font-size: 16px; line-height: 1.58; }
+  .event-websites-page .journey-panel { gap: 30px; margin-bottom: 58px; padding-top: 54px; padding-bottom: 54px; }
+  .event-websites-page .journey-panel h2 { font-size: 48px; }
+  .event-websites-page .journey-panel > div > p:last-child { margin-top: 16px; font-size: 16px; }
+  .event-websites-page .event-journey .journey-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .event-websites-page .event-journey .journey-track li { grid-template-columns: 26px 1fr; min-height: 66px; padding: 11px; }
+  .event-websites-page .event-journey .journey-track span { font-size: 15px; }
+  .event-websites-page .event-journey .journey-track strong { font-size: 18px; }
+  .event-lifecycle { margin-bottom: 58px; }
+  .event-section-heading { gap: 18px; margin-bottom: 30px; }
+  .event-section-heading h2 { font-size: 52px; }
+  .event-section-heading > p:last-child { font-size: 16px; line-height: 1.58; }
+  .event-lifecycle-grid { grid-template-columns: 1fr; }
+  .event-lifecycle-grid article { display: grid; grid-template-columns: 42px 1fr; gap: 0 12px; padding: 20px; }
+  .event-lifecycle-grid article > span { grid-row: 1 / 3; font-size: 34px; }
+  .event-lifecycle-grid h3 { margin: 2px 0 16px; font-size: 34px; }
+  .event-lifecycle-grid ul { grid-column: 2; }
+  .event-lifecycle-grid li { padding: 7px 0; font-size: 15px; }
+  .event-content-map { gap: 28px; margin-bottom: 58px; padding-top: 54px; padding-bottom: 54px; }
+  .event-content-map h2 { font-size: 46px; }
+  .event-content-map > div > p:last-child { margin-top: 16px; font-size: 16px; }
+  .event-content-map ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .event-content-map li { min-height: 54px; padding: 10px; font-size: 16px; }
+  .event-outcomes { grid-template-columns: 1fr; margin-bottom: 58px; }
+  .event-outcomes article { padding: 28px 24px; }
+  .event-outcomes h2 { margin-top: 20px; font-size: 42px; }
+  .event-outcomes article > p:last-child { margin-top: 18px; font-size: 16px; line-height: 1.58; }
+  .event-audience-path { gap: 28px; padding-top: 54px; padding-bottom: 54px; }
+  .event-audience-path h2 { font-size: 46px; }
+  .event-audience-path > div > p:last-child { margin-top: 18px; font-size: 16px; }
+  .event-audience-path li { padding: 13px 0; font-size: 21px; }
+  .event-campaign-sites { padding-top: 58px; padding-bottom: 58px; }
+  .compact-tag-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .compact-tag-list li { display: flex; align-items: center; min-height: 38px; font-size: 15px; }
+  .managed-digital-panel { gap: 28px; margin-bottom: 58px; padding-top: 54px; padding-bottom: 54px; }
+  .managed-digital-panel h2 { font-size: 50px; }
+  .managed-digital-panel > div > p:last-child { margin-top: 18px; font-size: 16px; }
+  .managed-digital-panel li { padding: 13px 0; font-size: 19px; }
+  .event-websites-page .commercial-assurance { gap: 18px; margin-bottom: 58px; padding: 24px; }
+  .event-websites-page .commercial-assurance h2 { font-size: 42px; }
+  .event-websites-page .related-links { margin-bottom: 58px; }
+  .event-websites-page .related-links a { min-height: 104px; }
+  .event-websites-page .back-link { margin: -28px 0 58px; }
 }

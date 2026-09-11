@@ -22,7 +22,7 @@ const deeperServices = [
   { pillar: "Get Heard", links: [["Music PR", "/services/music-pr"]] },
   { pillar: "Grassroots", links: [["Music Street Teams", "/services/grassroots/music-street-teams"], ["Flyer Distribution", "/services/grassroots/flyer-distribution"]] },
   { pillar: "Sell The Show", links: [["Festival Marketing", "/services/festival-marketing"]] },
-  { pillar: "Digital & Creative", links: [["Artist Website Design", "/services/artist-website-design"]] },
+  { pillar: "Digital & Creative", links: [["Artist Website Design", "/services/artist-website-design"], ["Event & Festival Websites", "/services/event-festival-websites"]] },
 ];
 
 export default function Services() {

@@ -11,6 +11,7 @@ export function Arrow() {
 }
 
 export function InternalPage({
+  className,
   eyebrow,
   title,
   intro,
@@ -18,6 +19,7 @@ export function InternalPage({
   breadcrumbs,
   children,
 }: {
+  className?: string;
   eyebrow: string;
   title: ReactNode;
   intro: string;
@@ -26,7 +28,7 @@ export function InternalPage({
   children: ReactNode;
 }) {
   return (
-    <main className="inner-site">
+    <main className={["inner-site", className].filter(Boolean).join(" ")}>
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <SiteHeader />
       <section className="inner-hero">

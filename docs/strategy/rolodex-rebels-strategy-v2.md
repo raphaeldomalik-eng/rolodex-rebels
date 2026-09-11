@@ -242,11 +242,11 @@ Slice 2 implements five focused landing pages beneath the existing service pilla
 
 These pages answer distinct buyer intent while remaining subordinate to the six pillar architecture. They must keep unique metadata, substantive service detail, accurate claims and clear links back to their parent pillars.
 
-## 15. Research and validation backlog
+## 15. Research and validation history
 
-Validate demand and commercial fit for event and festival websites, campaign sites and microsites, venue and promoter digital infrastructure, managed content and digital improvement, audience journey and conversion reviews, and music and brand partnership strategy.
+The Digital Growth research programme assessed event and festival websites, campaign sites and microsites, venue and promoter digital infrastructure, managed content and digital improvement, audience journey and conversion reviews, and music and brand partnership strategy.
 
-For each opportunity, test search demand, client language, competitive fit, delivery capacity, pricing logic, proof requirements and the most credible relationship to the six pillars.
+Its approved public-route decision is recorded in section 18. Remaining validation should focus on delivery capacity, pricing logic, proof requirements and packaging inside the existing six pillars rather than creating overlapping search pages.
 
 ## 16. Release gates
 
@@ -266,4 +266,15 @@ For each opportunity, test search demand, client language, competitive fit, deli
 
 The implementation succeeds when a prospective client can quickly understand that Rolodex Rebels is unmistakably a music marketing agency; retains credible grassroots character; connects attention to audience and commercial outcomes; can support releases, artists and live campaigns across physical and digital channels; uses intelligence to improve decisions without selling technology theatre; offers deeper capability without confusing the six-pillar architecture; and makes the next useful action clear.
 
-The recommended next slice is research and validation only: quantify search demand and delivery fit for event and festival websites and campaign sites or microsites, then define the proof requirements before any new route is approved. Do not build those future pages in that slice.
+## 18. Digital Growth expansion decision
+
+The Digital Growth opportunity is approved as a broader commercial expression of the Digital & Creative pillar. It must remain rooted in music marketing and audience growth rather than generic web development.
+
+- **Event & Festival Websites** owns event, festival and live-event website intent on one combined route: `/services/event-festival-websites`.
+- **Artist Website Design** remains the specialist entry point for artist, musician and band website intent.
+- **Campaign Sites and Microsites** remain a substantial capability, not a separate route.
+- **Venue and Promoter Websites** remain capabilities within Event & Festival Websites and Digital & Creative, not separate routes.
+- **Managed Digital Growth** remains an optional service model — build it, run it, improve it — not a standalone route.
+- **Digital & Creative** remains the parent proposition and the digital infrastructure behind audience growth.
+
+**Recommended next slice:** Digital Growth commercial packaging and evidence readiness. Define scopes, intake questions, pricing logic, content ownership, maintenance boundaries and evidence standards for Event & Festival Websites and optional managed digital support — without creating new public routes.

@@ -217,7 +217,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     ],
     assuranceTitle: "ONE FESTIVAL. A CAMPAIGN THAT CHANGES WITH THE MOMENT.",
     assuranceCopy: "Not every festival needs every capability. We build the mix around the proposition, sales position, audience, internal team and budget.",
-    related: [["Explore Sell The Show", "/services/sell-the-show"], ["For promoters, venues & festivals", "/who-we-help/promoters-venues-festivals"], ["Digital & Creative", "/services/digital-creative"]],
+    related: [["Explore Sell The Show", "/services/sell-the-show"], ["Event & Festival Websites", "/services/event-festival-websites"], ["For promoters, venues & festivals", "/who-we-help/promoters-venues-festivals"]],
   },
   artistWebsiteDesign: {
     name: "Artist Website Design",

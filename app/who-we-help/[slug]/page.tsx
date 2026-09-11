@@ -54,7 +54,7 @@ const audienceData = {
       ["Connect online and on the ground", "Join digital discovery and ticket journeys with credible place-based activation where it adds value."],
       ["Keep the relationship moving", "Use permission-based audience connections and learning to support the next date, season or programme."],
     ],
-    links: [["Festival marketing", "/services/festival-marketing"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Flyer distribution", "/services/grassroots/flyer-distribution"], ["Concert, tour and ticket marketing", "/services/sell-the-show"]],
+    links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Flyer distribution", "/services/grassroots/flyer-distribution"]],
   },
 } as const;
 
