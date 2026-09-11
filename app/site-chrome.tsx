@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import rebelsLogo from "../public/rolodex-rebels-logo-transparent.png";
+import footerLogo from "../public/rolodex-rebels-logo-footer.png";
 
 export const navItems = [
   ["Why Us", "/why-us"],
@@ -33,7 +34,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <Link className="footer-brand" href="/">
-        <Image src={rebelsLogo} alt="Rolodex Rebels" sizes="270px" />
+        <Image src={footerLogo} alt="Rolodex Rebels" sizes="270px" />
       </Link>
       <p>Full-service music marketing.<br />From the streets to the screens.</p>
       <div className="footer-links">
