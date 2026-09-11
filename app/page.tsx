@@ -19,50 +19,53 @@ const meanings = [
   {
     number: "01",
     title: "Get Seen",
-    copy: "Reach the right people through search, paid media, digital campaigns, social visibility and activity on the ground.",
+    copy: "Be found by the people who matter through relevant search, paid, social, creator and on-the-ground discovery.",
   },
   {
     number: "02",
     title: "Get Heard",
-    copy: "Turn your story into PR, content, creator activity and communications that people notice, remember and respond to.",
+    copy: "Turn your story into PR, content, creator activity and communications — with somewhere useful for earned attention to go.",
   },
   {
     number: "03",
     title: "Get Results",
-    copy: "Grow your audience, strengthen fan relationships, sell tickets and learn what drives the next move.",
+    copy: "Turn response into audience growth, stronger fan relationships, ticket action and learning for the next move.",
   },
 ];
 
 const audiences = [
-  ["Artists", "Launch your music, grow a real fanbase and keep moving between releases and shows.", "/who-we-help/artists"],
-  ["Labels & Managers", "Give every campaign the strategy, reach, creative thinking and follow-through it deserves.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, sell tickets and turn today’s crowd into tomorrow’s audience.", "/who-we-help/promoters-venues-festivals"],
+  ["Artists", "Launch the next release — and build momentum for what comes after.", "/who-we-help/artists"],
+  ["Labels & Managers", "Add specialist depth, reduce fragmentation and keep every campaign strand moving together.", "/who-we-help/labels-managers"],
+  ["Promoters, Venues & Festivals", "Build demand, sell tickets and retain more of today’s audience for tomorrow.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 const pillars = [
-  ["Get Heard", "PR, release campaigns, storytelling, creators, content and fan communications.", "/services/get-heard"],
-  ["Get Seen", "Search, paid media, digital campaigns, social visibility and targeted exposure.", "/services/get-seen"],
-  ["Build Your Audience", "Audience insight, fan acquisition, segmentation, email and retention.", "/services/build-your-audience"],
-  ["Sell The Show", "Ticket growth, tour marketing, promoter and festival campaigns, RSVP and guests.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflets, posters, hand-to-hand flyering, campus and local activation.", "/services/grassroots"],
-  ["Digital & Creative", "Websites, landing pages, SEO, content, campaign assets and infrastructure.", "/services/digital-creative"],
+  ["Get Heard", "Music PR, release stories, creators, content and fan communication that keep attention moving.", "/services/get-heard"],
+  ["Get Seen", "Relevant discovery across search, paid, social, creators and targeted grassroots exposure.", "/services/get-seen"],
+  ["Build Your Audience", "Permission-based capture, audience understanding, communication, activation and retention.", "/services/build-your-audience"],
+  ["Sell The Show", "Demand, ticket response, live audience growth, guest campaigns and retention beyond doors.", "/services/sell-the-show"],
+  ["Grassroots", "Street teams, leaflets, posters, hand-to-hand flyering, campuses and place-based activation.", "/services/grassroots"],
+  ["Digital & Creative", "The websites, campaign destinations, content and audience journeys behind growth.", "/services/digital-creative"],
 ];
 
 const smartServices = [
-  ["Audience Intelligence", "Understand where your audience is, how they behave and which campaigns move them."],
-  ["Fan Relationships", "Build permission-based fan relationships you can reach again for the next release, show or announcement."],
-  ["Search & Discovery", "Make your music, events and digital presence easier to find when people are actively looking."],
-  ["Campaign Insight", "Understand what worked, why it mattered and where the next opportunity lies."],
+  ["Audience Intelligence", "Bring available audience, channel and campaign signals together to see who responded and what deserves attention next."],
+  ["Fan Relationships", "Build permission-based fan connections, organise them usefully and communicate with greater relevance between campaign moments."],
+  ["Search & Discovery", "Make your music, events and digital presence easier to find, understand and act on when people are actively looking."],
+  ["Campaign Insight", "Connect response, sales and journey signals where available so the next decision is based on learning, not noise."],
 ];
 
 const ways = [
   ["Launch My Music", "A joined-up campaign for your next single, EP or album.", "Rebel Launch"],
   ["Build My Audience", "Find the right fans and create relationships you can grow.", "Audience Growth"],
-  ["Improve My Digital Presence", "Build a stronger website, sharper discovery and clearer conversion.", "Digital & Creative"],
+  ["Improve My Digital Presence", "Build a stronger website or campaign destination, sharper discovery and a clearer audience journey.", "Digital & Creative"],
   ["Sell More Tickets", "Turn campaign activity into demand, buyers and attendance.", "Sell The Show"],
   ["Guest & Industry Campaigns", "Handle invitations, RSVP, reminders and follow-up professionally.", "Guest Campaigns"],
   ["Activate People On The Ground", "Put real teams in the right places with accountable local activation.", "Grassroots"],
 ];
+
+// Keep the evidence-led Results section recoverable while approved case studies are prepared.
+const showResults = false;
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -90,7 +93,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link className="button button-pink" href="/start-a-project">Let&apos;s make some noise</Link>
-            <Link className="text-link light-link" href="/results">See our results <Arrow /></Link>
+            <Link className="text-link light-link" href="/services">Explore our services <Arrow /></Link>
           </div>
         </div>
         <div className="hero-art">
@@ -136,7 +139,7 @@ export default function Home() {
           ))}
         </div>
         <div className="proof-strip" aria-label="Why Rolodex Rebels">
-          <span>Targeted Exposure</span><span>Proven Results</span><span>Creative &amp; Reliable</span><span>Local. Loud. Effective.</span>
+          <span>Targeted Exposure</span><span>Built Around Outcomes</span><span>Creative &amp; Reliable</span><span>Local. Loud. Effective.</span>
         </div>
       </section>
 
@@ -213,7 +216,7 @@ export default function Home() {
           <p className="eyebrow">Built from the ground up</p>
           <h2 id="grassroots-title">Local.<br />Loud.<br /><span>Effective.</span></h2>
           <p className="large-copy">Grassroots is not a legacy service or a bolt-on. It is part of who we are.</p>
-          <p>Our teams put campaigns into the real world — properly planned, professionally delivered and connected to the wider objective.</p>
+          <p>Our teams put campaigns into the real world — planned around the audience, place and moment, professionally delivered and connected to the wider objective. Where useful, physical response can feed the next digital move.</p>
           <div className="service-tags">
             {[
               "Street teams", "Leaflet drops", "Poster runs", "Hand-to-hand flyering", "Campus campaigns", "Local activation",
@@ -250,7 +253,7 @@ export default function Home() {
         </div>
         <div className="no-jargon">
           <p>No data theatre. No jargon.</p>
-          <strong>Just better decisions, stronger campaigns and audiences that keep growing.</strong>
+          <strong>Just better decisions, stronger campaigns and audience relationships you can keep building.</strong>
           <Link className="button button-pink" href="/start-a-project">Build a smarter campaign</Link>
         </div>
       </section>
@@ -273,12 +276,12 @@ export default function Home() {
         <Link className="text-link" href="/services">View all services <Arrow /></Link>
       </section>
 
-      <section className="results section-pad" aria-labelledby="results-title">
+      {showResults && <section className="results section-pad" aria-labelledby="results-title">
         <div className="results-lead">
           <p className="eyebrow light">Proven results</p>
           <h2 id="results-title">Noise is good.<br /><span>Results are better.</span></h2>
           <p>The strongest campaigns do more than generate activity. They change what happens next.</p>
-          <Link className="button button-pink" href="/results">See the results</Link>
+          <Link className="button button-pink" href="/start-a-project">Start a project</Link>
         </div>
         <div className="results-standard">
           <p className="eyebrow light">Our evidence standard</p>
@@ -290,7 +293,7 @@ export default function Home() {
           </div>
           <small>Client names, testimonials and metrics are published only with approval.</small>
         </div>
-      </section>
+      </section>}
 
       <section className="final-cta section-pad" aria-labelledby="final-title">
         <Image src={rebelsMark} alt="" sizes="(max-width: 760px) 50vw, 480px" />

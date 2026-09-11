@@ -90,7 +90,17 @@ export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
   };
 }
 
-export function serviceJsonLd({ name, description, path }: { name: string; description: string; path: string }) {
+export function serviceJsonLd({
+  name,
+  description,
+  path,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  areaServed?: string;
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -98,7 +108,9 @@ export function serviceJsonLd({ name, description, path }: { name: string; descr
     description,
     url: `${SITE_URL}${path}`,
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: { "@type": "Country", name: "United Kingdom" },
+    areaServed: areaServed
+      ? { "@type": "Place", name: areaServed }
+      : { "@type": "Country", name: "United Kingdom" },
     audience: { "@type": "Audience", audienceType: "Music industry" },
   };
 }

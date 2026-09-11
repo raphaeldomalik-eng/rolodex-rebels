@@ -10,9 +10,9 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const audiences = [
-  ["Artists", "Launch music, grow a real fanbase and build momentum between releases and shows.", "/who-we-help/artists"],
-  ["Labels & Managers", "Give every campaign the strategy, reach, creative thinking and follow-through it deserves.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, sell tickets and turn today’s crowd into tomorrow’s audience.", "/who-we-help/promoters-venues-festivals"],
+  ["Artists", "Promote the next release and build momentum for what comes after.", "/who-we-help/artists"],
+  ["Labels & Managers", "Add specialist depth, reduce fragmentation and keep the campaign moving as one.", "/who-we-help/labels-managers"],
+  ["Promoters, Venues & Festivals", "Build demand, sell tickets and retain more of today’s audience for tomorrow.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 export default function WhoWeHelp() {
