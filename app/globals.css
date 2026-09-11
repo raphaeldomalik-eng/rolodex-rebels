@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Bebas";
   src: url("/fonts/bebas.woff2") format("woff2");
-  font-display: swap;
+  font-display: block;
 }
 
 :root {
@@ -57,7 +57,7 @@ p { text-wrap: pretty; }
   letter-spacing: .07em;
   text-transform: uppercase;
 }
-.primary-nav a { position: relative; font-size: 16px; letter-spacing: .035em; }
+.primary-nav a { position: relative; font-size: clamp(18px, 1.15vw, 20px); line-height: 1.1; letter-spacing: .035em; }
 .primary-nav a::after {
   content: "";
   position: absolute;
@@ -76,7 +76,8 @@ p { text-wrap: pretty; }
   color: var(--ink);
   background: var(--pink);
   border: 2px solid var(--pink);
-  font-size: 16px;
+  font-size: clamp(18px, 1.15vw, 20px);
+  line-height: 1.1;
   letter-spacing: .035em;
   box-shadow: 5px 5px 0 var(--white);
   transition: color .2s ease, background-color .2s ease, border-color .2s ease;
@@ -320,7 +321,13 @@ p { text-wrap: pretty; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ticker div { animation: none; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .ticker div { animation: none !important; transform: none !important; }
 }
 
 @media (max-width: 1100px) {

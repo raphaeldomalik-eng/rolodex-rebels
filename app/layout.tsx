@@ -6,7 +6,7 @@ import { organizationJsonLd, SITE_URL } from "./seo";
 import "./globals.css";
 
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
-const bingVerification = process.env.BING_SITE_VERIFICATION;
+const bingVerification = process.env.BING_SITE_VERIFICATION || "B72860C65343B56F765BE1AF15F3AFEA";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,5 +26,5 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-GB"><body><JsonLd data={organizationJsonLd} />{children}<AnalyticsTracker /><CookieConsent /></body></html>;
+  return <html lang="en-GB"><head><link rel="preload" href="/fonts/bebas.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></head><body><JsonLd data={organizationJsonLd} />{children}<AnalyticsTracker /><CookieConsent /></body></html>;
 }
