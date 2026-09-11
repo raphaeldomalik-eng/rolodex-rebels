@@ -11,8 +11,8 @@ export const metadata: Metadata = pageMetadata({
 
 const audiences = [
   ["Artists", "Promote the next release and build momentum for what comes after.", "/who-we-help/artists"],
-  ["Labels & Managers", "Add specialist depth, reduce fragmentation and keep the campaign moving as one.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, sell tickets and retain more of today’s audience for tomorrow.", "/who-we-help/promoters-venues-festivals"],
+  ["Labels & Managers", "Bring PR, paid, content, audience and live specialists around the same release plan.", "/who-we-help/labels-managers"],
+  ["Promoters, Venues & Festivals", "Build demand, protect ticket pace and make the next event easier to grow.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 export default function WhoWeHelp() {
@@ -21,7 +21,7 @@ export default function WhoWeHelp() {
       <section className="route-grid three-up">
         {audiences.map(([title, copy, href], index) => <Link href={href} key={title}><span>0{index + 1}</span><h2>{title}</h2><p>{copy}</p><strong>Choose this route <Arrow /></strong></Link>)}
       </section>
-      <section className="dark-panel"><div><p className="eyebrow light">No fixed channel list</p><h2>START WITH THE OUTCOME.</h2></div><p>We shape the campaign around the audience, timing, budget and commercial goal—then bring in the right mix of PR, digital, audience growth and grassroots activation.</p></section>
+      <section className="dark-panel"><div><p className="eyebrow light">No fixed channel list</p><h2>START WITH THE OUTCOME.</h2></div><p>A single, on-sale, tour date and festival line-up drop create different pressures. We start with the audience, timing, budget and commercial goal — then choose the PR, digital, audience and grassroots work the moment actually needs.</p></section>
     </InternalPage>
   );
 }
