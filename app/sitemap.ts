@@ -17,6 +17,7 @@ const staticRoutes = [
   ["/services/grassroots/flyer-distribution", "monthly", 0.75],
   ["/services/festival-marketing", "monthly", 0.75],
   ["/services/artist-website-design", "monthly", 0.75],
+  ["/services/event-festival-websites", "monthly", 0.75],
   ["/who-we-help", "monthly", 0.8],
   ["/who-we-help/artists", "monthly", 0.8],
   ["/who-we-help/labels-managers", "monthly", 0.8],
