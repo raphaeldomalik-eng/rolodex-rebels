@@ -11,6 +11,7 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag?: (...args: unknown[]) => void;
+    rrAnalyticsInitialised?: boolean;
   }
 }
 
@@ -21,12 +22,14 @@ export function CookieConsent() {
   useEffect(() => {
     const timer = window.setTimeout(() => {
       const saved = window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
+      if (saved === "granted") initialiseAnalytics();
       if (saved === "granted" || saved === "denied") setConsent(saved);
     }, 0);
     return () => window.clearTimeout(timer);
   }, []);
 
   function initialiseAnalytics() {
+    if (window.rrAnalyticsInitialised) return;
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || ((...args: unknown[]) => window.dataLayer.push(args));
     window.gtag("consent", "default", {
@@ -37,11 +40,13 @@ export function CookieConsent() {
     });
     window.gtag("js", new Date());
     window.gtag("config", "G-EZSJL5TG8N");
+    window.rrAnalyticsInitialised = true;
     window.dispatchEvent(new Event("rr:analytics-ready"));
   }
 
   function choose(nextConsent: Exclude<Consent, null>) {
     window.localStorage.setItem(ANALYTICS_CONSENT_KEY, nextConsent);
+    if (nextConsent === "granted") initialiseAnalytics();
     setConsent(nextConsent);
     setIsOpen(false);
     window.gtag?.("consent", "update", {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies } from "../../content";
@@ -48,6 +49,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         {study.lessons && <><h2>What we learned</h2><p>{study.lessons}</p></>}
         {study.next && <><h2>What happened next</h2><p>{study.next}</p></>}
         {study.testimonial && <><h2>Testimonial</h2><blockquote><p>“{study.testimonial.quote}”</p><cite>{study.testimonial.attribution}</cite></blockquote></>}
+      </section>}
+      {Boolean(study.images?.length) && <section className="case-gallery" aria-label="Campaign imagery">
+        {study.images?.map((image) => <figure key={image.src}>
+          <Image src={image.src} alt={image.alt} width={1600} height={1000} sizes="(max-width: 760px) 100vw, 50vw" />
+          {image.caption && <figcaption>{image.caption}</figcaption>}
+        </figure>)}
       </section>}
       <nav className="related-links" aria-label="Related pages"><h2>EXPLORE THE CAMPAIGN.</h2><Link href={study.service.path}>{study.service.name} ↗</Link><Link href={study.audience.path}>{study.audience.name} ↗</Link><Link href="/start-a-project">Start a project ↗</Link></nav>
     </InternalPage>
