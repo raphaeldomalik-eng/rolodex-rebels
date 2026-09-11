@@ -49,10 +49,30 @@ export function AnalyticsTracker() {
       const linkText = link.textContent?.trim().replace(/\s+/g, " ").slice(0, 100) ?? "";
       const currentPath = window.location.pathname;
 
+      function recordContactNavigation(name: "email_click" | "phone_click") {
+        if (!window.gtag) return;
+
+        event.preventDefault();
+        let hasNavigated = false;
+        const navigate = () => {
+          if (hasNavigated) return;
+          hasNavigated = true;
+          window.location.assign(href);
+        };
+
+        trackEvent(name, {
+          link_text: linkText,
+          transport_type: "beacon",
+          event_callback: navigate,
+          event_timeout: 500,
+        });
+        window.setTimeout(navigate, 600);
+      }
+
       if (href.startsWith("mailto:")) {
-        trackEvent("email_click", { link_text: linkText });
+        recordContactNavigation("email_click");
       } else if (href.startsWith("tel:")) {
-        trackEvent("phone_click", { link_text: linkText });
+        recordContactNavigation("phone_click");
       } else if (href === "/start-a-project" || href.startsWith("/start-a-project?")) {
         trackEvent(currentPath.startsWith("/services/") ? "service_page_enquiry" : "start_project_cta", {
           source_page: currentPath,
