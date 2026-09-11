@@ -14,12 +14,14 @@ export function InternalPage({
   eyebrow,
   title,
   intro,
+  heroCta,
   breadcrumbs,
   children,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro: string;
+  heroCta?: { label: string; href: string };
   breadcrumbs: BreadcrumbItem[];
   children: ReactNode;
 }) {
@@ -32,6 +34,7 @@ export function InternalPage({
           <p className="eyebrow light">{eyebrow}</p>
           <h1>{title}</h1>
           <p>{intro}</p>
+          {heroCta && <Link className="button button-pink" href={heroCta.href}>{heroCta.label} <Arrow /></Link>}
         </div>
         <div className="inner-logo-slab">
           <Image src={rebelsMark} alt="Rolodex Rebels" sizes="(max-width: 640px) 82vw, (max-width: 980px) 360px, 26vw" fetchPriority="high" loading="eager" />

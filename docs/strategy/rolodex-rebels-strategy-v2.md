@@ -230,9 +230,9 @@ While Results is paused, suppress the homepage Results promotion and replace act
 - Describe search and AI discovery readiness without promising rankings or citation.
 - Protect performance, responsive layout and accessibility during content expansion.
 
-## 14. Planned commercial landing pages — do not build in this slice
+## 14. Commercial landing pages — Slice 2
 
-The next implementation slice can prepare five focused landing pages:
+Slice 2 implements five focused landing pages beneath the existing service pillars:
 
 - `/services/music-pr`
 - `/services/grassroots/music-street-teams`
@@ -240,7 +240,7 @@ The next implementation slice can prepare five focused landing pages:
 - `/services/festival-marketing`
 - `/services/artist-website-design`
 
-These routes require focused keyword validation, page-specific evidence and clear differentiation from the six pillar pages before publication.
+These pages answer distinct buyer intent while remaining subordinate to the six pillar architecture. They must keep unique metadata, substantive service detail, accurate claims and clear links back to their parent pillars.
 
 ## 15. Research and validation backlog
 

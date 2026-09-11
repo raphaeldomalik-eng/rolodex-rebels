@@ -20,7 +20,7 @@ const audienceData = {
       ["A direct fan relationship", "Create permission-based ways for the right people to stay connected between releases and shows."],
       ["Marketing that fits the artist", "Build the mix around the music, stage, audience and ambition — not a fixed channel package."],
     ],
-    links: [["Music PR and release marketing", "/services/get-heard"], ["Build your audience", "/services/build-your-audience"], ["Music websites, SEO and creative", "/services/digital-creative"], ["Ticket and tour marketing", "/services/sell-the-show"]],
+    links: [["Music PR", "/services/music-pr"], ["Build your audience", "/services/build-your-audience"], ["Artist website design", "/services/artist-website-design"], ["Ticket and tour marketing", "/services/sell-the-show"]],
   },
   "labels-managers": {
     name: "Labels & Managers",
@@ -37,7 +37,7 @@ const audienceData = {
       ["Connected specialists", "Bring PR, audience, digital, live and grassroots thinking together around one campaign objective."],
       ["Learning that travels", "Use available response and campaign signals to make the next decision stronger."],
     ],
-    links: [["Music PR and release marketing", "/services/get-heard"], ["Build artist audiences", "/services/build-your-audience"], ["Digital music marketing and promotion", "/services/get-seen"], ["Start a project", "/start-a-project"]],
+    links: [["Music PR", "/services/music-pr"], ["Build artist audiences", "/services/build-your-audience"], ["Artist website design", "/services/artist-website-design"], ["Digital music marketing", "/services/get-seen"]],
   },
   "promoters-venues-festivals": {
     name: "Promoters, Venues & Festivals",
@@ -54,7 +54,7 @@ const audienceData = {
       ["Connect online and on the ground", "Join digital discovery and ticket journeys with credible place-based activation where it adds value."],
       ["Keep the relationship moving", "Use permission-based audience connections and learning to support the next date, season or programme."],
     ],
-    links: [["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Grassroots music promotion", "/services/grassroots"], ["Build your audience", "/services/build-your-audience"], ["Music websites, SEO and creative", "/services/digital-creative"]],
+    links: [["Festival marketing", "/services/festival-marketing"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Flyer distribution", "/services/grassroots/flyer-distribution"], ["Concert, tour and ticket marketing", "/services/sell-the-show"]],
   },
 } as const;
 

@@ -123,7 +123,7 @@ p { text-wrap: pretty; }
 }
 .hero h1 { font-size: clamp(58px, 8.4vw, 142px); line-height: .79; }
 .hero h1 span { display: block; }
-.pink { color: var(--pink); }
+.pink { color: var(--pink-text); }
 .hero-intro {
   max-width: 690px;
   margin: 36px 0 0;
