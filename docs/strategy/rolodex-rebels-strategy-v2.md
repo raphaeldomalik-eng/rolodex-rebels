@@ -266,4 +266,4 @@ For each opportunity, test search demand, client language, competitive fit, deli
 
 The implementation succeeds when a prospective client can quickly understand that Rolodex Rebels is unmistakably a music marketing agency; retains credible grassroots character; connects attention to audience and commercial outcomes; can support releases, artists and live campaigns across physical and digital channels; uses intelligence to improve decisions without selling technology theatre; offers deeper capability without confusing the six-pillar architecture; and makes the next useful action clear.
 
-The next slice is the five commercial landing pages listed above. It is explicitly outside this implementation.
+The recommended next slice is research and validation only: quantify search demand and delivery fit for event and festival websites and campaign sites or microsites, then define the proof requirements before any new route is approved. Do not build those future pages in that slice.
