@@ -138,8 +138,8 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="proof-strip" aria-label="Why Rolodex Rebels">
-          <span>Targeted Exposure</span><span>Built Around Outcomes</span><span>Creative &amp; Reliable</span><span>Local. Loud. Effective.</span>
+        <div className="proof-strip" role="list" aria-label="Why Rolodex Rebels">
+          <span role="listitem">Targeted Exposure</span><span role="listitem">Built Around Outcomes</span><span role="listitem">Creative &amp; Reliable</span><span role="listitem">Local. Loud. Effective.</span>
         </div>
       </section>
 
@@ -201,12 +201,12 @@ export default function Home() {
           <p>We connect PR, creative, digital discovery, audience growth, ticket campaigns and grassroots activation around one objective. Every part has a job. Every response teaches us something. Every campaign should make the next one stronger.</p>
           <Link className="text-link light-link" href="/why-us">See how we work <Arrow /></Link>
         </div>
-        <div className="campaign-flow" aria-label="Campaign journey">
+        <div className="campaign-flow" role="list" aria-label="Campaign journey">
           {[
             ["Discover", "Be found"], ["Engage", "Give a reason"], ["Capture", "Build a link"],
             ["Convert", "Create action"], ["Learn", "See what moved"], ["Grow", "Go again"],
           ].map(([step, note], index) => (
-            <div key={step}><span>0{index + 1}</span><strong>{step}</strong><small>{note}</small></div>
+            <div role="listitem" key={step}><span>0{index + 1}</span><strong>{step}</strong><small>{note}</small></div>
           ))}
         </div>
       </section>
