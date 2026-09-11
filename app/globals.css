@@ -319,7 +319,7 @@ p { text-wrap: pretty; }
 
 .site-footer { display: grid; grid-template-columns: .8fr .8fr 1.4fr; gap: 50px; padding: 56px clamp(22px, 5.5vw, 90px) 22px; color: var(--white); background: var(--ink); }
 .footer-brand { display: inline-flex; width: fit-content; }
-.footer-brand img { display: block; width: min(100%, 270px); filter: brightness(0) invert(1); }
+.footer-brand img { display: block; width: min(100%, 270px); height: auto; }
 .site-footer > p { max-width: 42ch; margin: 0; color: rgba(255,255,255,.66); font-size: 17px; line-height: 1.6; font-weight: 400; }
 .footer-links { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 18px 28px; font-size: 12px; }
 .footer-links a:last-child { color: var(--pink); }
