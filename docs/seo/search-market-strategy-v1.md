@@ -1,5 +1,7 @@
 # Rolodex Rebels Search-Market & SEO Implementation Strategy v1
 
+> Supersession notice (11 September 2026): this V1 document is retained as the evidence and search-market baseline. Where positioning, offer design, operating model, or implementation guidance conflicts with the V2 strategy, `../strategy/rolodex-rebels-strategy-v2.md` is the controlling document.
+
 **Status:** Definitive strategy — approved for implementation planning  
 **Version:** 1.0  
 **Date:** 11 September 2026  

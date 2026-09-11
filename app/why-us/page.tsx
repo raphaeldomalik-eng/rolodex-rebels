@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
 
 const strengths = [
   ["Targeted Exposure", "We put your message in front of the people most likely to care, act and come back."],
-  ["Proven Results", "We agree the outcome, track the campaign and use what we learn to make the next move stronger."],
+  ["Built Around Outcomes", "We agree the objective, read the available response and use what we learn to make the next move stronger."],
   ["Creative & Reliable", "Fresh thinking, straight answers and delivery you can count on when timings get tight."],
   ["Local. Loud. Effective.", "Real local knowledge, experienced teams and activity that earns attention where it matters."],
 ];

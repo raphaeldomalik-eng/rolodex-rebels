@@ -39,6 +39,13 @@
 .inner-split h2 { max-width: 690px; font-size: clamp(52px, 6vw, 96px); line-height: .9; }
 .body-copy { max-width: 66ch; }
 .body-copy p { margin: 0 0 24px; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.64; font-weight: 400; }
+.journey-panel { display: grid; grid-template-columns: minmax(280px, .7fr) minmax(0, 1.3fr); gap: clamp(42px, 7vw, 110px); margin: 0 calc(clamp(22px, 5.5vw, 90px) * -1) clamp(84px, 10vw, 150px); padding: clamp(68px, 8vw, 112px) clamp(22px, 5.5vw, 90px); color: var(--white); background: var(--ink); }
+.journey-panel h2 { max-width: 700px; font-size: clamp(50px, 5.8vw, 92px); line-height: .88; }
+.journey-panel > div > p:last-child { max-width: 52ch; margin: 24px 0 0; font-size: clamp(17px, 1.35vw, 21px); line-height: 1.62; }
+.journey-track { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--white); border-left: 2px solid var(--white); }
+.journey-track li { display: grid; grid-template-columns: 38px 1fr; align-items: center; gap: 10px; min-height: 94px; padding: 18px; border-right: 2px solid var(--white); border-bottom: 2px solid var(--white); }
+.journey-track span { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 20px; }
+.journey-track strong { font-family: "Bebas", Impact, sans-serif; font-size: clamp(21px, 2vw, 30px); font-weight: 400; line-height: 1; letter-spacing: .035em; text-transform: uppercase; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); margin-bottom: clamp(84px, 10vw, 150px); }
 .feature-grid.four-up { grid-template-columns: repeat(4, 1fr); }
 .feature-grid article { min-height: 260px; padding: 26px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
@@ -131,7 +138,7 @@
 @media (max-width: 980px) {
   .inner-hero { grid-template-columns: 1fr; }
   .inner-logo-slab { width: min(360px, 70%); }
-  .inner-split, .dark-panel, .pink-panel { grid-template-columns: 1fr; }
+  .inner-split, .dark-panel, .pink-panel, .journey-panel { grid-template-columns: 1fr; }
   .feature-grid.four-up { grid-template-columns: repeat(2, 1fr); }
   .route-grid.three-up { grid-template-columns: 1fr; }
   .evidence-grid { grid-template-columns: 1fr; }
@@ -146,6 +153,7 @@
 @media (max-width: 640px) {
   .inner-hero { min-height: auto; padding-top: 132px; }
   .inner-logo-slab { width: 82%; }
+  .journey-track { grid-template-columns: 1fr; }
   .feature-grid, .feature-grid.four-up, .route-grid, .form-grid { grid-template-columns: 1fr; }
   .form-field-wide { grid-column: auto; }
   .form-submit-row { grid-template-columns: 1fr; }

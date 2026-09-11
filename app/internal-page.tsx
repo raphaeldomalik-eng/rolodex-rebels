@@ -34,7 +34,7 @@ export function InternalPage({
           <p>{intro}</p>
         </div>
         <div className="inner-logo-slab">
-          <Image src={rebelsMark} alt="Rolodex Rebels" sizes="(max-width: 640px) 82vw, (max-width: 980px) 360px, 26vw" fetchPriority="high" />
+          <Image src={rebelsMark} alt="Rolodex Rebels" sizes="(max-width: 640px) 82vw, (max-width: 980px) 360px, 26vw" fetchPriority="high" loading="eager" />
           <span>LOCAL. LOUD. EFFECTIVE.</span>
         </div>
       </section>
