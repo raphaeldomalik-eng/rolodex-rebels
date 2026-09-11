@@ -99,7 +99,7 @@ export function serviceJsonLd({
   name: string;
   description: string;
   path: string;
-  areaServed?: string;
+  areaServed?: string | false;
 }) {
   return {
     "@context": "https://schema.org",
@@ -108,9 +108,11 @@ export function serviceJsonLd({
     description,
     url: `${SITE_URL}${path}`,
     provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: areaServed
-      ? { "@type": "Place", name: areaServed }
-      : { "@type": "Country", name: "United Kingdom" },
+    ...(areaServed === false
+      ? {}
+      : { areaServed: areaServed
+        ? { "@type": "Place", name: areaServed }
+        : { "@type": "Country", name: "United Kingdom" } }),
     audience: { "@type": "Audience", audienceType: "Music industry" },
   };
 }

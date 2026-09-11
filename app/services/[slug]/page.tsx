@@ -24,6 +24,7 @@ const serviceData = {
       ["Content & fan communications", "Turn campaign moments into useful content and direct communication that keeps the audience moving."],
     ],
     offers: "Rebel Launch · Rebel Artist Growth",
+    deeper: [["Explore Music PR", "/services/music-pr"]],
     related: [["Music marketing for artists", "/who-we-help/artists"], ["Build a music audience", "/services/build-your-audience"], ["Improve digital visibility", "/services/get-seen"]],
   },
   "get-seen": {
@@ -84,6 +85,7 @@ const serviceData = {
       ["Guest & industry campaigns", "Plan invitations, RSVP, reminders and follow-up as part of the wider campaign — not an isolated admin task."],
     ],
     offers: "Rebel Tour · Promoter Growth · Festival Growth · Guest & Industry Campaigns",
+    deeper: [["Explore Festival Marketing", "/services/festival-marketing"]],
     related: [["Marketing for promoters, venues and festivals", "/who-we-help/promoters-venues-festivals"], ["Grassroots music promotion", "/services/grassroots"], ["Build your audience", "/services/build-your-audience"]],
   },
   grassroots: {
@@ -106,6 +108,7 @@ const serviceData = {
       ["Local activation", "Place-based campaign support connected to launches, shows, openings and cultural moments."],
     ],
     offers: "Grassroots Activation",
+    deeper: [["Explore Music Street Teams", "/services/grassroots/music-street-teams"], ["Explore Flyer Distribution", "/services/grassroots/flyer-distribution"]],
     areaServed: "London, surrounding areas and Kent",
     related: [["Ticket and tour marketing", "/services/sell-the-show"], ["Marketing for promoters, venues and festivals", "/who-we-help/promoters-venues-festivals"], ["Digital music promotion", "/services/get-seen"]],
   },
@@ -131,6 +134,7 @@ const serviceData = {
       ["Managed improvement", "Ongoing content, campaign and experience support where the engagement calls for it."],
     ],
     offers: "Digital Presence · Campaign Sites · Audience Journey Review · Managed Improvement",
+    deeper: [["Explore Artist Website Design", "/services/artist-website-design"]],
     related: [["Music marketing for artists", "/who-we-help/artists"], ["Search and digital visibility", "/services/get-seen"], ["Build a music audience", "/services/build-your-audience"]],
   },
 } as const;
@@ -154,6 +158,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
   const path = `/services/${slug}`;
   const areaServed = "areaServed" in service ? service.areaServed : undefined;
+  const deeper = "deeper" in service ? service.deeper : [];
 
   return (
     <InternalPage
@@ -176,6 +181,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="feature-grid">
         {service.items.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}
       </section>
+      {deeper.length > 0 && <section className="deeper-service-links">
+        <div><p className="eyebrow light">Specialist service</p><h2>GO DEEPER ON THIS BRIEF.</h2></div>
+        <nav aria-label={`Specialist ${service.name} services`}>
+          {deeper.map(([label, href]) => <Link href={href} key={href}>{label} <span aria-hidden="true">↗</span></Link>)}
+        </nav>
+      </section>}
       <nav className="related-links" aria-label="Related services and audiences">
         <h2>KEEP BUILDING THE CAMPAIGN.</h2>
         {service.related.map(([label, href]) => <Link href={href} key={href}>{label} ↗</Link>)}
