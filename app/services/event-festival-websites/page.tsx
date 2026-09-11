@@ -20,7 +20,7 @@ const lifecycle = [
 
 const contentCapabilities = ["Event overview", "Tickets", "Programme", "Schedule", "Line-up", "Artist profiles", "Venue", "Travel", "Accommodation", "Food & drink", "Vendors & exhibitors", "Accessibility", "FAQs", "Sponsors & partners", "Announcements"];
 
-const focusedCampaigns = ["Release launch", "Tour", "Festival announcement", "On-sale", "Ticket push", "RSVP", "Competition", "Campaign activation", "Brand and music activation", "Guest campaign"];
+const focusedCampaigns = ["Announcement", "On-sale", "Tour", "Release", "RSVP", "Competition", "Sponsor activation", "Ticket push"];
 
 const managedWork = ["Content and line-up updates", "Programme and visitor information", "New campaign pages", "Ticket links and audience journeys", "Search and conversion improvements", "Post-event transition and next-campaign preparation"];
 
@@ -47,8 +47,8 @@ export default function EventFestivalWebsitesPage() {
         <div><p className="eyebrow pink">Audience first</p><h2>DON&apos;T START WITH THE TEMPLATE. START WITH THE AUDIENCE.</h2></div>
         <div className="body-copy">
           <p>Who is coming? What do they need to know? What should they do next? What changes as the campaign moves from announcement to on-sale, event day and beyond?</p>
-          <p>We plan the site around those questions. The result is not a static brochure. It is a useful part of the event-growth strategy for festivals, promoters, venues and live teams.</p>
-          <p><strong>The outcome:</strong><br />A clear digital home that supports discovery, ticket journeys, visitor experience and a stronger audience relationship.</p>
+          <p>We plan the site around those questions so it can carry the campaign from first announcement to event day — and give people a reason to come back afterwards.</p>
+          <p><strong>The outcome:</strong><br />A clear digital home for discovery, tickets, programme content, practical visitor information and permission-based audience sign-up.</p>
           <Link className="text-link" href="/start-a-project">Build my event site <Arrow /></Link>
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function EventFestivalWebsitesPage() {
       </section>
 
       <section className="event-lifecycle" aria-labelledby="event-lifecycle-title">
-        <div className="event-section-heading"><p className="eyebrow pink">A live campaign needs a live digital home</p><h2 id="event-lifecycle-title">BEFORE. DURING. AFTER.</h2><p>The useful content changes as the event gets closer. We shape the right mix for the brief rather than forcing every event into the same structure.</p></div>
+        <div className="event-section-heading"><p className="eyebrow pink">A live campaign needs a live digital home</p><h2 id="event-lifecycle-title">BEFORE. DURING. AFTER.</h2><p>What someone needs six months out is different from what they need at the gate. Line-up and tickets matter early; travel, timings, access and practical information become critical as event day approaches.</p></div>
         <div className="event-lifecycle-grid">
           {lifecycle.map(([stage, items], index) => <article key={stage}><span>{String(index + 1).padStart(2, "0")}</span><h3>{stage}</h3><ul>{items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
         </div>
@@ -73,21 +73,21 @@ export default function EventFestivalWebsitesPage() {
       </section>
 
       <section className="event-outcomes" aria-label="Event website outcomes">
-        <article><p className="eyebrow pink">Built to sell the event</p><h2>MOVE THE RIGHT PERSON TOWARDS THE RIGHT ACTION.</h2><p>Clear ticket journeys, strong event calls to action, mobile-first pages and focused campaign destinations reduce friction between interest and the next useful step. Where available, consent-aware analytics and response signals can guide improvement.</p></article>
+        <article><p className="eyebrow pink">Built to sell the event</p><h2>MOVE THE RIGHT PERSON TOWARDS THE RIGHT ACTION.</h2><p>Clear ticket buttons, mobile-first pages and focused campaign destinations reduce the distance between interest and the ticket page. Where available, consent-aware analytics can show which pages and calls to action need attention.</p></article>
         <article><p className="eyebrow pink">Search and discovery</p><h2>MAKE THE EVENT EASIER TO FIND AND UNDERSTAND.</h2><p>We build crawlable page structures, useful metadata, structured information, clear event and artist content and meaningful internal links. These foundations support search and AI-assisted discovery readiness without promising rankings or citations.</p></article>
       </section>
 
       <section className="event-audience-path" aria-labelledby="event-audience-path-title">
-        <div><p className="eyebrow">From website to audience</p><h2 id="event-audience-path-title">DON&apos;T LET THE RELATIONSHIP END AT THE TICKET LINK.</h2><p>Where it fits the campaign, the site can connect sign-up, RSVP and event updates to a clear, permission-based relationship that remains useful after the event.</p></div>
+        <div><p className="eyebrow">From website to audience</p><h2 id="event-audience-path-title">DON&apos;T LET THE RELATIONSHIP END AT THE TICKET LINK.</h2><p>Where it fits the campaign, the site can invite people to sign up for line-up news, event updates or what comes next — clearly, consensually and on terms they understand.</p></div>
         <ol>
           {['Discovery', 'Useful experience', 'Action', 'Permission-based relationship', 'Next campaign'].map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}
         </ol>
       </section>
 
       <section className="event-campaign-sites inner-split">
-        <div><p className="eyebrow pink">A focused alternative</p><h2>CAMPAIGN SITES WHEN A FULL WEBSITE ISN&apos;T THE ANSWER.</h2></div>
+        <div><p className="eyebrow pink">A focused alternative</p><h2>ONE CAMPAIGN. ONE AUDIENCE. ONE CLEAR JOB.</h2></div>
         <div className="body-copy">
-          <p>Some campaigns need one focused destination rather than a permanent website: one campaign, one audience and one clear job.</p>
+          <p>A full website is not always the answer. Some campaigns need one focused destination built around the announcement, on-sale, release or ticket push.</p>
           <ul className="compact-tag-list">{focusedCampaigns.map((item) => <li key={item}>{item}</li>)}</ul>
           <p>A campaign site can explain the moment, direct the audience and connect the next action without adding unnecessary structure.</p>
         </div>

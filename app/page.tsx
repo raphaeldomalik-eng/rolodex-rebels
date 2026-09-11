@@ -19,49 +19,49 @@ const meanings = [
   {
     number: "01",
     title: "Get Seen",
-    copy: "Be found by the people who matter through relevant search, paid, social, creator and on-the-ground discovery.",
+    copy: "Put the campaign where the right audience is already looking — in search, feeds, media, venues, queues and streets.",
   },
   {
     number: "02",
     title: "Get Heard",
-    copy: "Turn your story into PR, content, creator activity and communications — with somewhere useful for earned attention to go.",
+    copy: "Give journalists, editors, broadcasters, creators and fans a clear reason to care about this artist, release or live moment.",
   },
   {
     number: "03",
     title: "Get Results",
-    copy: "Turn response into audience growth, stronger fan relationships, ticket action and learning for the next move.",
+    copy: "Turn attention into streams, sign-ups, ticket action and an audience you can reach when the next campaign lands.",
   },
 ];
 
 const audiences = [
   ["Artists", "Launch the next release — and build momentum for what comes after.", "/who-we-help/artists"],
-  ["Labels & Managers", "Add specialist depth, reduce fragmentation and keep every campaign strand moving together.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, sell tickets and retain more of today’s audience for tomorrow.", "/who-we-help/promoters-venues-festivals"],
+  ["Labels & Managers", "Keep PR, paid, content, audience and live specialists moving around the same release plan.", "/who-we-help/labels-managers"],
+  ["Promoters, Venues & Festivals", "Build demand, protect ticket pace and turn today’s ticket buyers into a returning audience.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 const pillars = [
-  ["Get Heard", "Music PR, release stories, creators, content and fan communication that keep attention moving.", "/services/get-heard"],
-  ["Get Seen", "Relevant discovery across search, paid, social, creators and targeted grassroots exposure.", "/services/get-seen"],
-  ["Build Your Audience", "Permission-based capture, audience understanding, communication, activation and retention.", "/services/build-your-audience"],
-  ["Sell The Show", "Demand, ticket response, live audience growth, guest campaigns and retention beyond doors.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflets, posters, hand-to-hand flyering, campuses and place-based activation.", "/services/grassroots"],
-  ["Digital & Creative", "The websites, campaign destinations, content and audience journeys behind growth.", "/services/digital-creative"],
+  ["Get Heard", "Music PR, release stories, creator activity, content and fan communications built around the moment.", "/services/get-heard"],
+  ["Get Seen", "Search, paid media, social, creators and grassroots exposure aimed at the audience that matters.", "/services/get-seen"],
+  ["Build Your Audience", "Fan sign-up, audience insight, email, segmentation and retention between campaign moments.", "/services/build-your-audience"],
+  ["Sell The Show", "Announcement, on-sale, ticket campaigns, tour marketing, guests and the final push.", "/services/sell-the-show"],
+  ["Grassroots", "Street teams, leaflet drops, poster runs, hand-to-hand flyering, campuses and local activation.", "/services/grassroots"],
+  ["Digital & Creative", "Artist, event and campaign websites, landing pages, content, search and creative assets.", "/services/digital-creative"],
 ];
 
 const smartServices = [
-  ["Audience Intelligence", "Bring available audience, channel and campaign signals together to see who responded and what deserves attention next."],
-  ["Fan Relationships", "Build permission-based fan connections, organise them usefully and communicate with greater relevance between campaign moments."],
+  ["Audience Intelligence", "See which audiences, channels, places and campaign moments are getting a response — then put more effort behind what is working."],
+  ["Fan Relationships", "Give fans a reason and permission to stay connected, then bring them back for the next release, date or announcement."],
   ["Search & Discovery", "Make your music, events and digital presence easier to find, understand and act on when people are actively looking."],
-  ["Campaign Insight", "Connect response, sales and journey signals where available so the next decision is based on learning, not noise."],
+  ["Campaign Insight", "Ticket sales slowing? Creative not landing? Plenty of clicks but little action? Use the signals available to find the problem before simply spending more."],
 ];
 
 const ways = [
   ["Launch My Music", "A joined-up campaign for your next single, EP or album.", "Rebel Launch"],
   ["Build My Audience", "Find the right fans and create relationships you can grow.", "Audience Growth"],
-  ["Improve My Digital Presence", "Build a stronger website or campaign destination, sharper discovery and a clearer audience journey.", "Digital & Creative"],
-  ["Sell More Tickets", "Turn campaign activity into demand, buyers and attendance.", "Sell The Show"],
+  ["Improve My Digital Presence", "Build the artist, event or campaign site people need to find, understand and act on.", "Digital & Creative"],
+  ["Sell More Tickets", "Build demand from announcement to final push and remove friction on the way to the ticket page.", "Sell The Show"],
   ["Guest & Industry Campaigns", "Handle invitations, RSVP, reminders and follow-up professionally.", "Guest Campaigns"],
-  ["Activate People On The Ground", "Put real teams in the right places with accountable local activation.", "Grassroots"],
+  ["Activate People On The Ground", "Put street teams, flyers and posters into the places and moments that fit the audience.", "Grassroots"],
 ];
 
 // Keep the evidence-led Results section recoverable while approved case studies are prepared.
@@ -87,9 +87,8 @@ export default function Home() {
             <span className="pink">get results!</span>
           </h1>
           <p className="hero-intro">
-            Rolodex Rebels is a UK music marketing agency helping artists, labels, managers,
-            promoters, venues and festivals grow audiences, launch music, increase visibility
-            and sell tickets. Built on decades of PR and grassroots experience — from the streets to the screens.
+            Music marketing for artists, labels, managers and live music teams who need more than noise.
+            PR, digital, audience growth and grassroots execution — from the streets to the screens.
           </p>
           <div className="hero-actions">
             <Link className="button button-pink" href="/start-a-project">Let&apos;s make some noise</Link>
@@ -127,7 +126,7 @@ export default function Home() {
         <div className="section-lead">
           <p className="eyebrow">The promise hasn&apos;t changed</p>
           <h2 id="meaning-title">The way we deliver it has.</h2>
-          <p>Rolodex Rebels has grown into a full-service music marketing agency — without losing the attitude, relationships or grassroots experience that built the business.</p>
+          <p>The channels have changed. The job hasn&apos;t: get the right people to notice, care and act. Today that might mean a press story, a search result, a paid campaign, an email, a ticket page or a team outside the right venue — all working towards the same result.</p>
         </div>
         <div className="meaning-grid">
           {meanings.map((item) => (
@@ -198,13 +197,13 @@ export default function Home() {
         </div>
         <div className="streets-body">
           <p className="large-copy">Real momentum rarely comes from one channel.</p>
-          <p>We connect PR, creative, digital discovery, audience growth, ticket campaigns and grassroots activation around one objective. Every part has a job. Every response teaches us something. Every campaign should make the next one stronger.</p>
+          <p>A release might need PR and search. A tour date might need paid media, email and a team outside the venue. We make each part serve the same objective — then use what happened to sharpen what comes next.</p>
           <Link className="text-link light-link" href="/why-us">See how we work <Arrow /></Link>
         </div>
         <div className="campaign-flow" role="list" aria-label="Campaign journey">
           {[
-            ["Discover", "Be found"], ["Engage", "Give a reason"], ["Capture", "Build a link"],
-            ["Convert", "Create action"], ["Learn", "See what moved"], ["Grow", "Go again"],
+            ["Discover", "Be found"], ["Engage", "Give a reason"], ["Capture", "Earn permission"],
+            ["Convert", "Create action"], ["Learn", "Find what worked"], ["Grow", "Use it again"],
           ].map(([step, note], index) => (
             <div role="listitem" key={step}><span>0{index + 1}</span><strong>{step}</strong><small>{note}</small></div>
           ))}
@@ -216,7 +215,7 @@ export default function Home() {
           <p className="eyebrow">Built from the ground up</p>
           <h2 id="grassroots-title">Local.<br />Loud.<br /><span>Effective.</span></h2>
           <p className="large-copy">Grassroots is not a legacy service or a bolt-on. It is part of who we are.</p>
-          <p>Our teams put campaigns into the real world — planned around the audience, place and moment, professionally delivered and connected to the wider objective. Where useful, physical response can feed the next digital move.</p>
+          <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside relevant venues, in queues, on campuses and across the local areas around a show.</p>
           <div className="service-tags">
             {[
               "Street teams", "Leaflet drops", "Poster runs", "Hand-to-hand flyering", "Campus campaigns", "Local activation",
@@ -231,7 +230,7 @@ export default function Home() {
           <Image src={grassrootsFlyering} alt="Street promoter holding a stack of flyers" fill sizes="(max-width: 760px) 100vw, 44vw" placeholder="blur" />
           <figcaption>
             <strong>Real people. Real places.</strong>
-            <span>Field evidence and campaign coverage where available.</span>
+            <span>Reporting and campaign evidence agreed around the brief.</span>
           </figcaption>
         </figure>
       </section>
@@ -253,7 +252,7 @@ export default function Home() {
         </div>
         <div className="no-jargon">
           <p>No data theatre. No jargon.</p>
-          <strong>Just better decisions, stronger campaigns and audience relationships you can keep building.</strong>
+          <strong>Just a clearer view of what to keep, change or stop.</strong>
           <Link className="button button-pink" href="/start-a-project">Build a smarter campaign</Link>
         </div>
       </section>

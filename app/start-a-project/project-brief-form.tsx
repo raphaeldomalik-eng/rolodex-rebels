@@ -30,11 +30,11 @@ export function ProjectBriefForm() {
       <div className="project-form-intro">
         <p className="eyebrow">A useful first brief</p>
         <h2 id="project-brief-title">GIVE US<br />THE SIGNAL.</h2>
-        <p>Tell us where you want to go. We’ll work out how to make the right noise in the right places.</p>
+        <p>Tell us what is launching, when it needs to move and who needs to care. We will shape the right campaign around it.</p>
         <ol>
           <li><span>01</span> Share the goal</li>
           <li><span>02</span> Give us the essentials</li>
-          <li><span>03</span> We’ll shape the campaign</li>
+          <li><span>03</span> Get a sensible next step</li>
         </ol>
       </div>
 
