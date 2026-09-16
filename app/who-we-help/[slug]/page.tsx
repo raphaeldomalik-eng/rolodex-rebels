@@ -18,7 +18,7 @@ const audienceData = {
     model: ["Position", "Audience", "Discovery", "Release", "Capture", "Live", "Commercial opportunity", "Retain", "Grow"],
     principles: [
       ["Momentum beyond release day", "Use the campaign to grow the mailing list, sharpen the artist story, build search presence or create assets the next release can use."],
-      ["A direct fan relationship", "Create permission-based ways for the right people to stay connected between releases and shows."],
+      ["A direct fan relationship", "Give the right people a reason to stay in touch between releases and shows."],
       ["Marketing that fits the artist", "Build the mix around the music, stage, audience and ambition — not a fixed channel package."],
     ],
     links: [["Music PR", "/services/music-pr"], ["Build your audience", "/services/build-your-audience"], ["Artist website design", "/services/artist-website-design"], ["Ticket and tour marketing", "/services/sell-the-show"]],
@@ -27,7 +27,7 @@ const audienceData = {
     name: "Labels & Managers",
     seoTitle: "Music Marketing for Labels & Managers | Rolodex Rebels",
     title: "MUSIC MARKETING FOR LABELS & MANAGERS. LESS FRAGMENTATION.",
-    description: "Joined-up music marketing for labels and artist managers, combining release PR, audience growth, digital visibility and specialist delivery.",
+    description: "Music marketing for labels and artist managers, combining release PR, audience growth, digital visibility and specialist delivery.",
     intro: "Add specialist depth without adding another disconnected campaign strand.",
     answer: "Release dates move quickly. Assets arrive late. PR, paid media, content, audience and live activity often sit with different suppliers. We help bring those strands around one objective without taking control away from the label or manager. We add specialist delivery; we do not replace management or label functions.",
     modelTitle: "ADD DEPTH. KEEP CONTROL.",
@@ -53,7 +53,7 @@ const audienceData = {
     principles: [
       ["Work from the sales position", "Read the ticket pace and time to event before choosing whether the next move is reach, new creative, PR, email or local activity."],
       ["Connect online and on the ground", "Join search, social, email and the ticket page with street teams, flyers or posters where the audience and place fit."],
-      ["Give people a reason to return", "Use permission-based sign-up and post-event communication to support the next date, season or programme."],
+      ["Give people a reason to return", "Use mailing list sign-up and post-event communication to support the next date, season or programme."],
     ],
     links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"]],
   },
@@ -90,7 +90,7 @@ export default async function AudiencePage({ params }: { params: Promise<{ slug:
         <div className="body-copy"><p>{audience.answer}</p></div>
       </section>
       <section className="journey-panel" aria-labelledby={`${slug}-journey`}>
-        <div><p className="eyebrow light">The growth journey</p><h2 id={`${slug}-journey`}>{audience.modelTitle}</h2><p>{audience.modelIntro}</p></div>
+        <div><p className="eyebrow light">How the work moves</p><h2 id={`${slug}-journey`}>{audience.modelTitle}</h2><p>{audience.modelIntro}</p></div>
         <ol className="journey-track">
           {audience.model.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><strong>{step}</strong></li>)}
         </ol>
