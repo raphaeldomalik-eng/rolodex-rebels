@@ -22,7 +22,7 @@ const contentCapabilities = ["Event overview", "Tickets", "Programme", "Schedule
 
 const focusedCampaigns = ["Announcement", "On-sale", "Tour", "Release", "RSVP", "Competition", "Sponsor activation", "Ticket push"];
 
-const managedWork = ["Content and line-up updates", "Programme and visitor information", "New campaign pages", "Ticket links and audience journeys", "Search and conversion improvements", "Post-event transition and next-campaign preparation"];
+const managedWork = ["Content and line-up updates", "Programme and visitor information", "New campaign pages", "Ticket links and audience journeys", "Search and conversion improvements", "Hosting, maintenance and ongoing support", "Post-event transition and next-campaign preparation"];
 
 export default function EventFestivalWebsitesPage() {
   const breadcrumbs = [
@@ -94,7 +94,7 @@ export default function EventFestivalWebsitesPage() {
       </section>
 
       <section className="managed-digital-panel" aria-labelledby="managed-digital-title">
-        <div><p className="eyebrow light">Managed digital growth</p><h2 id="managed-digital-title">BUILD IT. RUN IT. IMPROVE IT.</h2><p>A launch is not always the finish line. Where useful, Rolodex Rebels can keep the digital work moving as the campaign changes. Ongoing support is available, not compulsory.</p></div>
+        <div><p className="eyebrow light">Managed digital growth</p><h2 id="managed-digital-title">BUILD IT. RUN IT. IMPROVE IT.</h2><p>A launch is not always the finish line. Need us to stay involved after launch? Ongoing hosting, updates and support can be included as part of the website service. Ongoing support is available, not compulsory.</p></div>
         <ul>{managedWork.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ul>
       </section>
 

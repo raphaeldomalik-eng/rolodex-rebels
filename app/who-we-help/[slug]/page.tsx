@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InternalPage } from "../../internal-page";
+import { PracticalServiceList, venuePromoterSupport } from "../../practical-services";
 import { pageMetadata } from "../../seo";
 
 const audienceData = {
@@ -45,7 +46,7 @@ const audienceData = {
     title: "MARKETING FOR PROMOTERS, VENUES & FESTIVALS. BUILD DEMAND.",
     description: "Marketing for promoters, venues and festivals that connects ticket growth, audience insight, digital campaigns, guests and grassroots activity.",
     intro: "Build demand, turn attention into ticket action and give today’s audience a reason to return.",
-    answer: "One successful show matters. Building an audience you can reach again makes the next one easier to grow. We connect announcement, ticket campaigns, guest lists and RSVP, audience communication, event websites and grassroots activity around the live programme and sales position. Where the data is available, ticket pace, geography, creative, email and landing-page behaviour help us decide what needs to change.",
+    answer: "One successful show matters. Building an audience you can reach again makes the next one easier to grow. We connect announcement, ticket campaign support, on-sale planning, guest lists and RSVP, audience communication, event websites, event diary and listings support, and grassroots activity around the live programme and sales position. Where the data is available, ticket pace, geography, creative, email and landing-page behaviour help us decide what needs to change.",
     modelTitle: "GROW MORE THAN ONE EVENT.",
     modelIntro: "Plan the announcement, on-sale and final push with the next date, season or festival edition in mind.",
     model: ["Build demand", "Sell", "Capture", "Retain", "Grow"],
@@ -54,7 +55,7 @@ const audienceData = {
       ["Connect online and on the ground", "Join search, social, email and the ticket page with street teams, flyers or posters where the audience and place fit."],
       ["Give people a reason to return", "Use permission-based sign-up and post-event communication to support the next date, season or programme."],
     ],
-    links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Flyer distribution", "/services/grassroots/flyer-distribution"]],
+    links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"]],
   },
 } as const;
 
@@ -97,6 +98,16 @@ export default async function AudiencePage({ params }: { params: Promise<{ slug:
       <section className="feature-grid">
         {audience.principles.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}
       </section>
+      {slug === "promoters-venues-festivals" && (
+        <section className="practical-service-index venue-support-index" id="venue-promoter-support" aria-labelledby="venue-promoter-support-title">
+          <div>
+            <p className="eyebrow pink">Venue & promoter support</p>
+            <h2 id="venue-promoter-support-title">PRACTICAL SUPPORT FOR THE LIVE PROGRAMME.</h2>
+            <p>Ticketing and on-sale support, event diary and listings, websites, campaigns and grassroots promotion — described as the work Rolodex Rebels delivers around the programme, not as a ticketing platform.</p>
+          </div>
+          <PracticalServiceList items={venuePromoterSupport} labelledBy="venue-promoter-support-title" />
+        </section>
+      )}
       <nav className="related-links related-links-grid" aria-label={`Services for ${audience.name}`}>
         <h2>CHOOSE THE RESULT YOU NEED.</h2>
         {audience.links.map(([label, href], index) => <Link href={href} key={href}><span>{String(index + 1).padStart(2, "0")}</span>{label} ↗</Link>)}

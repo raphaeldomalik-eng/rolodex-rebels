@@ -88,6 +88,13 @@ export function AnalyticsTracker() {
           source_page: currentPath,
           link_text: linkText,
         });
+      } else if (link.dataset.serviceLabel) {
+        trackEvent("service_directory_selection", {
+          destination: href,
+          service_label: link.dataset.serviceLabel,
+          link_text: linkText,
+          source_page: currentPath,
+        });
       } else if (href.startsWith("/who-we-help/")) {
         trackEvent("audience_route_selection", { destination: href, link_text: linkText });
       } else {
