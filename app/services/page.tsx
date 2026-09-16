@@ -15,7 +15,7 @@ const services = [
   ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
   ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
   ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflet and flyer distribution, poster campaigns, campuses and local promotion.", "/services/grassroots"],
+  ["Grassroots", "Street teams, leaflet and flyer distribution, poster distribution, campuses and local promotion.", "/services/grassroots"],
   ["Digital & Creative", "Websites, campaign pages, content, creative work and ongoing website support.", "/services/digital-creative"],
 ];
 

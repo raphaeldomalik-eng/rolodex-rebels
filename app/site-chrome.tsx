@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import rebelsLogo from "../public/rolodex-rebels-logo-transparent.png";
-import footerLogo from "../public/rolodex-rebels-logo-footer.png";
+import rebelsLogoDark from "../public/rolodex-rebels-logo-footer.png";
 
 export const navItems = [
   ["Why Us", "/why-us"],
@@ -13,7 +12,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Rolodex Rebels home">
-        <Image src={rebelsLogo} alt="Rolodex Rebels" sizes="(max-width: 760px) 142px, 218px" loading="eager" />
+        <Image src={rebelsLogoDark} alt="Rolodex Rebels" sizes="(max-width: 760px) 142px, 218px" loading="eager" />
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         {navItems.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
@@ -34,7 +33,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <Link className="footer-brand" href="/">
-        <Image src={footerLogo} alt="Rolodex Rebels" sizes="270px" />
+        <Image src={rebelsLogoDark} alt="Rolodex Rebels" sizes="270px" />
       </Link>
       <p>Full-service music marketing.<br />From the streets to the screens.</p>
       <div className="footer-links">

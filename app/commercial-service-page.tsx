@@ -145,7 +145,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     problemTitle: "WE START WITH THE AUDIENCE. NOT THE BOX OF FLYERS.",
     problemCopy: [
       "Useful distribution begins with who the campaign needs to reach, where those people move, when the message will be relevant and what action the leaflet or flyer should support.",
-      "Quantity matters only after audience, location, timing, message and campaign role are clear. We plan leaflet and flyer distribution to support the wider objective rather than competing on volume alone.",
+      "Our flyering campaigns include hand-to-hand flyer distribution around relevant events, venues and queues. Quantity matters only after audience, location, timing, message and campaign role are clear. We plan leaflet and flyer distribution to support the wider objective rather than competing on volume alone.",
     ],
     outcome: "Physical campaign reach planned around audience relevance, timing and a clear next action.",
     serves: "Promoters, venues, festivals, tours, artists, labels and other music campaigns with a credible physical audience opportunity.",
@@ -153,7 +153,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     journeyIntro: "The plan connects the audience to the place, message and action.",
     journey: ["Who", "Where", "When", "Message", "Quantity", "Action"],
     capabilities: [
-      ["Hand-to-hand", "Direct leaflet and flyer distribution around relevant events, venues, queues and audience movement where an informed human interaction adds value."],
+      ["Flyering Campaigns", "Direct distribution around relevant events, venues and queues, taking your campaign straight to your target audience, where one of our skilled flyerers can add value."],
       ["Targeted distribution", "Plan placement and distribution around agreed locations, timings and audience contexts."],
       ["Campaign support", "Use leaflets and flyers alongside posters, PR, digital activity, ticket campaigns and other grassroots work."],
       ["Gig & tour campaigns", "Support priority dates and local demand with distribution shaped around the event and audience."],

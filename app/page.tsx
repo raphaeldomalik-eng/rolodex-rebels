@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ClientProof } from "./client-proof";
 import { JsonLd } from "./json-ld";
 import { pageMetadata, websiteJsonLd } from "./seo";
 import { SiteFooter, SiteHeader } from "./site-chrome";
@@ -44,7 +45,7 @@ const pillars = [
   ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
   ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
   ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflet and flyer distribution, poster campaigns, campuses and local promotion.", "/services/grassroots"],
+  ["Grassroots", "Street teams, leaflet and flyer distribution, poster distribution, campuses and local promotion.", "/services/grassroots"],
   ["Digital & Creative", "Websites, campaign pages, content, creative work and ongoing website support.", "/services/digital-creative"],
 ];
 
@@ -142,6 +143,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ClientProof />
+
       <section className="audience section-pad" aria-labelledby="audience-title">
         <div className="audience-photo media-frame">
           <Image src={artistStage} alt="Guitarist performing on a dark stage" fill sizes="(max-width: 760px) 100vw, 38vw" placeholder="blur" />
@@ -218,7 +221,7 @@ export default function Home() {
           <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside venues, in queues, on campuses and around the show.</p>
           <div className="service-tags">
             {[
-              "Street teams", "Leaflet and flyer distribution", "Poster campaigns", "Hand-to-hand flyering", "Campus campaigns", "Local promotion",
+              "Street teams", "Leaflet and flyer distribution", "Poster distribution", "Hand-to-hand flyering", "Campus campaigns", "Local promotion",
             ].map((item) => <span key={item}>{item}</span>)}
           </div>
           <div className="button-row">

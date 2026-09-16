@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ClientProof } from "../../client-proof";
 import { InternalPage } from "../../internal-page";
 import { JsonLd } from "../../json-ld";
 import { pageMetadata, serviceJsonLd } from "../../seo";
@@ -97,7 +98,7 @@ const serviceData = {
     name: "Grassroots",
     seoTitle: "Grassroots Music Promotion & Street Teams | Rolodex Rebels",
     title: "GRASSROOTS MUSIC PROMOTION. LOCAL. LOUD. EFFECTIVE.",
-    description: "Grassroots music promotion through street teams, leaflet and flyer distribution, poster campaigns, campaign print, campuses and local promotion.",
+    description: "Grassroots music promotion through street teams, leaflet and flyer distribution, poster distribution, campaign print, campuses and local promotion.",
     intro: "Street teams, leaflets, flyers and posters — planned around where your audience actually is.",
     meaningTitle: "START WITH WHO, WHERE AND WHEN.",
     outcome: "Street teams, leaflets, flyers and posters in the venues, queues, campuses and nightlife areas where the message belongs.",
@@ -108,9 +109,9 @@ const serviceData = {
     items: [
       ["Music Street Teams", "Street teams in London, surrounding areas and Kent, planned around the audience, place and campaign moment."],
       ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, campuses, nightlife areas and dates that fit the audience."],
-      ["Poster Campaigns", "Poster campaigns around relevant venues, music areas, campuses and agreed campaign locations — planned around audience, timing and geography."],
+      ["Poster Distribution", "Targeted poster campaigns in London. Posters are placed in shops, music stores and anywhere we can get you in front of the right audience. Leaflet distribution can also be used to enhance your campaign."],
       ["Print & Campaign Materials", "Flyers, leaflets, posters and event materials coordinated as part of the campaign — production and supply, not a print shop."],
-      ["Campus campaigns", "Student-facing activity shaped around the campus, calendar and audience fit."],
+      ["Campus Campaigns", "Student-facing activity shaped around the campus, calendar and audience fit."],
       ["Local Promotion", "Local promotion connected to launches, shows, openings and cultural moments."],
     ],
     offers: "Grassroots Promotion",
@@ -151,6 +152,10 @@ function itemId(title: string) {
   return title.toLowerCase().replace(/&/g, " ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
+const hashAliases: Record<string, string> = {
+  "poster-distribution": "poster-campaigns",
+};
+
 export function generateStaticParams() {
   return Object.keys(serviceData).map((slug) => ({ slug }));
 }
@@ -188,8 +193,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </ol>
       </section>
       <section className="feature-grid">
-        {service.items.map(([title, copy], index) => <article key={title} id={itemId(title)}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}
+        {service.items.map(([title, copy], index) => {
+          const id = itemId(title);
+          return (
+            <article key={title} id={id}>
+              {hashAliases[id] ? <span id={hashAliases[id]} className="hash-alias" aria-hidden="true" /> : null}
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          );
+        })}
       </section>
+      {slug === "grassroots" && <ClientProof />}
       {deeper.length > 0 && <section className="deeper-service-links">
         <div><p className="eyebrow light">Specialist service</p><h2>GO DEEPER ON THIS BRIEF.</h2></div>
         <nav aria-label={`Specialist ${service.name} services`}>
