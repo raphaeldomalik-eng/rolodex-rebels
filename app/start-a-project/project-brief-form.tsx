@@ -107,7 +107,7 @@ export function ProjectBriefForm() {
             </label>
             <label className="form-field-wide">
               What is already in motion?
-              <textarea name="activity" rows={4} maxLength={3000} placeholder="PR, social, ads, street activity, ticket sales…" />
+              <textarea name="activity" rows={4} maxLength={3000} placeholder="PR, social, ads, flyers, ticket sales…" />
             </label>
             <label>
               Budget range

@@ -9,7 +9,6 @@ export const indexableRoutes = [
   ["/services/grassroots", "monthly", 0.8],
   ["/services/digital-creative", "monthly", 0.8],
   ["/services/music-pr", "monthly", 0.75],
-  ["/services/grassroots/music-street-teams", "monthly", 0.75],
   ["/services/grassroots/flyer-distribution", "monthly", 0.75],
   ["/services/festival-marketing", "monthly", 0.75],
   ["/services/artist-website-design", "monthly", 0.75],

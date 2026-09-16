@@ -54,7 +54,6 @@ export const practicalServices = [
 ] as const satisfies readonly PracticalService[];
 
 export const specialistServiceLinks = [
-  ["Music Street Teams", "/services/grassroots/music-street-teams"],
   ["Festival Marketing", "/services/festival-marketing"],
   ["Artist Website Design", "/services/artist-website-design"],
   ["Event & Festival Websites", "/services/event-festival-websites"],
@@ -93,7 +92,7 @@ export const venuePromoterSupport = [
   },
   {
     name: "Grassroots Promotion",
-    copy: "Street teams, leaflet and flyer distribution, poster campaigns and local promotion where it fits.",
+    copy: "Leaflet and flyer distribution, poster campaigns and local promotion where it fits.",
     href: "/services/grassroots",
   },
 ] as const satisfies readonly PracticalService[];

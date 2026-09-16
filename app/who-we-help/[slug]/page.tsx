@@ -52,10 +52,10 @@ const audienceData = {
     model: ["Build demand", "Sell", "Capture", "Retain", "Grow"],
     principles: [
       ["Work from the sales position", "Read the ticket pace and time to event before choosing whether the next move is reach, new creative, PR, email or local activity."],
-      ["Connect online and on the ground", "Join search, social, email and the ticket page with street teams, flyers or posters where the audience and place fit."],
+      ["Connect online and on the ground", "Join search, social, email and the ticket page with flyers or posters where the audience and place fit."],
       ["Give people a reason to return", "Use mailing list sign-up and post-event communication to support the next date, season or programme."],
     ],
-    links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"]],
+    links: [["Festival marketing", "/services/festival-marketing"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Concert, tour and ticket marketing", "/services/sell-the-show"], ["Build your audience", "/services/build-your-audience"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"]],
   },
 } as const;
 
