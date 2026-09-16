@@ -45,7 +45,7 @@ const pillars = [
   ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
   ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
   ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflet and flyer distribution, poster distribution, campuses and local promotion.", "/services/grassroots"],
+  ["Grassroots", "Leaflet and flyer distribution, poster distribution, campaign print and local promotion.", "/services/grassroots"],
   ["Digital & Creative", "Websites, campaign pages, content, creative work and ongoing website support.", "/services/digital-creative"],
 ];
 
@@ -62,7 +62,7 @@ const ways = [
   ["Improve My Digital Presence", "Build the artist, event or campaign site people need to find you.", "Digital & Creative"],
   ["Sell More Tickets", "Ticket campaigns from announcement to the final push.", "Sell The Show"],
   ["Guest & Industry Campaigns", "Handle invitations, RSVP, reminders and follow-up.", "Guest Campaigns"],
-  ["Promote On The Ground", "Put street teams, flyers and posters where the audience actually is.", "Grassroots"],
+  ["Promote On The Ground", "Put flyers and posters where the audience actually is.", "Grassroots"],
 ];
 
 // Keep the evidence-led Results section recoverable while approved case studies are prepared.
@@ -88,7 +88,7 @@ export default function Home() {
             <span className="pink">get results!</span>
           </h1>
           <p className="hero-intro">
-            PR, social media, websites, SEO, ticket campaigns, street teams, flyers and posters for artists, venues, promoters and festivals.
+            PR, social media, websites, SEO, ticket campaigns, flyers and posters for artists, venues, promoters and festivals.
             Need one service or a full campaign? We can help with both.
           </p>
           <div className="hero-actions">
@@ -120,14 +120,14 @@ export default function Home() {
       </section>
 
       <div className="ticker" aria-hidden="true">
-        <div>PR • SEO • SOCIAL • WEBSITES • TICKETS • STREET TEAMS • FLYERS • POSTERS • PR • SEO • SOCIAL • WEBSITES • TICKETS • STREET TEAMS • FLYERS • POSTERS •</div>
+        <div>PR • SEO • SOCIAL • WEBSITES • TICKETS • FLYERS • POSTERS • PR • SEO • SOCIAL • WEBSITES • TICKETS • FLYERS • POSTERS •</div>
       </div>
 
       <section className="meaning section-pad" aria-labelledby="meaning-title">
         <div className="section-lead">
           <p className="eyebrow">The promise hasn&apos;t changed</p>
           <h2 id="meaning-title">The way we deliver it has.</h2>
-          <p>The channels have changed. The job hasn&apos;t: get the right people to notice, care and act. That might mean PR, a search result, a social campaign, an email, a ticket page or a team outside the venue — all working towards the same result.</p>
+          <p>The channels have changed. The job hasn&apos;t: get the right people to notice, care and act. That might mean PR, a search result, a social campaign, an email, a ticket page or flyers outside the venue — all working towards the same result.</p>
         </div>
         <div className="meaning-grid">
           {meanings.map((item) => (
@@ -178,7 +178,7 @@ export default function Home() {
             <p className="eyebrow">What we do</p>
             <h2 id="services-title">One goal. Everything working together.</h2>
           </div>
-          <p>Start with what you want to achieve. We&apos;ll bring the right mix of PR, social, websites, ticket campaigns and street promotion around it.</p>
+          <p>Start with what you want to achieve. We&apos;ll bring the right mix of PR, social, websites, ticket campaigns, flyers and posters around it.</p>
         </div>
         <div className="pillar-grid">
           {pillars.map(([title, copy, href], index) => (
@@ -200,7 +200,7 @@ export default function Home() {
         </div>
         <div className="streets-body">
           <p className="large-copy">Real momentum rarely comes from one channel.</p>
-          <p>A release might need PR and SEO. A tour date might need ads, email and a team outside the venue. We make each part serve the same goal — then use what happened to decide what comes next.</p>
+          <p>A release might need PR and SEO. A tour date might need ads, email and flyers outside the venue. We make each part serve the same goal — then use what happened to decide what comes next.</p>
           <Link className="text-link light-link" href="/why-us">See how we work <Arrow /></Link>
         </div>
         <div className="campaign-flow" role="list" aria-label="Campaign journey">
@@ -218,10 +218,10 @@ export default function Home() {
           <p className="eyebrow">Built from the ground up</p>
           <h2 id="grassroots-title">Local.<br />Loud.<br /><span>Effective.</span></h2>
           <p className="large-copy">Grassroots is not a legacy service or a bolt-on. It is part of who we are.</p>
-          <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside venues, in queues, on campuses and around the show.</p>
+          <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside venues, in queues, on high streets and around the show.</p>
           <div className="service-tags">
             {[
-              "Street teams", "Leaflet and flyer distribution", "Poster distribution", "Hand-to-hand flyering", "Campus campaigns", "Local promotion",
+              "Leaflet and flyer distribution", "Poster distribution", "Hand-to-hand flyering", "Campaign print", "Local promotion",
             ].map((item) => <span key={item}>{item}</span>)}
           </div>
           <div className="button-row">

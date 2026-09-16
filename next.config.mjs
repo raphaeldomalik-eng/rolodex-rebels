@@ -11,6 +11,7 @@ const nextConfig = {
       },
       { source: "/contact", destination: "/start-a-project", permanent: true },
       { source: "/services/digital-and-creative", destination: "/services/digital-creative", permanent: true },
+      { source: "/services/grassroots/music-street-teams", destination: "/services/grassroots", permanent: true },
       { source: "/who-we-help/live-music", destination: "/who-we-help/promoters-venues-festivals", permanent: true },
     ];
   },

@@ -6,7 +6,7 @@ import { pageMetadata } from "../seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Music Marketing Services | Rolodex Rebels",
-  description: "Music marketing services including PR, SEO, social media, websites, ticket campaigns, street teams, flyers and posters for artists, venues, promoters and festivals.",
+  description: "Music marketing services including PR, SEO, social media, websites, ticket campaigns, flyers and posters for artists, venues, promoters and festivals.",
   path: "/services",
 });
 
@@ -15,13 +15,13 @@ const services = [
   ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
   ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
   ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflet and flyer distribution, poster distribution, campuses and local promotion.", "/services/grassroots"],
+  ["Grassroots", "Leaflet and flyer distribution, poster distribution, campaign print and local promotion.", "/services/grassroots"],
   ["Digital & Creative", "Websites, campaign pages, content, creative work and ongoing website support.", "/services/digital-creative"],
 ];
 
 export default function Services() {
   return (
-    <InternalPage className="services-index-page" eyebrow="What we do" title={<>MUSIC MARKETING.<br /><span>EVERYTHING WORKING TOGETHER.</span></>} intro="PR, SEO, social media, websites, ticket campaigns, street teams, flyers and posters for artists, venues, promoters and festivals." breadcrumbs={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]}>
+    <InternalPage className="services-index-page" eyebrow="What we do" title={<>MUSIC MARKETING.<br /><span>EVERYTHING WORKING TOGETHER.</span></>} intro="PR, SEO, social media, websites, ticket campaigns, flyers and posters for artists, venues, promoters and festivals." breadcrumbs={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]}>
       <section className="practical-service-index" aria-labelledby="practical-services-title">
         <div>
           <p className="eyebrow pink">Looking for something specific?</p>
