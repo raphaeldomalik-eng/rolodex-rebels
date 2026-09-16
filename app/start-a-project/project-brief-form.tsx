@@ -49,8 +49,8 @@ export function ProjectBriefForm() {
     <section className="project-form-section" aria-labelledby="project-brief-title">
       <div className="project-form-intro">
         <p className="eyebrow">A useful first brief</p>
-        <h2 id="project-brief-title">GIVE US<br />THE SIGNAL.</h2>
-        <p>Tell us what is launching, when it needs to move and who needs to care. We will shape the right campaign around it.</p>
+        <h2 id="project-brief-title">TELL US<br />WHAT YOU NEED.</h2>
+        <p>Tell us what you&apos;re promoting, who you want to reach and what you need help with.</p>
         <ol>
           <li><span>01</span> Share the goal</li>
           <li><span>02</span> Give us the essentials</li>

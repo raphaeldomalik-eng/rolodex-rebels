@@ -6,23 +6,23 @@ import { pageMetadata, serviceJsonLd } from "../../seo";
 
 const path = "/services/event-festival-websites";
 const title = "Event & Festival Website Design | Rolodex Rebels";
-const description = "Event and festival websites built around discovery, tickets, programme content, visitor information, audience journeys and ongoing campaign growth.";
+const description = "Event and festival websites built around discovery, tickets, programme content, visitor information and ongoing campaign growth.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
-const journey = ["Audience", "Goals", "Site plan", "Content", "Discovery", "Ticket journey", "Visitor experience", "Audience relationship", "Publish", "Improve"];
+const journey = ["Audience", "Goals", "Site plan", "Content", "Discovery", "Tickets", "Visitor experience", "Audience relationship", "Publish", "Improve"];
 
 const lifecycle = [
   ["Before the event", ["Announcement and on-sale", "Tickets, line-up and programme", "Artist and campaign pages", "Travel and practical information", "Search visibility and audience capture"]],
   ["During the event", ["Mobile visitor information", "Programme and schedule", "Directions and venue details", "Practical updates and useful content", "Confirmed accessibility information"]],
-  ["After the event", ["Galleries and retained content", "Next-event discovery", "Ongoing search value", "Permission-based communication", "A stronger next campaign"]],
+  ["After the event", ["Galleries and retained content", "Next-event discovery", "Ongoing search value", "Stay-in-touch communication", "A stronger next campaign"]],
 ] as const;
 
 const contentCapabilities = ["Event overview", "Tickets", "Programme", "Schedule", "Line-up", "Artist profiles", "Venue", "Travel", "Accommodation", "Food & drink", "Vendors & exhibitors", "Accessibility", "FAQs", "Sponsors & partners", "Announcements"];
 
-const focusedCampaigns = ["Announcement", "On-sale", "Tour", "Release", "RSVP", "Competition", "Sponsor activation", "Ticket push"];
+const focusedCampaigns = ["Announcement", "On-sale", "Tour", "Release", "RSVP", "Competition", "Sponsor campaigns", "Ticket push"];
 
-const managedWork = ["Content and line-up updates", "Programme and visitor information", "New campaign pages", "Ticket links and audience journeys", "Search and conversion improvements", "Hosting, maintenance and ongoing support", "Post-event transition and next-campaign preparation"];
+const managedWork = ["Content and line-up updates", "Programme and visitor information", "New campaign pages", "Ticket links and next steps", "Search and ticket-page improvements", "Hosting, maintenance and ongoing support", "Post-event transition and next-campaign preparation"];
 
 export default function EventFestivalWebsitesPage() {
   const breadcrumbs = [
@@ -48,7 +48,7 @@ export default function EventFestivalWebsitesPage() {
         <div className="body-copy">
           <p>Who is coming? What do they need to know? What should they do next? What changes as the campaign moves from announcement to on-sale, event day and beyond?</p>
           <p>We plan the site around those questions so it can carry the campaign from first announcement to event day — and give people a reason to come back afterwards.</p>
-          <p><strong>The outcome:</strong><br />A clear digital home for discovery, tickets, programme content, practical visitor information and permission-based audience sign-up.</p>
+          <p><strong>The outcome:</strong><br />A clear digital home for discovery, tickets, programme content, practical visitor information and mailing list sign-up.</p>
           <Link className="text-link" href="/start-a-project">Build my event site <Arrow /></Link>
         </div>
       </section>
@@ -74,13 +74,13 @@ export default function EventFestivalWebsitesPage() {
 
       <section className="event-outcomes" aria-label="Event website outcomes">
         <article><p className="eyebrow pink">Built to sell the event</p><h2>MOVE THE RIGHT PERSON TOWARDS THE RIGHT ACTION.</h2><p>Clear ticket buttons, mobile-first pages and focused campaign destinations reduce the distance between interest and the ticket page. Where available, consent-aware analytics can show which pages and calls to action need attention.</p></article>
-        <article><p className="eyebrow pink">Search and discovery</p><h2>MAKE THE EVENT EASIER TO FIND AND UNDERSTAND.</h2><p>We build crawlable page structures, useful metadata, structured information, clear event and artist content and meaningful internal links. These foundations support search and AI-assisted discovery readiness without promising rankings or citations.</p></article>
+        <article><p className="eyebrow pink">Search and discovery</p><h2>MAKE THE EVENT EASIER TO FIND AND UNDERSTAND.</h2><p>We build crawlable page structures, useful metadata, structured information, clear event and artist content and meaningful internal links. These foundations help search engines and AI tools understand the event, without promising rankings or citations.</p></article>
       </section>
 
       <section className="event-audience-path" aria-labelledby="event-audience-path-title">
         <div><p className="eyebrow">From website to audience</p><h2 id="event-audience-path-title">DON&apos;T LET THE RELATIONSHIP END AT THE TICKET LINK.</h2><p>Where it fits the campaign, the site can invite people to sign up for line-up news, event updates or what comes next — clearly, consensually and on terms they understand.</p></div>
         <ol>
-          {['Discovery', 'Useful experience', 'Action', 'Permission-based relationship', 'Next campaign'].map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}
+          {['Discovery', 'Useful experience', 'Action', 'Stay in touch', 'Next campaign'].map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}
         </ol>
       </section>
 

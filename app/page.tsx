@@ -19,49 +19,49 @@ const meanings = [
   {
     number: "01",
     title: "Get Seen",
-    copy: "Put the campaign where the right audience is already looking — in search, feeds, media, venues, queues and streets.",
+    copy: "Get your music, event or campaign in front of the right people — online, through the media and out in the real world.",
   },
   {
     number: "02",
     title: "Get Heard",
-    copy: "Give journalists, editors, broadcasters, creators and fans a clear reason to care about this artist, release or live moment.",
+    copy: "Give journalists, creators and fans a clear reason to pay attention.",
   },
   {
     number: "03",
     title: "Get Results",
-    copy: "Turn attention into streams, sign-ups, ticket action and an audience you can reach when the next campaign lands.",
+    copy: "Turn attention into streams, sign-ups, enquiries and ticket sales.",
   },
 ];
 
 const audiences = [
-  ["Artists", "Launch the next release — and build momentum for what comes after.", "/who-we-help/artists"],
-  ["Labels & Managers", "Keep PR, paid, content, audience and live specialists moving around the same release plan.", "/who-we-help/labels-managers"],
-  ["Promoters, Venues & Festivals", "Build demand, protect ticket pace and turn today’s ticket buyers into a returning audience.", "/who-we-help/promoters-venues-festivals"],
+  ["Artists", "Launch releases, grow your audience and promote live shows.", "/who-we-help/artists"],
+  ["Labels & Managers", "Bring PR, social, digital and live promotion together around the release plan.", "/who-we-help/labels-managers"],
+  ["Promoters, Venues & Festivals", "Build demand, sell tickets and give people a reason to come back.", "/who-we-help/promoters-venues-festivals"],
 ];
 
 const pillars = [
-  ["Get Heard", "Music PR, release stories, creator activity, content and fan communications built around the moment.", "/services/get-heard"],
-  ["Get Seen", "Search, paid media, social, creators and grassroots exposure aimed at the audience that matters.", "/services/get-seen"],
-  ["Build Your Audience", "Fan sign-up, audience insight, email, segmentation and retention between campaign moments.", "/services/build-your-audience"],
-  ["Sell The Show", "Announcement, on-sale, ticket campaigns, tour marketing, guests and the final push.", "/services/sell-the-show"],
-  ["Grassroots", "Street teams, leaflet drops, poster runs, hand-to-hand flyering, campuses and local activation.", "/services/grassroots"],
-  ["Digital & Creative", "Artist, event and campaign websites, landing pages, content, search and creative assets.", "/services/digital-creative"],
+  ["Get Heard", "PR and release campaigns that put your story in front of the right media and people.", "/services/get-heard"],
+  ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
+  ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
+  ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],
+  ["Grassroots", "Street teams, leaflet and flyer distribution, poster campaigns, campuses and local promotion.", "/services/grassroots"],
+  ["Digital & Creative", "Websites, campaign pages, content, creative work and ongoing website support.", "/services/digital-creative"],
 ];
 
 const smartServices = [
-  ["Audience Intelligence", "See which audiences, channels, places and campaign moments are getting a response — then put more effort behind what is working."],
-  ["Fan Relationships", "Give fans a reason and permission to stay connected, then bring them back for the next release, date or announcement."],
-  ["Search & Discovery", "Make your music, events and digital presence easier to find, understand and act on when people are actively looking."],
-  ["Campaign Insight", "Ticket sales slowing? Creative not landing? Plenty of clicks but little action? Use the signals available to find the problem before simply spending more."],
+  ["See What's Working", "See which audiences, channels and places are getting a response so you know where to put your time and money."],
+  ["Keep In Touch", "Give fans a reason to sign up so you can reach them again for the next release or show."],
+  ["Help People Find You", "Make your music, event or website easier to find online."],
+  ["See What Needs Changing", "Ticket sales slow? Ads not working? Lots of clicks but no action? Look at the problem before spending more."],
 ];
 
 const ways = [
-  ["Launch My Music", "A joined-up campaign for your next single, EP or album.", "Rebel Launch"],
-  ["Build My Audience", "Find the right fans and create relationships you can grow.", "Audience Growth"],
-  ["Improve My Digital Presence", "Build the artist, event or campaign site people need to find, understand and act on.", "Digital & Creative"],
-  ["Sell More Tickets", "Build demand from announcement to final push and remove friction on the way to the ticket page.", "Sell The Show"],
-  ["Guest & Industry Campaigns", "Handle invitations, RSVP, reminders and follow-up professionally.", "Guest Campaigns"],
-  ["Activate People On The Ground", "Put street teams, flyers and posters into the places and moments that fit the audience.", "Grassroots"],
+  ["Launch My Music", "A campaign for your next single, EP or album.", "Rebel Launch"],
+  ["Build My Audience", "Find the right fans and stay in touch with them.", "Audience Growth"],
+  ["Improve My Digital Presence", "Build the artist, event or campaign site people need to find you.", "Digital & Creative"],
+  ["Sell More Tickets", "Ticket campaigns from announcement to the final push.", "Sell The Show"],
+  ["Guest & Industry Campaigns", "Handle invitations, RSVP, reminders and follow-up.", "Guest Campaigns"],
+  ["Promote On The Ground", "Put street teams, flyers and posters where the audience actually is.", "Grassroots"],
 ];
 
 // Keep the evidence-led Results section recoverable while approved case studies are prepared.
@@ -87,8 +87,8 @@ export default function Home() {
             <span className="pink">get results!</span>
           </h1>
           <p className="hero-intro">
-            Music marketing for artists, labels, managers and live music teams who need more than noise.
-            PR, digital, audience growth and grassroots execution — from the streets to the screens.
+            PR, social media, websites, SEO, ticket campaigns, street teams, flyers and posters for artists, venues, promoters and festivals.
+            Need one service or a full campaign? We can help with both.
           </p>
           <div className="hero-actions">
             <Link className="button button-pink" href="/start-a-project">Let&apos;s make some noise</Link>
@@ -119,14 +119,14 @@ export default function Home() {
       </section>
 
       <div className="ticker" aria-hidden="true">
-        <div>PR • DIGITAL • AUDIENCE • LIVE • GRASSROOTS • CREATIVE • PR • DIGITAL • AUDIENCE • LIVE • GRASSROOTS • CREATIVE •</div>
+        <div>PR • SEO • SOCIAL • WEBSITES • TICKETS • STREET TEAMS • FLYERS • POSTERS • PR • SEO • SOCIAL • WEBSITES • TICKETS • STREET TEAMS • FLYERS • POSTERS •</div>
       </div>
 
       <section className="meaning section-pad" aria-labelledby="meaning-title">
         <div className="section-lead">
           <p className="eyebrow">The promise hasn&apos;t changed</p>
           <h2 id="meaning-title">The way we deliver it has.</h2>
-          <p>The channels have changed. The job hasn&apos;t: get the right people to notice, care and act. Today that might mean a press story, a search result, a paid campaign, an email, a ticket page or a team outside the right venue — all working towards the same result.</p>
+          <p>The channels have changed. The job hasn&apos;t: get the right people to notice, care and act. That might mean PR, a search result, a social campaign, an email, a ticket page or a team outside the venue — all working towards the same result.</p>
         </div>
         <div className="meaning-grid">
           {meanings.map((item) => (
@@ -149,8 +149,8 @@ export default function Home() {
         </div>
         <div className="audience-copy">
           <p className="eyebrow light">Built for the music industry</p>
-          <h2 id="audience-title">You bring the music. We build the momentum.</h2>
-          <p className="large-copy">Whether you are launching a release, building an artist, filling a venue or growing a festival, we shape the campaign around the result you need.</p>
+          <h2 id="audience-title">You bring the music. We help people find it.</h2>
+          <p className="large-copy">Whether you are launching a release, filling a venue or growing a festival, we start with who you want to reach and what you want them to do.</p>
           <div className="audience-list">
             {audiences.map(([title, copy, href], index) => (
               <Link href={href} className="audience-row" key={title}>
@@ -163,7 +163,7 @@ export default function Home() {
           <div className="goal-cloud" aria-label="Choose your goal">
             {[
               "Launch my music", "Build my audience", "Improve my digital presence",
-              "Sell more tickets", "Market my tour", "Activate on the ground",
+              "Sell more tickets", "Market my tour", "Promote on the ground",
             ].map((goal) => <Link href="/start-a-project" key={goal}>{goal}</Link>)}
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function Home() {
             <p className="eyebrow">What we do</p>
             <h2 id="services-title">One goal. Everything working together.</h2>
           </div>
-          <p>Start with what you want to achieve. We&apos;ll build the right mix of strategy, creativity, reach and activation around it.</p>
+          <p>Start with what you want to achieve. We&apos;ll bring the right mix of PR, social, websites, ticket campaigns and street promotion around it.</p>
         </div>
         <div className="pillar-grid">
           {pillars.map(([title, copy, href], index) => (
@@ -192,18 +192,18 @@ export default function Home() {
 
       <section className="streets section-pad" aria-labelledby="streets-title">
         <div className="streets-title-wrap">
-          <p className="eyebrow light">Joined-up music marketing</p>
+          <p className="eyebrow light">Online and on the ground</p>
           <h2 id="streets-title">From the streets<br />to the <span>screens.</span></h2>
         </div>
         <div className="streets-body">
           <p className="large-copy">Real momentum rarely comes from one channel.</p>
-          <p>A release might need PR and search. A tour date might need paid media, email and a team outside the venue. We make each part serve the same objective — then use what happened to sharpen what comes next.</p>
+          <p>A release might need PR and SEO. A tour date might need ads, email and a team outside the venue. We make each part serve the same goal — then use what happened to decide what comes next.</p>
           <Link className="text-link light-link" href="/why-us">See how we work <Arrow /></Link>
         </div>
         <div className="campaign-flow" role="list" aria-label="Campaign journey">
           {[
-            ["Discover", "Be found"], ["Engage", "Give a reason"], ["Capture", "Earn permission"],
-            ["Convert", "Create action"], ["Learn", "Find what worked"], ["Grow", "Use it again"],
+            ["Find", "Be found"], ["Engage", "Give a reason"], ["Sign up", "Stay in touch"],
+            ["Act", "Streams, tickets, enquiries"], ["Learn", "See what worked"], ["Grow", "Use it again"],
           ].map(([step, note], index) => (
             <div role="listitem" key={step}><span>0{index + 1}</span><strong>{step}</strong><small>{note}</small></div>
           ))}
@@ -215,10 +215,10 @@ export default function Home() {
           <p className="eyebrow">Built from the ground up</p>
           <h2 id="grassroots-title">Local.<br />Loud.<br /><span>Effective.</span></h2>
           <p className="large-copy">Grassroots is not a legacy service or a bolt-on. It is part of who we are.</p>
-          <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside relevant venues, in queues, on campuses and across the local areas around a show.</p>
+          <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside venues, in queues, on campuses and around the show.</p>
           <div className="service-tags">
             {[
-              "Street teams", "Leaflet drops", "Poster runs", "Hand-to-hand flyering", "Campus campaigns", "Local activation",
+              "Street teams", "Leaflet and flyer distribution", "Poster campaigns", "Hand-to-hand flyering", "Campus campaigns", "Local promotion",
             ].map((item) => <span key={item}>{item}</span>)}
           </div>
           <div className="button-row">
@@ -287,7 +287,7 @@ export default function Home() {
           <h3>Real campaigns.<br />Real evidence.<br />No inflated numbers.</h3>
           <div className="case-structure">
             <div><span>01</span><strong>Challenge</strong><p>The commercial problem we were asked to solve.</p></div>
-            <div><span>02</span><strong>What we did</strong><p>The joined-up campaign we built and delivered.</p></div>
+            <div><span>02</span><strong>What we did</strong><p>The campaign we built and delivered — PR, digital and on the ground.</p></div>
             <div><span>03</span><strong>Result</strong><p>The verified outcome, learning and next move.</p></div>
           </div>
           <small>Client names, testimonials and metrics are published only with approval.</small>
@@ -298,7 +298,7 @@ export default function Home() {
         <Image src={rebelsMark} alt="" sizes="(max-width: 760px) 50vw, 480px" />
         <p className="eyebrow">Ready to be heard?</p>
         <h2 id="final-title">Let&apos;s get your<br /><span>message out!</span></h2>
-        <p>Tell us what you&apos;re launching, growing or trying to sell. We&apos;ll help shape the right campaign — without making you decode a long menu of services.</p>
+        <p>Tell us what you&apos;re promoting, who you want to reach and what you need help with.</p>
         <div className="button-row center">
           <Link className="button button-dark" href="/start-a-project">Start a project</Link>
           <a className="text-link" href="mailto:joanne@rolodexrebels.co.uk">Email Rolodex Rebels <Arrow /></a>

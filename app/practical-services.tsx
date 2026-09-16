@@ -13,42 +13,42 @@ export type PracticalService = {
 export const practicalServices = [
   {
     name: "PR Campaigns",
-    copy: "Music PR and release campaigns for artists, labels and managers — from positioning and press materials to targeted outreach and campaign follow-up.",
+    copy: "PR for artists, releases and live campaigns — from the story and press materials to media outreach and follow-up.",
     href: "/services/music-pr",
   },
   {
     name: "SEO & Search Discovery",
-    copy: "Search strategy, site structure, metadata and content clarity that help music, events and organisations become easier to find and understand.",
+    copy: "Help people find your music, event or business online through better websites, content and search setup.",
     href: "/services/get-seen#seo-search-discovery",
   },
   {
     name: "Social Media Campaigns",
-    copy: "Paid and organic social campaigns built around a defined audience, message and action — rather than posting simply to stay busy.",
+    copy: "Paid and organic social campaigns built around who you want to reach and what you want them to do.",
     href: "/services/get-seen#social-media-campaigns",
   },
   {
     name: "Website Design & Digital Builds",
-    copy: "Websites and campaign destinations for artists, events, festivals, venues, promoters and music businesses — built around what audiences need to find, understand and do.",
+    copy: "Websites and campaign pages for artists, events, festivals, venues and promoters.",
     href: "/services/digital-creative#website-design-digital-builds",
   },
   {
     name: "Leaflet & Flyer Distribution",
-    copy: "Audience-led leaflet and flyer distribution for gigs, festivals, tours, venues and music campaigns.",
+    copy: "Targeted leaflet and flyer distribution for gigs, festivals, tours, venues and music campaigns.",
     href: "/services/grassroots/flyer-distribution",
   },
   {
     name: "Poster Campaigns",
-    copy: "Targeted poster activity around relevant venues, music areas, campuses and agreed campaign locations.",
+    copy: "Poster campaigns planned around the places and audiences that matter.",
     href: "/services/grassroots#poster-campaigns",
   },
   {
     name: "Print & Campaign Materials",
-    copy: "Flyers, leaflets, posters and event materials coordinated as part of a music or event campaign.",
+    copy: "Flyers, leaflets, posters and other materials for music and event campaigns.",
     href: "/services/grassroots#print-campaign-materials",
   },
   {
     name: "Venue & Promoter Support",
-    copy: "Practical support for live programmes — ticketing and on-sale support, event diary and listings, websites, campaigns and grassroots promotion.",
+    copy: "Ticket campaigns, listings, websites, marketing and grassroots support for live programmes.",
     href: "/who-we-help/promoters-venues-festivals#venue-promoter-support",
   },
 ] as const satisfies readonly PracticalService[];
@@ -63,37 +63,37 @@ export const specialistServiceLinks = [
 export const venuePromoterSupport = [
   {
     name: "Ticketing & On-Sale Support",
-    copy: "Ticket campaign support, on-sale planning, ticket journeys and sales-position activity around the live programme.",
+    copy: "Help with on-sale planning, ticket pages, ticket links and the marketing around selling the show.",
     href: "/services/sell-the-show",
   },
   {
     name: "Event Diary & Listings",
-    copy: "Keep event listings, programme pages, on-sale information, artist details and campaign links current as the diary moves.",
+    copy: "Keep your event listings, artist details, on-sale information and programme pages up to date.",
     href: "/services/event-festival-websites",
   },
   {
     name: "Event & Venue Websites",
-    copy: "Websites, event pages and campaign landing pages for venues, promoters and festivals.",
+    copy: "Websites, event pages and campaign pages for venues, promoters and festivals.",
     href: "/services/event-festival-websites",
   },
   {
     name: "Marketing Campaigns",
-    copy: "Announcement, on-sale, programme and ticket-pace campaigns across digital, PR and connected live marketing.",
+    copy: "Announcement, on-sale and ticket campaigns across PR, social, email and live promotion.",
     href: "/services/festival-marketing",
   },
   {
     name: "Audience Growth",
-    copy: "Permission-based capture, communication and retention so today’s ticket buyers can be reached for the next date.",
+    copy: "Give people a reason to sign up so you can reach them again for the next date.",
     href: "/services/build-your-audience",
   },
   {
     name: "Guest & Industry",
-    copy: "Invitations, RSVP, reminders and follow-up as part of the wider campaign — not an isolated admin task.",
+    copy: "Invitations, RSVPs, reminders and follow-up for guests and industry, handled as part of the campaign.",
     href: "/services/sell-the-show",
   },
   {
     name: "Grassroots Promotion",
-    copy: "Street teams, leaflet and flyer distribution, poster campaigns and local activation where the audience and place fit.",
+    copy: "Street teams, leaflet and flyer distribution, poster campaigns and local promotion where it fits.",
     href: "/services/grassroots",
   },
 ] as const satisfies readonly PracticalService[];

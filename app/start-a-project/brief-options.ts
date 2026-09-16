@@ -4,7 +4,7 @@ export const goalOptions = [
   "Improve my digital presence",
   "Sell more tickets",
   "Run a guest or industry campaign",
-  "Activate audiences on the ground",
+  "Promote on the ground",
   "Something else",
 ] as const;
 
