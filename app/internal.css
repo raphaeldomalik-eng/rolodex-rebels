@@ -50,6 +50,7 @@
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 3px solid var(--ink); border-left: 3px solid var(--ink); margin-bottom: clamp(84px, 10vw, 150px); }
 .feature-grid.four-up { grid-template-columns: repeat(4, 1fr); }
 .feature-grid article { scroll-margin-top: 24px; min-height: 260px; padding: 26px; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+.hash-alias { display: block; height: 0; overflow: hidden; scroll-margin-top: 24px; }
 .feature-grid article > span, .route-grid > a > span, .evidence-grid article > span, .insight-list article > span { color: var(--pink); font-family: "Bebas", Impact, sans-serif; font-size: 52px; line-height: 1; }
 .feature-grid h3 { margin-top: 42px; font-size: clamp(28px, 2.4vw, 38px); line-height: .95; }
 .feature-grid p { margin: 16px 0 0; font-size: 16px; line-height: 1.62; font-weight: 400; }

@@ -37,9 +37,9 @@ export const practicalServices = [
     href: "/services/grassroots/flyer-distribution",
   },
   {
-    name: "Poster Campaigns",
-    copy: "Poster campaigns planned around the places and audiences that matter.",
-    href: "/services/grassroots#poster-campaigns",
+    name: "Poster Distribution",
+    copy: "Targeted poster campaigns across London, using shops, music stores and other suitable locations to put the campaign in front of the right audience.",
+    href: "/services/grassroots#poster-distribution",
   },
   {
     name: "Print & Campaign Materials",
