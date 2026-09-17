@@ -44,9 +44,15 @@ These briefs are planning material only. Nothing should be published until Rolod
 
 ## 5. When should a promoter use street teams?
 
+**Status: RETIRED / DO NOT PUBLISH — 17 September 2026**
+
+Street Teams is no longer a current Rolodex Rebels offer. Do not write, commission or publish this article. Do not recreate `/services/grassroots/music-street-teams` from this brief.
+
+Keep flyer, poster, grassroots promotion and physical-to-digital campaign topics. Those remain relevant.
+
 - **Primary audience:** Promoters, venues, festivals and tour marketers
 - **Search intent:** Service evaluation / buying decision
-- **Service pillar:** Grassroots
+- **Service pillar:** Grassroots — retired Street Teams offer
 - **Who We Help:** Promoters, Venues & Festivals
 - **Core question:** Which campaign conditions make street teams worthwhile, and what separates professional activation from simple leaflet distribution?
 - **Rolodex Rebels input required:** Selection criteria; staffing and briefing process; location planning; compliance; evidence capture; real examples of useful and poor-fit deployments.

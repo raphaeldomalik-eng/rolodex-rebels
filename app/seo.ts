@@ -50,7 +50,12 @@ export const organizationJsonLd = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/rolodex-rebels-logo-transparent.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/rolodex-rebels-mark.png`,
+    width: 1254,
+    height: 1254,
+  },
   description: "A UK music marketing agency helping artists, labels, managers, promoters, venues and festivals grow audiences, launch music, increase visibility and sell tickets.",
   email: "joanne@rolodexrebels.co.uk",
   telephone: "+44 7934 419997",

@@ -20,7 +20,7 @@ const serviceData = {
     modelIntro: "A feature, interview or radio play should support the release plan rather than sit apart from it.",
     model: ["Story", "Materials", "Media", "Outreach", "Follow up", "Learn"],
     items: [
-      ["PR Campaigns", "PR for artists, releases and live campaigns — from the story and press materials to media outreach and follow-up."],
+      ["PR Campaigns", "PR for artists, releases and live campaigns — from the story and press materials to media outreach and follow-up.", "/services/music-pr"],
       ["Release Marketing", "Shape the angle, targets and timing around a release people can understand."],
       ["Story & messaging", "Build a clear story that holds together across media, social, web and fan communication."],
       ["Content & fan communications", "Turn announcements, release day and media moments into content fans can follow and share."],
@@ -87,7 +87,7 @@ const serviceData = {
     items: [
       ["Ticket marketing", "Change the audience, creative, timing, communication or ticket page when the sales picture shows what needs attention."],
       ["Tour marketing", "Connect local demand, artist audiences, content, search and grassroots activity across the dates that matter."],
-      ["Festival marketing", "Build demand around the announcement, programme, audience, place and ticket pace."],
+      ["Festival marketing", "Build demand around the announcement, programme, audience, place and ticket pace.", "/services/festival-marketing"],
       ["Guest & industry campaigns", "Plan invitations, RSVP, reminders and follow-up as part of the campaign — not an isolated admin task."],
     ],
     offers: "Rebel Tour · Promoter Growth · Festival Growth · Guest & Industry Campaigns",
@@ -107,7 +107,7 @@ const serviceData = {
     modelIntro: "The leaflet, flyer or poster should meet the audience where the campaign makes sense — not simply where the footfall is highest.",
     model: ["Audience", "Place", "Moment", "Promotion", "Optional next step", "Learn"],
     items: [
-      ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, nightlife areas and dates that fit the audience."],
+      ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, nightlife areas and dates that fit the audience.", "/services/grassroots/flyer-distribution"],
       ["Poster Distribution", "Targeted poster campaigns in London. Posters are placed in shops, music stores and anywhere we can get you in front of the right audience. Leaflet distribution can also be used to enhance your campaign."],
       ["Print & Campaign Materials", "Flyers, leaflets, posters and event materials coordinated as part of the campaign — production and supply, not a print shop."],
       ["Local Promotion", "Local promotion connected to launches, shows, openings and cultural moments."],
@@ -130,7 +130,7 @@ const serviceData = {
     model: ["Audience", "Need", "Pages", "Content", "Action", "Stay in touch"],
     items: [
       ["Website Design & Digital Builds", "Websites and campaign pages for artists, events, festivals, venues and promoters."],
-      ["Artist Websites", "Artist and band sites for music, releases, live dates, press and sign-up."],
+      ["Artist Websites", "Artist and band sites for music, releases, live dates, press and sign-up.", "/services/artist-website-design"],
       ["Event & Festival Websites", "Websites for events, festivals, venues and promoters — tickets, programme content, visitor information and campaign pages."],
       ["Campaign Sites", "Focused destinations for a release, on-sale, tour, RSVP or ticket push with one clear job."],
       ["Landing Pages", "Straightforward pages that give people a next step: listen, sign up, enquire or buy a ticket."],
@@ -191,13 +191,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </ol>
       </section>
       <section className="feature-grid">
-        {service.items.map(([title, copy], index) => {
+        {service.items.map((item, index) => {
+          const [title, copy, href] = item;
           const id = itemId(title);
           return (
             <article key={title} id={id}>
               {hashAliases[id] ? <span id={hashAliases[id]} className="hash-alias" aria-hidden="true" /> : null}
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
+              <h3>{href ? <Link href={href}>{title}</Link> : title}</h3>
               <p>{copy}</p>
             </article>
           );

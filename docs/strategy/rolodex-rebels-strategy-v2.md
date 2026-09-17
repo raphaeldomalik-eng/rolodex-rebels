@@ -4,6 +4,8 @@
 **Date:** 11 September 2026  
 **Relationship to V1:** V1 remains the search-market evidence base. V2 supersedes it wherever the two documents conflict.
 
+**Offer update (17 September 2026):** Street Teams and campus campaigns are not current public offers. Do not recreate `/services/grassroots/music-street-teams` or restore London & Kent Street Team copy. The retired URL permanently redirects to `/services/grassroots`. Current Grassroots covers leaflet and flyer distribution, poster distribution, print and campaign materials, and local promotion. Historical Street Teams sections below are superseded and must not control implementation.
+
 ## 1. Strategic position
 
 Rolodex Rebels is a specialist, technology-enabled music growth agency.
@@ -28,7 +30,7 @@ The public service architecture remains exactly six pillars:
 2. **Get Seen** — relevant discovery across search, social, paid, creator and grassroots channels.
 3. **Build Your Audience** — permission-based capture, understanding, communication, activation and retention.
 4. **Sell The Show** — demand, response, ticket conversion, audience learning and repeat attendance.
-5. **Grassroots** — street teams, flyer distribution, poster runs and place-based activation.
+5. **Grassroots** — leaflet and flyer distribution, poster distribution, campaign print and local promotion.
 6. **Digital & Creative** — the digital infrastructure behind audience growth.
 
 Do not add a Technology, Data, AI, Platform or Intelligence pillar. Do not expand the primary navigation into individual tactics or offer families.
@@ -143,9 +145,9 @@ Grassroots is a current strategic advantage, not a legacy footnote.
 
 > AUDIENCE → PLACE → MOMENT → ACTIVATION → OPTIONAL DIGITAL RESPONSE → LEARNING
 
-Capability includes street teams, leaflet drops, poster runs, hand-to-hand flyering, campus activity and local activation. Digital response mechanisms may be used where they improve the campaign, but must not be forced into every physical interaction.
+Capability includes leaflet and flyer distribution, poster distribution, print and campaign materials, and local promotion. Digital response mechanisms may be used where they improve the campaign, but must not be forced into every physical interaction.
 
-Staffed Street Teams are offered only in London, surrounding areas and Kent. Do not describe Street Teams as nationwide. Do not fabricate GPS tracking, live field dashboards, route verification or distribution technology. Wider project geography may be explored for other services only when operationally credible and explicitly agreed.
+Street Teams is retired. Do not describe a current Street Teams offer, do not restore London & Kent Street Team geography as a live service boundary, and do not recreate `/services/grassroots/music-street-teams`. Do not fabricate GPS tracking, live field dashboards, route verification or distribution technology. Wider project geography may be explored for other services only when operationally credible and explicitly agreed.
 
 ### 7.6 Digital & Creative
 
@@ -192,7 +194,7 @@ Offer families organise commercial conversations beneath the six pillars. They a
 - **Artist and release:** Rebel Launch, Rebel Artist Growth, Audience Growth Programme, Digital Presence Programme.
 - **Live:** Rebel Tour, Promoter Growth, Festival Growth, Guest & Industry Campaigns.
 - **Intelligence and improvement:** Campaign Intelligence, Search & Discovery Review, Audience Journey Review, Retention and Fan Communication Programme.
-- **Grassroots:** Street Teams, Flyer Distribution, Poster Runs, Campus and Local Activation.
+- **Grassroots:** Flyer Distribution, Poster Distribution, Print & Campaign Materials, Local Promotion.
 - **Digital & creative:** Artist and Band Websites, Event/Festival/Venue Websites, Campaign Sites and Microsites, Landing Pages and Audience Journeys, Search and AI Discovery Readiness, Managed Content and Improvement.
 
 ## 10. Music & Brand Partnerships
@@ -235,8 +237,7 @@ While Results is paused, suppress the homepage Results promotion and replace act
 Slice 2 implements five focused landing pages beneath the existing service pillars:
 
 - `/services/music-pr`
-- `/services/grassroots/music-street-teams`
-- `/services/grassroots/flyer-distribution`
+- `/services/grassroots/flyer-distribution` — `/services/grassroots/music-street-teams` is retired and must not be restored
 - `/services/festival-marketing`
 - `/services/artist-website-design`
 
@@ -255,7 +256,7 @@ Its approved public-route decision is recorded in section 18. Remaining validati
 - confirm Results and empty Insights are not in primary navigation or the sitemap;
 - confirm paused routes remain `noindex`;
 - confirm homepage Results CTAs are removed or redirected to useful live routes;
-- confirm Street Teams geography is London, surrounding areas and Kent;
+- confirm Street Teams remains retired and is not restored as a public offer;
 - confirm no guarantees, invented proof, fabricated client names or unsupported data access;
 - validate metadata, structured data and internal links;
 - test all affected pages at laptop and mobile widths;

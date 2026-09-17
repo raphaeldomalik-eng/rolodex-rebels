@@ -2,6 +2,8 @@
 
 Baseline date: 11 September 2026
 
+**Offer update (17 September 2026):** Queries 15 and 26 relate to the retired Street Teams offer. Keep them in the measurement set only as historical or negative checks. Do not recreate `/services/grassroots/music-street-teams` to chase them.
+
 Use the same prompts, location assumptions and signed-out/private browsing conditions on each comparison date. Record evidence, not a composite “AI ranking score”.
 
 ## Traditional search queries

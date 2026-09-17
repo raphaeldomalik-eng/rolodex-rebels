@@ -124,6 +124,25 @@ p { text-wrap: pretty; }
 .hero h1 { font-size: clamp(58px, 8.4vw, 142px); line-height: .79; }
 .hero h1 span { display: block; }
 .pink { color: var(--pink-text); }
+.hero-intro a,
+.section-lead a,
+.meaning-card a,
+.services-heading a,
+.home-specific-services a {
+  color: var(--pink-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hero-intro a,
+.streets-body a { color: var(--pink); }
+.streets-body a { text-decoration: underline; text-underline-offset: 3px; }
+.home-specific-services {
+  max-width: 62ch;
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+}
 .hero-intro {
   max-width: 690px;
   margin: 36px 0 0;
@@ -225,10 +244,13 @@ p { text-wrap: pretty; }
   list-style: none;
 }
 .client-proof-item {
-  display: grid;
-  place-items: center;
-  min-height: 48px;
-  padding: 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 64px;
+  padding: 0 4px;
 }
 .client-proof-item img {
   width: auto;
@@ -239,10 +261,15 @@ p { text-wrap: pretty; }
 .client-proof-name {
   color: var(--ink);
   font-family: "Bebas", Impact, sans-serif;
-  font-size: clamp(18px, 1.5vw, 22px);
-  letter-spacing: .06em;
+  font-size: 12px;
+  letter-spacing: .05em;
+  line-height: 1.2;
   text-align: center;
   text-transform: uppercase;
+}
+.client-proof-item:not(:has(img)) .client-proof-name {
+  font-size: clamp(18px, 1.5vw, 22px);
+  letter-spacing: .06em;
 }
 .inner-content .client-proof {
   margin: 0 0 clamp(48px, 6vw, 90px);
@@ -267,7 +294,7 @@ p { text-wrap: pretty; }
 .audience-row > span:last-child { font-size: 25px; }
 .row-number { color: var(--pink); font-size: 12px; }
 .goal-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
-.goal-cloud a, .service-tags span { padding: 9px 11px 8px; border: 1px solid currentColor; font-family: "Bebas", Impact, sans-serif; font-size: 12px; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; transition: color .2s, background .2s; }
+.goal-cloud a, .service-tags span, .service-tags a { padding: 9px 11px 8px; border: 1px solid currentColor; font-family: "Bebas", Impact, sans-serif; font-size: 12px; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; transition: color .2s, background .2s; }
 .goal-cloud a:hover { color: var(--ink); background: var(--pink); border-color: var(--pink); }
 
 .services { background: var(--paper); }
@@ -306,7 +333,8 @@ p { text-wrap: pretty; }
 .grassroots-copy > .large-copy { margin: 40px 0 22px; }
 .grassroots-copy > p:not(.large-copy):not(.eyebrow) { font-size: 18px; line-height: 1.62; font-weight: 400; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 34px; }
-.service-tags span { background: var(--white); }
+.service-tags span, .service-tags a { background: var(--white); color: inherit; text-decoration: none; }
+.service-tags a:hover { color: var(--white); background: var(--ink); }
 .grassroots-photo { min-height: 650px; transform: rotate(1.8deg); }
 .grassroots-photo img { width: 100%; height: 650px; object-fit: cover; filter: grayscale(1) contrast(1.08); }
 .grassroots-photo figcaption { position: absolute; right: -18px; bottom: 24px; left: 22px; display: grid; gap: 5px; padding: 17px; color: var(--ink); background: var(--pink); box-shadow: 6px 6px 0 var(--ink); }
@@ -448,8 +476,9 @@ p { text-wrap: pretty; }
   .proof-strip span:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
   .client-proof { padding: 22px 18px 24px; }
   .client-proof-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
-  .client-proof-item { min-height: 44px; }
-  .client-proof-item img { height: 30px; }
+  .client-proof-item { min-height: 58px; gap: 6px; }
+  .client-proof-item img { height: 28px; }
+  .client-proof-name { font-size: 11px; }
   .audience { grid-template-columns: 1fr; }
   .audience-photo { display: none; }
   .audience-copy > .large-copy { margin: 24px 0 28px; font-size: 18px; line-height: 1.48; }
@@ -478,7 +507,7 @@ p { text-wrap: pretty; }
   .grassroots-copy > .large-copy { margin: 26px 0 16px; font-size: 18px; }
   .grassroots-copy > p:not(.large-copy):not(.eyebrow) { font-size: 16px; line-height: 1.5; }
   .service-tags { gap: 6px; margin-top: 24px; }
-  .service-tags span { padding: 7px 9px 6px; }
+  .service-tags span, .service-tags a { padding: 7px 9px 6px; }
   .grassroots-photo { min-height: 270px; }
   .grassroots-photo img { height: 270px; }
   .grassroots-photo figcaption { right: -7px; bottom: 14px; left: 14px; padding: 12px; }
