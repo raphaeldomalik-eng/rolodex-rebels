@@ -39,15 +39,14 @@ export function ClientProof({
             {"src" in client ? (
               <Image
                 src={client.src}
-                alt={client.name}
+                alt=""
                 width={client.width}
                 height={client.height}
                 unoptimized={client.unoptimized}
                 sizes="140px"
               />
-            ) : (
-              <span className="client-proof-name">{client.name}</span>
-            )}
+            ) : null}
+            <span className="client-proof-name">{client.name}</span>
           </li>
         ))}
       </ul>

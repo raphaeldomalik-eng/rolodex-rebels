@@ -10,6 +10,8 @@
 
 This document records the approved technical-search baseline. It is a regression reference, not a content roadmap. Results remains parked, empty Insights remains paused, and no speculative search routes are part of this closeout.
 
+**Historical note (17 September 2026):** Street Teams was later removed from the live offer. `/services/grassroots/music-street-teams` now permanently redirects to `/services/grassroots`. Do not restore that page from the inventory or copy snapshots below.
+
 ## Indexable route inventory
 
 All canonicals use HTTPS and the apex host. “Same path” means the canonical is `https://rolodexrebels.co.uk` plus the listed path. Counts are distinct crawlable internal links observed in the rendered production HTML during the closeout crawl.
