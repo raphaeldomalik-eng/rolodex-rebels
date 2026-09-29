@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InternalPage, Arrow } from "./internal-page";
+import { InternalPage, Arrow, DistributionHeroImage } from "./internal-page";
 import { JsonLd } from "./json-ld";
 import { guidePages } from "./guides/guides";
 import { faqJsonLd, pageMetadata, serviceJsonLd } from "./seo";
@@ -37,6 +37,7 @@ export type CommercialServiceData = {
   assuranceCopy: string;
   related: LinkItem[];
   areaServed?: string | false;
+  distributionHero?: boolean;
   questionsTitle?: string;
   questionsIntro?: string;
   questions?: readonly {
@@ -172,6 +173,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
       ["Plan a flyer or poster campaign", "/guides/how-to-plan-a-flyer-poster-distribution-campaign"],
     ],
     areaServed: "London and Kent",
+    distributionHero: true,
     questionsTitle: "Questions about flyer distribution?",
     questionsIntro: "Short answers. The longer versions live in the guides, where a distribution decision needs more than a paragraph.",
     questions: [
@@ -248,6 +250,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
       ["Plan a flyer or poster campaign", "/guides/how-to-plan-a-flyer-poster-distribution-campaign"],
     ],
     areaServed: "London and Kent",
+    distributionHero: true,
     questionsTitle: "Questions about poster distribution?",
     questionsIntro: "Short answers. The guides cover the choice between posters and flyers in more detail.",
     questions: [
@@ -372,6 +375,7 @@ export function CommercialServicePage({ data }: { data: CommercialServiceData })
       title={<>{data.title}</>}
       intro={data.intro}
       heroCta={{ label: data.heroCta, href: "/start-a-project" }}
+      heroMedia={data.distributionHero ? <DistributionHeroImage /> : undefined}
       breadcrumbs={data.breadcrumbs}
     >
       <JsonLd data={serviceJsonLd({ name: data.name, description: data.description, path: data.path, areaServed: data.areaServed })} />

@@ -73,6 +73,8 @@ export const distributionGuideArticleProps = {
   eyebrow: "Guides / Flyers & Posters",
   heroCta: { label: "Plan a distribution campaign", href: "/services/grassroots/flyer-distribution" },
   relatedLabel: "Related flyer and poster reading",
+  closingLabel: "Flyers & posters",
+  closingCopy: "Hand-to-hand flyer and leaflet distribution across London and Kent for gigs, festivals, tours, releases, venues and local campaigns.",
 } as const;
 
 export function distributionGuideRelated(path: string) {

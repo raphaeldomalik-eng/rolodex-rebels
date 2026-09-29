@@ -56,7 +56,7 @@ export default function MusicPrCostPage() {
         </p>
       </aside>
 
-      <section>
+      <section className="guide-warnings">
         <h2 id="warning-signs">Warning signs when you compare quotes</h2>
         <ul>
           <li>Guaranteed features, premieres, playlists or radio play. Those decisions are not the publicist’s to sell.</li>
