@@ -52,11 +52,28 @@ export default function KentFlyerDistributionPage() {
         <div><p className="eyebrow pink">What a Kent brief looks like</p><h2>A CATCHMENT AND A DATE. NOT THE WHOLE COUNTY.</h2></div>
         <div className="body-copy">
           <p>Most Kent flyer campaigns are local. There is a venue, a show, an opening or a town-centre moment, and a date it has to land before. The useful question is who lives, drinks, shops or queues near that moment — not how to put paper into every corner of the county.</p>
-          <p>That is why we do not publish a list of Kent towns and promise to cover them. The exact places are agreed on the brief, once we know the audience, the date and what the flyer is asking people to do. The plan stays tied to the campaign rather than to a map.</p>
+          <p>That is why a Kent brief usually centres on one town or local catchment rather than the county as a whole. The exact places are agreed on the brief, once we know the audience, the date and what the flyer is asking people to do. The plan stays tied to the campaign rather than to a map.</p>
           <p>The method is hand-to-hand: flyers and leaflets given to people outside venues, in queues, in nightlife areas, on high streets and around shows. It is not a letterbox drop and it is not a county-wide blanket.</p>
           <p>The main <Link href="/services/grassroots/flyer-distribution">flyer and leaflet distribution</Link> page defines the service across London and Kent. This page is about how a Kent brief is usually shaped.</p>
           <Link className="text-link" href="/start-a-project">Plan a Kent campaign <Arrow /></Link>
         </div>
+      </section>
+
+      <section className="inner-split commercial-secondary">
+        <div><p className="eyebrow pink">Kent&apos;s principal catchments</p><h2>FLYER DISTRIBUTION ACROSS KENT&apos;S MAIN TOWNS.</h2></div>
+        <div className="body-copy">
+          <p>Kent is not one audience. A campaign is planned around an individual town or local catchment and a date, rather than trying to reach the whole county in one drop. These are the principal places a Kent flyer or leaflet brief can centre on.</p>
+          <p>In mid and west Kent, that might be an event audience in Maidstone, a show night in Tunbridge Wells, or a town-centre launch in Tonbridge or Sevenoaks. In north Kent, it could be Dartford or Gravesend ahead of a local date, or Medway, with Rochester at its historic centre.</p>
+          <p>In east Kent and on the coast, a brief might centre on Canterbury, Ashford or Folkestone, or on Margate and the wider Thanet catchment when a seaside venue or event needs people to turn up.</p>
+          <p>Naming a town does not mean every street in it. The exact places, times and sessions are agreed on the brief, around where the audience will actually be.</p>
+        </div>
+      </section>
+
+      <section className="service-questions" aria-labelledby="kent-coverage-question">
+        <article className="service-question">
+          <h3 id="kent-coverage-question">Which parts of Kent do you cover?</h3>
+          <div><p>Campaigns are planned around Kent&apos;s principal towns and catchments: Maidstone, Canterbury, Tunbridge Wells, Tonbridge, Sevenoaks, Ashford, Dartford, Gravesend, Folkestone, Margate and Thanet, and Medway. Each brief is shaped around one of these places, or a small group of them, and the date it has to land. It is not a promise to cover every street in a town, or the whole county at once.</p></div>
+        </article>
       </section>
 
       <section className="service-questions" aria-labelledby="kent-brief-questions">
@@ -94,7 +111,7 @@ export default function KentFlyerDistributionPage() {
       <aside className="commercial-assurance">
         <p className="eyebrow">Campaign principle</p>
         <h2>LOCAL AUDIENCE. AGREED PLACES. ONE CLEAR ACTION.</h2>
-        <p>No town list and no county-wide promise. The plan follows the audience, the date and what the flyer needs people to do.</p>
+        <p>One town or catchment at a time, not a county-wide promise. The plan follows the audience, the date and what the flyer needs people to do.</p>
       </aside>
 
       <nav className="related-links" aria-label="Related to flyer distribution in Kent">
