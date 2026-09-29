@@ -62,7 +62,7 @@ export default function MusicPrVsPromotionPage() {
       <section>
         <h2 id="grassroots">Grassroots promotion</h2>
         <p>
-          Grassroots promotion puts a leaflet, flyer or poster where the audience already is: outside a venue, in a queue, on a high street, or around a show. It is often the right physical tool for a gig, club night, festival or local release.
+          Grassroots promotion puts a leaflet, flyer or poster where the audience already is: outside a venue, in a queue, on a high street, or around a show. It is often the right physical tool for a gig, club night, festival or local release, and <Link href="/services/grassroots/flyer-distribution">hand-to-hand flyer distribution</Link> is the most direct version of it.
         </p>
         <p>
           It does not write the feature. A flyer can carry a QR code to the music or the tickets. It cannot make a magazine care. Where place and moment matter, that work is <Link href="/services/grassroots">grassroots promotion</Link> — leaflets, flyers, posters and local distribution — planned separately from the press list and sometimes run in the same week. Street teams and campus campaigns are a different job, and not one Rolodex Rebels currently offers.

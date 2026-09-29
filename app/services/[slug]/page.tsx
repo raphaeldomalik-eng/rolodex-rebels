@@ -111,12 +111,16 @@ const serviceData = {
     model: ["Audience", "Place", "Moment", "Promotion", "Optional next step", "Learn"],
     items: [
       ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, nightlife areas and dates that fit the audience.", "/services/grassroots/flyer-distribution"],
-      ["Poster Distribution", "Targeted poster campaigns in London. Posters are placed in shops, music stores and anywhere we can get you in front of the right audience. Leaflet distribution can also be used to enhance your campaign."],
+      ["Poster Distribution", "Targeted poster campaigns across London and Kent. Posters are placed in shops, music stores and other suitable locations agreed around the brief. Leaflet distribution can also be used to enhance your campaign.", "/services/grassroots/poster-distribution"],
       ["Print & Campaign Materials", "Flyers, leaflets, posters and event materials coordinated as part of the campaign — production and supply, not a print shop."],
       ["Local Promotion", "Local promotion connected to launches, shows, openings and cultural moments."],
     ],
     offers: "Grassroots Promotion",
-    deeper: [["Explore Leaflet & Flyer Distribution", "/services/grassroots/flyer-distribution"]],
+    deeper: [
+      ["Explore Leaflet & Flyer Distribution", "/services/grassroots/flyer-distribution"],
+      ["Flyer Distribution in Kent", "/services/grassroots/flyer-distribution/kent"],
+      ["Explore Poster Distribution", "/services/grassroots/poster-distribution"],
+    ],
     related: [["Ticket and tour marketing", "/services/sell-the-show"], ["Marketing for promoters, venues and festivals", "/who-we-help/promoters-venues-festivals"], ["Digital music promotion", "/services/get-seen"]],
   },
   "digital-creative": {

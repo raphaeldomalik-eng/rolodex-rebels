@@ -235,7 +235,7 @@ export default function Home() {
           <p>Good grassroots promotion starts before anyone picks up a stack of flyers. We work out who needs to see the message, where they will actually be and when it will matter — outside venues, in queues, on high streets and around the show.</p>
           <div className="service-tags">
             <Link href="/services/grassroots/flyer-distribution">Leaflet and flyer distribution</Link>
-            <span>Poster distribution</span>
+            <Link href="/services/grassroots/poster-distribution">Poster distribution</Link>
             <span>Hand-to-hand flyering</span>
             <span>Campaign print</span>
             <span>Local promotion</span>

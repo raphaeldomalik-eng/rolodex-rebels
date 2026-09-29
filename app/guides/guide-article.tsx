@@ -4,9 +4,27 @@ import Link from "next/link";
 import { InternalPage, Arrow } from "../internal-page";
 import { JsonLd } from "../json-ld";
 import { articleJsonLd, pageMetadata } from "../seo";
-import { guidePages, type GuidePage } from "./guides";
+import { guidePages } from "./guides";
 
-export function guideMetadata(guide: GuidePage) {
+type GuideImage = { src: string; width: number; height: number };
+
+export type GuideData = {
+  path: string;
+  title: string;
+  h1: string;
+  navLabel: string;
+  description: string;
+  intro: string;
+  published: string;
+  publishedLabel: string;
+  modified?: string;
+  modifiedLabel?: string;
+  images: { alt: string; landscape: GuideImage; fourThree: GuideImage; square: GuideImage };
+};
+
+type GuideLink = readonly [label: string, href: string];
+
+export function guideMetadata(guide: GuideData) {
   return pageMetadata({
     title: `${guide.title} | Rolodex Rebels`,
     description: guide.description,
@@ -23,8 +41,25 @@ export function guideMetadata(guide: GuidePage) {
   });
 }
 
-export function GuideArticle({ guide, children }: { guide: GuidePage; children: ReactNode }) {
-  const others = guidePages.filter((item) => item.path !== guide.path);
+export function GuideArticle({
+  guide,
+  children,
+  eyebrow = "Guides / Music PR",
+  heroCta = { label: "Talk through Music PR", href: "/services/music-pr" },
+  related,
+  relatedLabel = "Related Music PR reading",
+}: {
+  guide: GuideData;
+  children: ReactNode;
+  eyebrow?: string;
+  heroCta?: { label: string; href: string };
+  related?: readonly GuideLink[];
+  relatedLabel?: string;
+}) {
+  const relatedLinks: readonly GuideLink[] = related ?? [
+    ["Music PR campaigns", "/services/music-pr"],
+    ...guidePages.filter((item) => item.path !== guide.path).map((item): GuideLink => [item.navLabel, item.path]),
+  ];
   const articleImages = [guide.images.landscape, guide.images.fourThree, guide.images.square].map((image) => ({
     url: image.src,
     width: image.width,
@@ -35,7 +70,7 @@ export function GuideArticle({ guide, children }: { guide: GuidePage; children: 
   return (
     <InternalPage
       className="guide-page"
-      eyebrow="Guides / Music PR"
+      eyebrow={eyebrow}
       title={<>{guide.h1}</>}
       intro={guide.intro}
       breadcrumbs={[
@@ -43,7 +78,7 @@ export function GuideArticle({ guide, children }: { guide: GuidePage; children: 
         { name: "Guides", path: "/guides" },
         { name: guide.title, path: guide.path },
       ]}
-      heroCta={{ label: "Talk through Music PR", href: "/services/music-pr" }}
+      heroCta={heroCta}
     >
       <JsonLd
         data={articleJsonLd({
@@ -72,16 +107,19 @@ export function GuideArticle({ guide, children }: { guide: GuidePage; children: 
           <Link href="/"><strong>Rolodex Rebels</strong></Link>
           <br />
           Published <time dateTime={guide.published}>{guide.publishedLabel}</time>
-          {" · "}
-          Updated <time dateTime={guide.modified}>{guide.modifiedLabel}</time>
+          {guide.modified && guide.modifiedLabel && (
+            <>
+              {" · "}
+              Updated <time dateTime={guide.modified}>{guide.modifiedLabel}</time>
+            </>
+          )}
         </p>
         {children}
       </article>
-      <nav className="related-links" aria-label="Related Music PR reading">
+      <nav className="related-links" aria-label={relatedLabel}>
         <h2>KEEP READING.</h2>
-        <Link href="/services/music-pr">Music PR campaigns <Arrow /></Link>
-        {others.map((item) => (
-          <Link href={item.path} key={item.path}>{item.navLabel} <Arrow /></Link>
+        {relatedLinks.map(([label, href]) => (
+          <Link href={href} key={href}>{label} <Arrow /></Link>
         ))}
       </nav>
     </InternalPage>
