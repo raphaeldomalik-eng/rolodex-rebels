@@ -38,8 +38,8 @@ export const practicalServices = [
   },
   {
     name: "Poster Distribution",
-    copy: "Targeted poster campaigns across London, using shops, music stores and other suitable locations to put the campaign in front of the right audience.",
-    href: "/services/grassroots#poster-distribution",
+    copy: "Targeted poster campaigns across London and Kent, using shops, music stores and other suitable locations to put the campaign in front of the right audience.",
+    href: "/services/grassroots/poster-distribution",
   },
   {
     name: "Print & Campaign Materials",
