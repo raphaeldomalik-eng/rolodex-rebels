@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { InternalPage, Arrow } from "../internal-page";
 import { JsonLd } from "../json-ld";
@@ -12,11 +13,24 @@ export function guideMetadata(guide: GuidePage) {
     path: guide.path,
     openGraphType: "article",
     publishedTime: guide.published,
+    modifiedTime: guide.modified,
+    image: {
+      url: guide.images.landscape.src,
+      width: guide.images.landscape.width,
+      height: guide.images.landscape.height,
+      alt: guide.images.alt,
+    },
   });
 }
 
 export function GuideArticle({ guide, children }: { guide: GuidePage; children: ReactNode }) {
   const others = guidePages.filter((item) => item.path !== guide.path);
+  const articleImages = [guide.images.landscape, guide.images.fourThree, guide.images.square].map((image) => ({
+    url: image.src,
+    width: image.width,
+    height: image.height,
+    alt: guide.images.alt,
+  }));
 
   return (
     <InternalPage
@@ -39,13 +53,27 @@ export function GuideArticle({ guide, children }: { guide: GuidePage; children: 
           path: guide.path,
           author: "Rolodex Rebels",
           datePublished: guide.published,
+          dateModified: guide.modified,
+          images: articleImages,
         })}
       />
       <article className="guide-copy">
+        <figure className="guide-figure">
+          <Image
+            src={guide.images.landscape.src}
+            alt={guide.images.alt}
+            width={guide.images.landscape.width}
+            height={guide.images.landscape.height}
+            sizes="(max-width: 800px) 100vw, 720px"
+            priority
+          />
+        </figure>
         <p className="guide-meta">
-          <strong>Rolodex Rebels</strong>
+          <Link href="/"><strong>Rolodex Rebels</strong></Link>
           <br />
           Published <time dateTime={guide.published}>{guide.publishedLabel}</time>
+          {" · "}
+          Updated <time dateTime={guide.modified}>{guide.modifiedLabel}</time>
         </p>
         {children}
       </article>

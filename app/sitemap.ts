@@ -1,14 +1,21 @@
 import type { MetadataRoute } from "next";
 import { caseStudies, insightArticles } from "./content";
+import { guidePages } from "./guides/guides";
 import { indexableRoutes } from "./indexable-routes";
 import { SITE_URL } from "./seo";
 
+const guideLastModified = new Map<string, string>(guidePages.map((guide) => [guide.path, guide.modified ?? guide.published]));
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes: MetadataRoute.Sitemap = indexableRoutes.map(([path, changeFrequency, priority]) => ({
-    url: `${SITE_URL}${path}`,
-    changeFrequency,
-    priority,
-  }));
+  const routes: MetadataRoute.Sitemap = indexableRoutes.map(([path, changeFrequency, priority]) => {
+    const lastModified = guideLastModified.get(path);
+    return {
+      url: `${SITE_URL}${path}`,
+      changeFrequency,
+      priority,
+      ...(lastModified ? { lastModified } : {}),
+    };
+  });
 
   if (caseStudies.length > 0) {
     routes.push({ url: `${SITE_URL}/results`, changeFrequency: "monthly", priority: 0.8 });

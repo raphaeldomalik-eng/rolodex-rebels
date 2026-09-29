@@ -12,7 +12,7 @@ export default function MusicPrCostPage() {
       <section>
         <h2 id="no-single-price">There is no single public price</h2>
         <p>
-          Rolodex Rebels does not publish a fixed Music PR fee. A one-track announcement and an album campaign with interviews, regional angles and a tour are not the same amount of work, and pretending they are produces bad quotes. If you need a number, the honest route is to <Link href="/start-a-project">send the brief</Link> — release, dates, what already exists, and what you want press to do.
+          Rolodex Rebels does not publish a fixed Music PR fee. A one-track announcement and an album campaign with interviews, regional angles and a tour are not the same amount of work, and a quote that pretends they are is not comparable with anything. If you need a number for this release, <Link href="/start-a-project">send the brief</Link> — the music, the dates, what already exists, and what you want press to do.
         </p>
         <p>
           What follows is how UK music PR fees are usually built, so a quote can be compared with another quote rather than with a rumour.
