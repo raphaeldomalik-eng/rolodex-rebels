@@ -230,6 +230,8 @@
 .service-question p { max-width: 62ch; margin: 0 0 16px; font-size: 17px; line-height: 1.64; }
 .service-question a, .body-copy a, .guide-index-note a { color: var(--pink-text); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .guide-copy { max-width: 70ch; margin: clamp(72px, 9vw, 120px) 0; }
+.guide-figure { margin: 0 0 28px; }
+.guide-figure img { display: block; width: 100%; height: auto; border: 3px solid var(--ink); }
 .guide-meta { margin-bottom: 36px; font-size: 15px; line-height: 1.5; }
 .guide-copy h2 { margin: 52px 0 14px; font-size: clamp(36px, 4vw, 58px); line-height: .95; }
 .guide-copy section:first-of-type h2 { margin-top: 0; }

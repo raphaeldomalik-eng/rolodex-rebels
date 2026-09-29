@@ -52,7 +52,7 @@ const baseBreadcrumbs = [
 export const commercialServices: Record<string, CommercialServiceData> = {
   musicPr: {
     name: "Music PR",
-    seoTitle: "Music PR Agency UK | Artist & Release Publicity | Rolodex Rebels",
+    seoTitle: "Music PR Agency UK for Artists & Releases | Rolodex Rebels",
     description: "UK music PR for independent artists, labels and managers. Targeted press for releases, artists and live projects — not a mass-email list.",
     path: "/services/music-pr",
     eyebrow: "Get Heard / Music PR",

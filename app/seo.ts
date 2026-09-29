@@ -9,12 +9,19 @@ export const DEFAULT_SOCIAL_IMAGE = {
   alt: "Rolodex Rebels — Get Seen, Get Heard, Get Results!",
 };
 
+type SocialImage = {
+  url: string;
+  width?: number;
+  height?: number;
+  alt: string;
+};
+
 type PageMetadataOptions = {
   title: string;
   description: string;
   path: string;
   noIndex?: boolean;
-  image?: string;
+  image?: string | SocialImage;
   openGraphType?: "website" | "article";
   publishedTime?: string;
   modifiedTime?: string;
@@ -30,7 +37,11 @@ export function pageMetadata({
   publishedTime,
   modifiedTime,
 }: PageMetadataOptions): Metadata {
-  const socialImages = image ? [{ url: image, alt: title }] : [DEFAULT_SOCIAL_IMAGE];
+  const socialImage: SocialImage = !image
+    ? DEFAULT_SOCIAL_IMAGE
+    : typeof image === "string"
+      ? { url: image, alt: title }
+      : image;
   const openGraph = openGraphType === "article"
     ? {
         title,
@@ -39,9 +50,9 @@ export function pageMetadata({
         siteName: SITE_NAME,
         locale: "en_GB" as const,
         type: "article" as const,
-        publishedTime,
-        modifiedTime: modifiedTime ?? publishedTime,
-        images: socialImages,
+        ...(publishedTime ? { publishedTime } : {}),
+        ...(modifiedTime ? { modifiedTime } : {}),
+        images: [socialImage],
       }
     : {
         title,
@@ -50,7 +61,7 @@ export function pageMetadata({
         siteName: SITE_NAME,
         locale: "en_GB" as const,
         type: "website" as const,
-        images: socialImages,
+        images: [socialImage],
       };
   return {
     title,
@@ -64,7 +75,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image ?? DEFAULT_SOCIAL_IMAGE.url],
+      images: [socialImage.url],
     },
   };
 }
@@ -134,6 +145,7 @@ export function serviceJsonLd({
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${SITE_URL}${path}#service`,
     name,
     description,
     url: `${SITE_URL}${path}`,
@@ -156,6 +168,7 @@ export function articleJsonLd({
   datePublished,
   dateModified,
   image = DEFAULT_SOCIAL_IMAGE.url,
+  images,
 }: {
   type: "Article" | "BlogPosting";
   headline: string;
@@ -165,19 +178,33 @@ export function articleJsonLd({
   datePublished: string;
   dateModified?: string;
   image?: string;
+  images?: readonly { url: string; width: number; height: number; alt?: string }[];
 }) {
+  const pageUrl = `${SITE_URL}${path}`;
+  const imageNodes = images && images.length > 0
+    ? images.map((item) => ({
+        "@type": "ImageObject",
+        url: new URL(item.url, SITE_URL).toString(),
+        width: item.width,
+        height: item.height,
+        ...(item.alt ? { caption: item.alt } : {}),
+      }))
+    : new URL(image, SITE_URL).toString();
   return {
     "@context": "https://schema.org",
     "@type": type,
+    "@id": `${pageUrl}#article`,
     headline,
     description,
-    url: `${SITE_URL}${path}`,
-    mainEntityOfPage: `${SITE_URL}${path}`,
-    image: new URL(image, SITE_URL).toString(),
-    author: { "@type": "Organization", name: author, url: `${SITE_URL}/` },
+    url: pageUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    image: imageNodes,
+    author: author === SITE_NAME
+      ? { "@id": `${SITE_URL}/#organization` }
+      : { "@type": "Organization", name: author, url: `${SITE_URL}/` },
     publisher: { "@id": `${SITE_URL}/#organization` },
     datePublished,
-    dateModified: dateModified ?? datePublished,
+    ...(dateModified ? { dateModified } : {}),
     inLanguage: "en-GB",
   };
 }
