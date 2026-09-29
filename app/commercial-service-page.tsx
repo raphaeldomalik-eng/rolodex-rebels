@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { InternalPage, Arrow } from "./internal-page";
 import { JsonLd } from "./json-ld";
-import { pageMetadata, serviceJsonLd } from "./seo";
+import { guidePages } from "./guides/guides";
+import { faqJsonLd, pageMetadata, serviceJsonLd } from "./seo";
 
 type LinkItem = readonly [label: string, href: string];
 type ContentItem = readonly [title: string, copy: string];
@@ -36,6 +37,11 @@ export type CommercialServiceData = {
   assuranceCopy: string;
   related: LinkItem[];
   areaServed?: string | false;
+  questions?: readonly {
+    question: string;
+    answer: string;
+    link?: LinkItem;
+  }[];
 };
 
 const baseBreadcrumbs = [
@@ -47,7 +53,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
   musicPr: {
     name: "Music PR",
     seoTitle: "Music PR Agency UK | Artist & Release Publicity | Rolodex Rebels",
-    description: "Music PR and release publicity for artists, labels and managers, combining strategy, targeted media outreach, content and fan follow-up.",
+    description: "UK music PR for independent artists, labels and managers. Targeted press for releases, artists and live projects — not a mass-email list.",
     path: "/services/music-pr",
     eyebrow: "Get Heard / Music PR",
     title: "MUSIC PR THAT GETS THE RIGHT PEOPLE LISTENING.",
@@ -58,10 +64,10 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     problemTitle: "MAKE THE STORY WORTH CARRYING.",
     problemCopy: [
       "Music PR is not simply sending a press release to the biggest possible list. It starts with why this artist, release or live moment matters — and which editors, journalists, broadcasters and creators have a genuine reason to care.",
-      "Rolodex Rebels brings positioning, campaign story, release strategy, media targeting, materials, content and timing into one plan. The work can stand alone or connect to the wider release, audience and live campaign.",
+      "Rolodex Rebels brings positioning, campaign story, release strategy, media targeting, materials, content and timing into one plan. The work is music PR for independent artists and established projects in the UK, across releases, artists and live campaigns. It can stand alone or sit inside a wider plan.",
     ],
     outcome: "A clear story, focused outreach and press that supports the wider artist or release campaign.",
-    serves: "Artists, labels and managers working across singles, EPs, albums, tours and live campaigns.",
+    serves: "Independent artists, labels and managers, including established projects where a targeted campaign fits.",
     journeyTitle: "FROM STORY TO MOMENTUM.",
     journeyIntro: "Build the campaign around relevance, then make each moment of attention useful.",
     journey: ["Position", "Shape the story", "Build materials", "Target media", "Outreach", "Follow up", "Learn"],
@@ -86,7 +92,33 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     ],
     assuranceTitle: "THE RIGHT FIT, NOT THE BIGGEST LIST.",
     assuranceCopy: "Every PR campaign is shaped around the music, stage, audience and objective. Not every campaign needs every capability listed here.",
-    related: [["Explore Get Heard", "/services/get-heard"], ["Marketing for artists", "/who-we-help/artists"], ["Artist website design", "/services/artist-website-design"], ["Build your audience", "/services/build-your-audience"]],
+    related: [["Release marketing and communications", "/services/get-heard"], ["Marketing for artists", "/who-we-help/artists"], ["Artist website design", "/services/artist-website-design"], ["Build your audience", "/services/build-your-audience"]],
+    questions: [
+      {
+        question: "What does a music PR campaign actually do?",
+        answer: "It decides what is worth saying about an artist, release or live project, prepares the materials, and approaches the editors, journalists, broadcasters and creators who have a reason to care. The outreach is targeted, with follow-up. It is not a blast to every address on a list, and coverage is never guaranteed.",
+      },
+      {
+        question: "Does music PR work for independent artists?",
+        answer: "It can, when the music is ready, the story is specific and the targets match the stage of the project. It is a poor use of money when the release is unfinished, the assets are missing, or the only aim is national coverage with no reason those desks would run the story.",
+        link: ["Music PR for independent artists", "/guides/music-pr-for-independent-artists"],
+      },
+      {
+        question: "When should a PR campaign start before a release?",
+        answer: "Most editorial outlets need the story before release week. A standard single often wants several weeks of active outreach — commonly six to eight where the targets are specialist and online — with longer for albums, tours or features. A campaign that starts days before release has fewer realistic options.",
+        link: ["Release lead times for independent artists", "/guides/music-pr-for-independent-artists#release-lead-times"],
+      },
+      {
+        question: "How much does music PR cost?",
+        answer: "There is no single public price. Cost follows the length of the campaign, how many releases are in the plan, how specialist the media is, and how much of the story and the assets still need building. A professional quote shows that scope before you compare it with another fee.",
+        link: ["What music PR costs in the UK", "/guides/how-much-does-music-pr-cost-uk"],
+      },
+      {
+        question: "What is the difference between music PR and music promotion?",
+        answer: "Music PR is earned media: a story pitched to people who choose whether to cover it. Promotion is the wider job of getting the music or event in front of people, which can include advertising, social, playlist pitching and grassroots work. They can run together. They are not the same job.",
+        link: ["Music PR compared with music promotion", "/guides/music-pr-vs-music-promotion"],
+      },
+    ],
   },
   flyerDistribution: {
     name: "Music & Event Flyer Distribution",
@@ -238,6 +270,7 @@ export function CommercialServicePage({ data }: { data: CommercialServiceData })
       breadcrumbs={data.breadcrumbs}
     >
       <JsonLd data={serviceJsonLd({ name: data.name, description: data.description, path: data.path, areaServed: data.areaServed })} />
+      {data.questions && <JsonLd data={faqJsonLd(data.questions)} />}
 
       <section className="inner-split commercial-intro">
         <div><p className="eyebrow pink">{data.problemEyebrow}</p><h2>{data.problemTitle}</h2></div>
@@ -282,6 +315,29 @@ export function CommercialServicePage({ data }: { data: CommercialServiceData })
         <h2>{data.assuranceTitle}</h2>
         <p>{data.assuranceCopy}</p>
       </aside>
+
+      {data.questions && (
+        <section className="service-questions" aria-labelledby="music-pr-questions">
+          <h2 id="music-pr-questions">Questions about music PR?</h2>
+          <p className="service-questions-intro">Short answers. The longer versions live in the guides, where a campaign decision needs more than a paragraph.</p>
+          {data.questions.map((item) => (
+            <article className="service-question" key={item.question}>
+              <h3>{item.question}</h3>
+              <div>
+                <p>{item.answer}</p>
+                {item.link && <Link href={item.link[1]}>{item.link[0]} <Arrow /></Link>}
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
+
+      {data.path === "/services/music-pr" && (
+        <nav className="related-links" aria-label="Music PR guides">
+          <h2>READ THE GUIDES.</h2>
+          {guidePages.map((guide) => <Link href={guide.path} key={guide.path}>{guide.navLabel} <Arrow /></Link>)}
+        </nav>
+      )}
 
       <nav className="related-links" aria-label={`Related to ${data.name}`}>
         <h2>KEEP BUILDING THE CAMPAIGN.</h2>

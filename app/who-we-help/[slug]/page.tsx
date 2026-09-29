@@ -87,7 +87,10 @@ export default async function AudiencePage({ params }: { params: Promise<{ slug:
     >
       <section className="inner-split">
         <div><p className="eyebrow pink">How we work</p><h2>ONE GOAL. ONE CONNECTED CAMPAIGN.</h2></div>
-        <div className="body-copy"><p>{audience.answer}</p></div>
+        <div className="body-copy">
+          <p>{audience.answer}</p>
+          {slug === "artists" && <p>Self-releasing, or not sure the record is ready for press? <Link href="/guides/music-pr-for-independent-artists">Music PR for independent artists</Link> covers timing, assets and when to wait.</p>}
+        </div>
       </section>
       <section className="journey-panel" aria-labelledby={`${slug}-journey`}>
         <div><p className="eyebrow light">How the work moves</p><h2 id={`${slug}-journey`}>{audience.modelTitle}</h2><p>{audience.modelIntro}</p></div>

@@ -43,7 +43,7 @@ const audiences = [
 ];
 
 const pillars = [
-  ["Get Heard", "PR and release campaigns that put your story in front of the right media and people.", "/services/get-heard"],
+  ["Get Heard", "Release marketing and communications, with Music PR when the campaign needs press.", "/services/get-heard"],
   ["Get Seen", "SEO, social media, paid ads and online promotion that help the right people find you.", "/services/get-seen"],
   ["Build Your Audience", "Turn listeners, followers and ticket buyers into people you can stay in touch with.", "/services/build-your-audience"],
   ["Sell The Show", "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.", "/services/sell-the-show"],

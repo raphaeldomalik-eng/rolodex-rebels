@@ -9,24 +9,27 @@ import { pageMetadata, serviceJsonLd } from "../../seo";
 const serviceData = {
   "get-heard": {
     name: "Get Heard",
-    seoTitle: "Music PR & Release Marketing | Rolodex Rebels",
-    title: "MUSIC PR, RELEASES & COMMUNICATIONS.",
-    description: "Music PR and release marketing for artists, labels and managers — story, press materials, media outreach and follow-up.",
-    intro: "Need PR for a release, artist or live campaign? We help shape the story, prepare the material, find the right media and handle the outreach.",
-    meaningTitle: "MAKE THE STORY WORTH CARRYING.",
-    outcome: "A clear story, focused media outreach and follow-up that supports the release or live campaign.",
-    answer: "PR is not a mailing list. The job is to give the right editor, journalist, broadcaster or creator a genuine reason to care about this artist, this release and this moment. We shape the story, prepare the materials, find the right media and handle the outreach. Coverage is never guaranteed.",
-    modelTitle: "FROM STORY TO FOLLOW-UP.",
-    modelIntro: "A feature, interview or radio play should support the release plan rather than sit apart from it.",
-    model: ["Story", "Materials", "Media", "Outreach", "Follow up", "Learn"],
+    seoTitle: "Release Marketing & Communications | Rolodex Rebels",
+    title: "RELEASE MARKETING & COMMUNICATIONS.",
+    description: "Release marketing and communications for artists, labels and managers — story, content, fan updates and campaign timing. Music PR is a separate press service.",
+    intro: "Shape the story, the content and the fan communications around a release or live moment. When the campaign needs press, Music PR is a separate service.",
+    meaningTitle: "ONE RELEASE. ONE VOICE.",
+    outcome: "A release or live moment with a clear story, consistent public communications, and a sensible place for press if press is actually required.",
+    answer: "A release can have a strong record and still reach people as a pile of disconnected posts. This work decides what the campaign is saying, which moments are public, and how fans hear about them. Press is one possible part of that, not the name of the whole job.",
+    modelTitle: "HOLD THE PUBLIC MOMENTS TOGETHER.",
+    modelIntro: "Announcement, release day and the week after should sound like the same campaign, whether or not a journalist is involved.",
+    model: ["Story", "Plan the moments", "Content", "Fan updates", "Press where it fits", "Learn"],
     items: [
-      ["PR Campaigns", "PR for artists, releases and live campaigns — from the story and press materials to media outreach and follow-up.", "/services/music-pr"],
-      ["Release Marketing", "Shape the angle, targets and timing around a release people can understand."],
-      ["Story & messaging", "Build a clear story that holds together across media, social, web and fan communication."],
-      ["Content & fan communications", "Turn announcements, release day and media moments into content fans can follow and share."],
+      ["Release story", "Decide what this release, artist or live moment is actually about, and keep that story consistent."],
+      ["Announcements & content", "Plan the public moments so announcement, release day and follow-up sound like one campaign."],
+      ["Fan communications", "Tell people who already care what is happening, rather than hoping press alone will carry the news."],
+      ["Creator activity", "Bring in relevant creators where they help the audience understand the release, not as a separate stunt."],
     ],
     offers: "Rebel Launch · Rebel Artist Growth",
-    deeper: [["Explore Music PR", "/services/music-pr"]],
+    deeper: [
+      ["Music PR for artists, releases and live projects", "/services/music-pr"],
+      ["How music PR differs from promotion", "/guides/music-pr-vs-music-promotion"],
+    ],
     related: [["Music marketing for artists", "/who-we-help/artists"], ["Build a music audience", "/services/build-your-audience"], ["Improve digital visibility", "/services/get-seen"]],
   },
   "get-seen": {
@@ -48,7 +51,7 @@ const serviceData = {
       ["Creators & Digital Reach", "Work with relevant voices and channels where they can help the right people find you."],
     ],
     offers: "Rebel Launch · Search & Discovery Review",
-    related: [["Music marketing for labels and managers", "/who-we-help/labels-managers"], ["Music PR and release marketing", "/services/get-heard"], ["Digital and creative services", "/services/digital-creative"]],
+    related: [["Music marketing for labels and managers", "/who-we-help/labels-managers"], ["Music PR for artists and releases", "/services/music-pr"], ["Digital and creative services", "/services/digital-creative"]],
   },
   "build-your-audience": {
     name: "Build Your Audience",
@@ -182,7 +185,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={serviceJsonLd({ name: service.name, description: service.description, path })} />
       <section className="inner-split">
         <div><p className="eyebrow pink">What it means</p><h2>{service.meaningTitle}</h2></div>
-        <div className="body-copy"><p>{service.answer}</p><p><strong>The outcome:</strong><br />{service.outcome}</p><p><strong>Ways to work with us:</strong><br />{service.offers}</p></div>
+        <div className="body-copy">
+          <p>{service.answer}</p>
+          {slug === "get-heard" && <p>Dedicated press work sits on the <Link href="/services/music-pr">Music PR page</Link>. This page is the wider release marketing and communications around that press — or without it, when a press campaign is not the right tool.</p>}
+          <p><strong>The outcome:</strong><br />{service.outcome}</p>
+          <p><strong>Ways to work with us:</strong><br />{service.offers}</p>
+        </div>
       </section>
       <section className="journey-panel" aria-labelledby={`${slug}-journey`}>
         <div><p className="eyebrow light">How the work moves</p><h2 id={`${slug}-journey`}>{service.modelTitle}</h2><p>{service.modelIntro}</p></div>
