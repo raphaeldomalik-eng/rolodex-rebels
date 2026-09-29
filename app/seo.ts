@@ -15,10 +15,43 @@ type PageMetadataOptions = {
   path: string;
   noIndex?: boolean;
   image?: string;
+  openGraphType?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
-export function pageMetadata({ title, description, path, noIndex = false, image }: PageMetadataOptions): Metadata {
+export function pageMetadata({
+  title,
+  description,
+  path,
+  noIndex = false,
+  image,
+  openGraphType = "website",
+  publishedTime,
+  modifiedTime,
+}: PageMetadataOptions): Metadata {
   const socialImages = image ? [{ url: image, alt: title }] : [DEFAULT_SOCIAL_IMAGE];
+  const openGraph = openGraphType === "article"
+    ? {
+        title,
+        description,
+        url: path,
+        siteName: SITE_NAME,
+        locale: "en_GB" as const,
+        type: "article" as const,
+        publishedTime,
+        modifiedTime: modifiedTime ?? publishedTime,
+        images: socialImages,
+      }
+    : {
+        title,
+        description,
+        url: path,
+        siteName: SITE_NAME,
+        locale: "en_GB" as const,
+        type: "website" as const,
+        images: socialImages,
+      };
   return {
     title,
     description,
@@ -26,15 +59,7 @@ export function pageMetadata({ title, description, path, noIndex = false, image 
     robots: noIndex
       ? { index: false, follow: true, googleBot: { index: false, follow: true } }
       : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-    openGraph: {
-      title,
-      description,
-      url: path,
-      siteName: SITE_NAME,
-      locale: "en_GB",
-      type: "website",
-      images: socialImages,
-    },
+    openGraph,
     twitter: {
       card: "summary_large_image",
       title,
@@ -154,5 +179,20 @@ export function articleJsonLd({
     datePublished,
     dateModified: dateModified ?? datePublished,
     inLanguage: "en-GB",
+  };
+}
+
+export function faqJsonLd(items: readonly { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 }

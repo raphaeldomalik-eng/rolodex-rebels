@@ -222,6 +222,28 @@
 .inner-cta h2 span { color: var(--white); }
 .inner-cta .button { margin-top: 44px; }
 
+.service-questions { margin: 0 0 clamp(84px, 10vw, 150px); padding-top: clamp(28px, 4vw, 48px); border-top: 3px solid var(--ink); }
+.service-questions > h2 { max-width: 14ch; font-size: clamp(48px, 6vw, 88px); line-height: .9; }
+.service-questions-intro { max-width: 62ch; margin: 18px 0 8px; font-size: 18px; line-height: 1.6; }
+.service-question { display: grid; grid-template-columns: minmax(220px, .85fr) minmax(0, 1.15fr); gap: clamp(18px, 4vw, 56px); padding: 28px 0; border-bottom: 3px solid var(--ink); }
+.service-question h3 { font-size: clamp(28px, 3vw, 40px); line-height: .95; }
+.service-question p { max-width: 62ch; margin: 0 0 16px; font-size: 17px; line-height: 1.64; }
+.service-question a, .body-copy a, .guide-index-note a { color: var(--pink-text); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.guide-copy { max-width: 70ch; margin: clamp(72px, 9vw, 120px) 0; }
+.guide-meta { margin-bottom: 36px; font-size: 15px; line-height: 1.5; }
+.guide-copy h2 { margin: 52px 0 14px; font-size: clamp(36px, 4vw, 58px); line-height: .95; }
+.guide-copy section:first-of-type h2 { margin-top: 0; }
+.guide-copy p, .guide-copy li { font-size: 18px; line-height: 1.68; }
+.guide-copy p { margin: 0 0 18px; }
+.guide-copy ul { margin: 0 0 22px; padding-left: 1.2em; }
+.guide-copy li { margin: 0 0 10px; }
+.guide-copy a { color: var(--pink-text); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.guide-callout { margin: 8px 0 28px; padding: 22px 24px; background: var(--pink); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+.guide-callout p { margin: 0; }
+.guide-callout strong { display: block; margin-bottom: 8px; font-family: "Bebas", Impact, sans-serif; font-size: 28px; letter-spacing: .04em; line-height: 1; }
+.guide-index-note { max-width: 62ch; margin: -36px 0 clamp(84px, 10vw, 120px); font-size: 18px; line-height: 1.6; }
+.guide-index-page .route-grid { margin-bottom: 28px; }
+
 @media (max-width: 980px) {
   .inner-hero { grid-template-columns: 1fr; }
   .inner-logo-slab { width: min(360px, 70%); }
@@ -238,6 +260,7 @@
   .project-form-section { grid-template-columns: 1fr; }
   .project-form-intro ol { margin-top: 44px; }
   .related-links { grid-template-columns: repeat(2, 1fr); }
+  .service-question { grid-template-columns: 1fr; gap: 12px; }
 }
 
 @media (max-width: 640px) {
@@ -267,6 +290,10 @@
   .insight-list article > span { font-size: 40px; }
   .inner-cta h2 { font-size: clamp(56px, 18vw, 90px); }
   .related-links { grid-template-columns: 1fr; }
+  .service-questions > h2 { font-size: 46px; }
+  .guide-copy h2 { font-size: 36px; }
+  .guide-copy p, .guide-copy li { font-size: 16px; line-height: 1.62; }
+  .guide-index-note { margin-top: 8px; }
   .case-gallery { grid-template-columns: 1fr; }
   .event-websites-page .inner-hero { padding-bottom: 54px; }
   .event-websites-page .inner-hero h1 { font-size: clamp(54px, 17vw, 72px); line-height: .84; }
