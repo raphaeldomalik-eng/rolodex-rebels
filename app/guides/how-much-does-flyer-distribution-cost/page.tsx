@@ -57,7 +57,7 @@ export default function FlyerDistributionCostPage() {
         </p>
       </aside>
 
-      <section>
+      <section className="guide-warnings">
         <h2 id="warning-signs">Warning signs in a quote</h2>
         <ul>
           <li><strong>The method is not defined.</strong> &ldquo;Distribution&rdquo; with no account of how the flyers reach people.</li>

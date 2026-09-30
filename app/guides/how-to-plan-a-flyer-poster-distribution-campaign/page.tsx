@@ -19,6 +19,7 @@ export default function PlanDistributionCampaignPage() {
         </p>
       </section>
 
+      <div className="guide-steps">
       <section>
         <h2 id="who">1. Who</h2>
         <p>
@@ -86,6 +87,7 @@ export default function PlanDistributionCampaignPage() {
           The most useful thing a campaign can leave behind is a way to reach the same people next time. A mailing-list sign-up on the landing page turns a single scan into <Link href="/services/build-your-audience">an audience you can come back to</Link>.
         </p>
       </section>
+      </div>
 
       <aside className="guide-callout">
         <p>

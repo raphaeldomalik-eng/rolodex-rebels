@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InternalPage, Arrow } from "../../../../internal-page";
+import { InternalPage, Arrow, DistributionHeroImage } from "../../../../internal-page";
 import { JsonLd } from "../../../../json-ld";
 import { pageMetadata, serviceJsonLd } from "../../../../seo";
 
@@ -38,6 +38,7 @@ export default function KentFlyerDistributionPage() {
       title={<>FLYER AND LEAFLET DISTRIBUTION ACROSS KENT.</>}
       intro="Hand-to-hand flyer and leaflet distribution in Kent, planned around who you need to reach, where they will be, and what you need them to do next."
       heroCta={{ label: "Plan a Kent campaign", href: "/start-a-project" }}
+      heroMedia={<DistributionHeroImage />}
       breadcrumbs={[
         { name: "Home", path: "/" },
         { name: "Services", path: "/services" },
