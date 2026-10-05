@@ -17,7 +17,7 @@ export default function Results() {
         <article><span>02</span><h2>What Rolodex Rebels did</h2><p>The joined-up strategy, channels, creative and on-the-ground work used to move it.</p></article>
         <article><span>03</span><h2>Result</h2><p>The verified outcome, what we learned and how that evidence shaped the next move.</p></article>
       </section>
-      <section className="pink-panel"><p className="eyebrow">Our evidence standard</p><h2>REAL CAMPAIGNS. REAL EVIDENCE.</h2><p>Client names, testimonials and metrics are published only with approval. No inflated numbers. No vanity reporting. Just proof that helps people make better marketing decisions.</p></section>
+      <section className="pink-panel"><div><p className="eyebrow">Our evidence standard</p><h2>REAL CAMPAIGNS. REAL EVIDENCE.</h2></div><p>Client names, testimonials and metrics are published only with approval. No inflated numbers. No vanity reporting. Just proof that helps people make better marketing decisions.</p></section>
     </InternalPage>
   );
 }
