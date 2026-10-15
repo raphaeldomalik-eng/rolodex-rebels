@@ -9,24 +9,27 @@ import { pageMetadata, serviceJsonLd } from "../../seo";
 const serviceData = {
   "get-heard": {
     name: "Get Heard",
-    seoTitle: "Music PR & Release Marketing | Rolodex Rebels",
-    title: "MUSIC PR, RELEASES & COMMUNICATIONS.",
-    description: "Music PR and release marketing for artists, labels and managers — story, press materials, media outreach and follow-up.",
-    intro: "Need PR for a release, artist or live campaign? We help shape the story, prepare the material, find the right media and handle the outreach.",
-    meaningTitle: "MAKE THE STORY WORTH CARRYING.",
-    outcome: "A clear story, focused media outreach and follow-up that supports the release or live campaign.",
-    answer: "PR is not a mailing list. The job is to give the right editor, journalist, broadcaster or creator a genuine reason to care about this artist, this release and this moment. We shape the story, prepare the materials, find the right media and handle the outreach. Coverage is never guaranteed.",
-    modelTitle: "FROM STORY TO FOLLOW-UP.",
-    modelIntro: "A feature, interview or radio play should support the release plan rather than sit apart from it.",
-    model: ["Story", "Materials", "Media", "Outreach", "Follow up", "Learn"],
+    seoTitle: "Release Marketing & Communications | Rolodex Rebels",
+    title: "RELEASE MARKETING & COMMUNICATIONS.",
+    description: "Release marketing and communications for artists, labels and managers — story, content, fan updates and campaign timing. Music PR is a separate press service.",
+    intro: "Shape the story, the content and the fan communications around a release or live moment. When the campaign needs press, Music PR is a separate service.",
+    meaningTitle: "ONE RELEASE. ONE VOICE.",
+    outcome: "A release or live moment with a clear story, consistent public communications, and a sensible place for press if press is actually required.",
+    answer: "A release can have a strong record and still reach people as a pile of disconnected posts. This work decides what the campaign is saying, which moments are public, and how fans hear about them. Press is one possible part of that, not the name of the whole job.",
+    modelTitle: "HOLD THE PUBLIC MOMENTS TOGETHER.",
+    modelIntro: "Announcement, release day and the week after should sound like the same campaign, whether or not a journalist is involved.",
+    model: ["Story", "Plan the moments", "Content", "Fan updates", "Press where it fits", "Learn"],
     items: [
-      ["PR Campaigns", "PR for artists, releases and live campaigns — from the story and press materials to media outreach and follow-up."],
-      ["Release Marketing", "Shape the angle, targets and timing around a release people can understand."],
-      ["Story & messaging", "Build a clear story that holds together across media, social, web and fan communication."],
-      ["Content & fan communications", "Turn announcements, release day and media moments into content fans can follow and share."],
+      ["Release story", "Decide what this release, artist or live moment is actually about, and keep that story consistent."],
+      ["Announcements & content", "Plan the public moments so announcement, release day and follow-up sound like one campaign."],
+      ["Fan communications", "Tell people who already care what is happening, rather than hoping press alone will carry the news."],
+      ["Creator activity", "Bring in relevant creators where they help the audience understand the release, not as a separate stunt."],
     ],
     offers: "Rebel Launch · Rebel Artist Growth",
-    deeper: [["Explore Music PR", "/services/music-pr"]],
+    deeper: [
+      ["Music PR for artists, releases and live projects", "/services/music-pr"],
+      ["How music PR differs from promotion", "/guides/music-pr-vs-music-promotion"],
+    ],
     related: [["Music marketing for artists", "/who-we-help/artists"], ["Build a music audience", "/services/build-your-audience"], ["Improve digital visibility", "/services/get-seen"]],
   },
   "get-seen": {
@@ -48,7 +51,7 @@ const serviceData = {
       ["Creators & Digital Reach", "Work with relevant voices and channels where they can help the right people find you."],
     ],
     offers: "Rebel Launch · Search & Discovery Review",
-    related: [["Music marketing for labels and managers", "/who-we-help/labels-managers"], ["Music PR and release marketing", "/services/get-heard"], ["Digital and creative services", "/services/digital-creative"]],
+    related: [["Music marketing for labels and managers", "/who-we-help/labels-managers"], ["Music PR for artists and releases", "/services/music-pr"], ["Digital and creative services", "/services/digital-creative"]],
   },
   "build-your-audience": {
     name: "Build Your Audience",
@@ -80,14 +83,14 @@ const serviceData = {
     intro: "Ticket campaigns for gigs, tours and festivals — from announcement and on-sale to the final push.",
     meaningTitle: "FIND THE PROBLEM BEFORE YOU BUY MORE REACH.",
     outcome: "A live campaign that moves from announcement to on-sale and final push with the message, audience and activity matched to the ticket picture.",
-    answer: "Sell more tickets is an outcome. It is not a channel plan. If sales slow, more spend is not automatically the answer. Is awareness too low? Has the creative gone flat? Are we reaching the wrong audience? Did the campaign peak too early? Is the ticket page losing people? Where the evidence is available, we find the problem first. The fix might be new creative, a different audience, a PR moment, street promotion, retargeting, clearer communication, a ticket-page improvement or a better-timed final push.",
+    answer: "Sell more tickets is an outcome. It is not a channel plan. If sales slow, more spend is not automatically the answer. Is awareness too low? Has the creative gone flat? Are we reaching the wrong audience? Did the campaign peak too early? Is the ticket page losing people? Where the evidence is available, we find the problem first. The fix might be new creative, a different audience, a PR moment, flyers and posters, retargeting, clearer communication, a ticket-page improvement or a better-timed final push.",
     modelTitle: "TURN INTEREST INTO TICKETS.",
     modelIntro: "Announcement, on-sale, a quiet middle period and the final push are different jobs. The plan should move with them.",
     model: ["Build interest", "Get people to the ticket page", "Sell", "Bring them back"],
     items: [
       ["Ticket marketing", "Change the audience, creative, timing, communication or ticket page when the sales picture shows what needs attention."],
       ["Tour marketing", "Connect local demand, artist audiences, content, search and grassroots activity across the dates that matter."],
-      ["Festival marketing", "Build demand around the announcement, programme, audience, place and ticket pace."],
+      ["Festival marketing", "Build demand around the announcement, programme, audience, place and ticket pace.", "/services/festival-marketing"],
       ["Guest & industry campaigns", "Plan invitations, RSVP, reminders and follow-up as part of the campaign — not an isolated admin task."],
     ],
     offers: "Rebel Tour · Promoter Growth · Festival Growth · Guest & Industry Campaigns",
@@ -96,26 +99,28 @@ const serviceData = {
   },
   grassroots: {
     name: "Grassroots",
-    seoTitle: "Grassroots Music Promotion & Street Teams | Rolodex Rebels",
+    seoTitle: "Grassroots Music Promotion | Rolodex Rebels",
     title: "GRASSROOTS MUSIC PROMOTION. LOCAL. LOUD. EFFECTIVE.",
-    description: "Grassroots music promotion through street teams, leaflet and flyer distribution, poster distribution, campaign print, campuses and local promotion.",
-    intro: "Street teams, leaflets, flyers and posters — planned around where your audience actually is.",
+    description: "Grassroots music promotion through leaflet and flyer distribution, poster distribution, campaign print and local promotion.",
+    intro: "Leaflets, flyers and posters — planned around where your audience actually is.",
     meaningTitle: "START WITH WHO, WHERE AND WHEN.",
-    outcome: "Street teams, leaflets, flyers and posters in the venues, queues, campuses and nightlife areas where the message belongs.",
-    answer: "Tell us what you're promoting, who you're trying to reach, where and when. We'll plan the locations, team, materials and timing. A QR code or campaign URL is optional — the audience and place come first.",
+    outcome: "Leaflets, flyers and posters in the venues, queues, nightlife areas and streets where the message belongs.",
+    answer: "Tell us what you're promoting, who you're trying to reach, where and when. We'll plan the locations, materials and timing. A QR code or campaign URL is optional — the audience and place come first.",
     modelTitle: "PLAN FOR THE PLACE AND MOMENT.",
-    modelIntro: "The team, leaflet, flyer or poster should meet the audience where the campaign makes sense — not simply where the footfall is highest.",
+    modelIntro: "The leaflet, flyer or poster should meet the audience where the campaign makes sense — not simply where the footfall is highest.",
     model: ["Audience", "Place", "Moment", "Promotion", "Optional next step", "Learn"],
     items: [
-      ["Music Street Teams", "Street teams in London, surrounding areas and Kent, planned around the audience, place and campaign moment."],
-      ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, campuses, nightlife areas and dates that fit the audience."],
-      ["Poster Distribution", "Targeted poster campaigns in London. Posters are placed in shops, music stores and anywhere we can get you in front of the right audience. Leaflet distribution can also be used to enhance your campaign."],
+      ["Leaflet & Flyer Distribution", "Hand-to-hand leaflet and flyer distribution planned around venues, queues, nightlife areas and dates that fit the audience.", "/services/grassroots/flyer-distribution"],
+      ["Poster Distribution", "Targeted poster campaigns across London and Kent. Posters are placed in shops, music stores and other suitable locations agreed around the brief. Leaflet distribution can also be used to enhance your campaign.", "/services/grassroots/poster-distribution"],
       ["Print & Campaign Materials", "Flyers, leaflets, posters and event materials coordinated as part of the campaign — production and supply, not a print shop."],
-      ["Campus Campaigns", "Student-facing activity shaped around the campus, calendar and audience fit."],
       ["Local Promotion", "Local promotion connected to launches, shows, openings and cultural moments."],
     ],
     offers: "Grassroots Promotion",
-    deeper: [["Explore Music Street Teams", "/services/grassroots/music-street-teams"], ["Explore Leaflet & Flyer Distribution", "/services/grassroots/flyer-distribution"]],
+    deeper: [
+      ["Explore Leaflet & Flyer Distribution", "/services/grassroots/flyer-distribution"],
+      ["Flyer Distribution in Kent", "/services/grassroots/flyer-distribution/kent"],
+      ["Explore Poster Distribution", "/services/grassroots/poster-distribution"],
+    ],
     related: [["Ticket and tour marketing", "/services/sell-the-show"], ["Marketing for promoters, venues and festivals", "/who-we-help/promoters-venues-festivals"], ["Digital music promotion", "/services/get-seen"]],
   },
   "digital-creative": {
@@ -132,7 +137,7 @@ const serviceData = {
     model: ["Audience", "Need", "Pages", "Content", "Action", "Stay in touch"],
     items: [
       ["Website Design & Digital Builds", "Websites and campaign pages for artists, events, festivals, venues and promoters."],
-      ["Artist Websites", "Artist and band sites for music, releases, live dates, press and sign-up."],
+      ["Artist Websites", "Artist and band sites for music, releases, live dates, press and sign-up.", "/services/artist-website-design"],
       ["Event & Festival Websites", "Websites for events, festivals, venues and promoters — tickets, programme content, visitor information and campaign pages."],
       ["Campaign Sites", "Focused destinations for a release, on-sale, tour, RSVP or ticket push with one clear job."],
       ["Landing Pages", "Straightforward pages that give people a next step: listen, sign up, enquire or buy a ticket."],
@@ -184,7 +189,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={serviceJsonLd({ name: service.name, description: service.description, path })} />
       <section className="inner-split">
         <div><p className="eyebrow pink">What it means</p><h2>{service.meaningTitle}</h2></div>
-        <div className="body-copy"><p>{service.answer}</p><p><strong>The outcome:</strong><br />{service.outcome}</p><p><strong>Ways to work with us:</strong><br />{service.offers}</p></div>
+        <div className="body-copy">
+          <p>{service.answer}</p>
+          {slug === "get-heard" && <p>Dedicated press work sits on the <Link href="/services/music-pr">Music PR page</Link>. This page is the wider release marketing and communications around that press — or without it, when a press campaign is not the right tool.</p>}
+          <p><strong>The outcome:</strong><br />{service.outcome}</p>
+          <p><strong>Ways to work with us:</strong><br />{service.offers}</p>
+        </div>
       </section>
       <section className="journey-panel" aria-labelledby={`${slug}-journey`}>
         <div><p className="eyebrow light">How the work moves</p><h2 id={`${slug}-journey`}>{service.modelTitle}</h2><p>{service.modelIntro}</p></div>
@@ -193,13 +203,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </ol>
       </section>
       <section className="feature-grid">
-        {service.items.map(([title, copy], index) => {
+        {service.items.map((item, index) => {
+          const [title, copy, href] = item;
           const id = itemId(title);
           return (
             <article key={title} id={id}>
               {hashAliases[id] ? <span id={hashAliases[id]} className="hash-alias" aria-hidden="true" /> : null}
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
+              <h3>{href ? <Link href={href}>{title}</Link> : title}</h3>
               <p>{copy}</p>
             </article>
           );

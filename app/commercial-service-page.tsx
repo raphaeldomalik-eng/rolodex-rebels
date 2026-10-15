@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { InternalPage, Arrow } from "./internal-page";
+import { InternalPage, Arrow, DistributionHeroImage } from "./internal-page";
 import { JsonLd } from "./json-ld";
-import { pageMetadata, serviceJsonLd } from "./seo";
+import { guidePages } from "./guides/guides";
+import { faqJsonLd, pageMetadata, serviceJsonLd } from "./seo";
 
 type LinkItem = readonly [label: string, href: string];
 type ContentItem = readonly [title: string, copy: string];
@@ -36,6 +37,14 @@ export type CommercialServiceData = {
   assuranceCopy: string;
   related: LinkItem[];
   areaServed?: string | false;
+  distributionHero?: boolean;
+  questionsTitle?: string;
+  questionsIntro?: string;
+  questions?: readonly {
+    question: string;
+    answer: string;
+    link?: LinkItem;
+  }[];
 };
 
 const baseBreadcrumbs = [
@@ -46,8 +55,8 @@ const baseBreadcrumbs = [
 export const commercialServices: Record<string, CommercialServiceData> = {
   musicPr: {
     name: "Music PR",
-    seoTitle: "Music PR Agency UK | Artist & Release Publicity | Rolodex Rebels",
-    description: "Music PR and release publicity for artists, labels and managers, combining strategy, targeted media outreach, content and fan follow-up.",
+    seoTitle: "Music PR Agency UK for Artists & Releases | Rolodex Rebels",
+    description: "UK music PR for independent artists, labels and managers. Targeted press for releases, artists and live projects — not a mass-email list.",
     path: "/services/music-pr",
     eyebrow: "Get Heard / Music PR",
     title: "MUSIC PR THAT GETS THE RIGHT PEOPLE LISTENING.",
@@ -58,10 +67,10 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     problemTitle: "MAKE THE STORY WORTH CARRYING.",
     problemCopy: [
       "Music PR is not simply sending a press release to the biggest possible list. It starts with why this artist, release or live moment matters — and which editors, journalists, broadcasters and creators have a genuine reason to care.",
-      "Rolodex Rebels brings positioning, campaign story, release strategy, media targeting, materials, content and timing into one plan. The work can stand alone or connect to the wider release, audience and live campaign.",
+      "Rolodex Rebels brings positioning, campaign story, release strategy, media targeting, materials, content and timing into one plan. The work is music PR for independent artists and established projects in the UK, across releases, artists and live campaigns. It can stand alone or sit inside a wider plan.",
     ],
     outcome: "A clear story, focused outreach and press that supports the wider artist or release campaign.",
-    serves: "Artists, labels and managers working across singles, EPs, albums, tours and live campaigns.",
+    serves: "Independent artists, labels and managers, including established projects where a targeted campaign fits.",
     journeyTitle: "FROM STORY TO MOMENTUM.",
     journeyIntro: "Build the campaign around relevance, then make each moment of attention useful.",
     journey: ["Position", "Shape the story", "Build materials", "Target media", "Outreach", "Follow up", "Learn"],
@@ -86,93 +95,179 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     ],
     assuranceTitle: "THE RIGHT FIT, NOT THE BIGGEST LIST.",
     assuranceCopy: "Every PR campaign is shaped around the music, stage, audience and objective. Not every campaign needs every capability listed here.",
-    related: [["Explore Get Heard", "/services/get-heard"], ["Marketing for artists", "/who-we-help/artists"], ["Build your audience", "/services/build-your-audience"]],
-  },
-  streetTeams: {
-    name: "Music Street Teams",
-    seoTitle: "Music Street Teams London & Kent | Rolodex Rebels",
-    description: "Professional music and event street teams across London, surrounding areas and Kent, planned around audience, place, timing and campaign goals.",
-    path: "/services/grassroots/music-street-teams",
-    eyebrow: "Grassroots / Music Street Teams",
-    title: "PUT YOUR CAMPAIGN ON THE STREETS.",
-    intro: "Professional music and event street teams across London, surrounding areas and Kent.",
-    heroCta: "Plan a street campaign",
-    breadcrumbs: [...baseBreadcrumbs, { name: "Grassroots", path: "/services/grassroots" }, { name: "Music Street Teams", path: "/services/grassroots/music-street-teams" }],
-    problemEyebrow: "Audience first",
-    problemTitle: "THE RIGHT PEOPLE. THE RIGHT PLACE. THE RIGHT MOMENT.",
-    problemCopy: [
-      "Street promotion works when the people, location, context and timing match the campaign objective. It is not simply about putting a team outside the busiest place or distributing the highest quantity.",
-      "We plan around where the audience already moves and what the campaign needs them to notice or do. Teams are briefed on the music, event, message and moment before they go out.",
+    related: [["Release marketing and communications", "/services/get-heard"], ["Marketing for artists", "/who-we-help/artists"], ["Artist website design", "/services/artist-website-design"], ["Build your audience", "/services/build-your-audience"]],
+    questions: [
+      {
+        question: "What does a music PR campaign actually do?",
+        answer: "It decides what is worth saying about an artist, release or live project, prepares the materials, and approaches the editors, journalists, broadcasters and creators who have a reason to care. The outreach is targeted, with follow-up. It is not a blast to every address on a list, and coverage is never guaranteed.",
+      },
+      {
+        question: "Does music PR work for independent artists?",
+        answer: "It can, when the music is ready, the story is specific and the targets match the stage of the project. It is a poor use of money when the release is unfinished, the assets are missing, or the only aim is national coverage with no reason those desks would run the story.",
+        link: ["Music PR for independent artists", "/guides/music-pr-for-independent-artists"],
+      },
+      {
+        question: "When should a PR campaign start before a release?",
+        answer: "Most editorial outlets need the story before release week. A standard single often wants several weeks of active outreach — commonly six to eight where the targets are specialist and online — with longer for albums, tours or features. A campaign that starts days before release has fewer realistic options.",
+        link: ["Release lead times for independent artists", "/guides/music-pr-for-independent-artists#release-lead-times"],
+      },
+      {
+        question: "How much does music PR cost?",
+        answer: "There is no single public price. Cost follows the length of the campaign, how many releases are in the plan, how specialist the media is, and how much of the story and the assets still need building. A professional quote shows that scope before you compare it with another fee.",
+        link: ["What music PR costs in the UK", "/guides/how-much-does-music-pr-cost-uk"],
+      },
+      {
+        question: "What is the difference between music PR and music promotion?",
+        answer: "Music PR is earned media: a story pitched to people who choose whether to cover it. Promotion is the wider job of getting the music or event in front of people, which can include advertising, social, playlist pitching and grassroots work. They can run together. They are not the same job.",
+        link: ["Music PR compared with music promotion", "/guides/music-pr-vs-music-promotion"],
+      },
     ],
-    outcome: "A credible physical campaign presence built around relevant audience movement and a clear objective.",
-    serves: "Gigs, concerts, tours, festivals, releases, venues, campuses, nightlife and targeted hand-to-hand campaigns.",
-    journeyTitle: "PLAN IT. PUT IT LIVE. LEARN.",
-    journeyIntro: "Good street activity begins before the team reaches the location.",
-    journey: ["Plan", "Brief", "Go live", "Evidence", "Learn"],
-    capabilities: [
-      ["Gig & concert promotion", "Reach relevant audiences around venues, transport routes, queues and cultural moments where the context makes sense."],
-      ["Tour activity", "Support selected dates with local planning rather than treating every market as the same."],
-      ["Festival promotion", "Build local awareness and ticket attention around audience behaviour, timing and place."],
-      ["Release activity", "Put a new single, EP or album into physical spaces that connect naturally to the artist and audience."],
-      ["Venue campaigns", "Support programmes, openings and priority dates with activity shaped around the surrounding area and footfall."],
-      ["Campus & nightlife", "Plan student and nightlife activity around the calendar, the venues and the nights that fit the audience."],
-    ],
-    connectionEyebrow: "From the streets to the screens",
-    connectionTitle: "TURN THE STREET MOMENT INTO THE NEXT ACTION.",
-    connectionCopy: "Street work is still valuable on its own. Where it helps the campaign, the interaction can point to a QR code or dedicated URL leading to tickets, a release, RSVP, content or an optional mailing list sign-up.",
-    connectionPoints: ["Street interaction", "QR code or campaign URL", "Ticket, release, RSVP or content", "Optional audience capture", "Campaign response where measurable"],
-    secondaryTitle: "LONDON. SURROUNDING AREAS. KENT.",
-    secondaryCopy: [
-      "That is the approved staffed Street Team coverage. We plan and staff this service only within these areas.",
-      "Reporting and campaign evidence are agreed around the brief, locations and activity being delivered.",
-    ],
-    assuranceTitle: "REAL PEOPLE. CLEAR BRIEF. RELEVANT PLACES.",
-    assuranceCopy: "Every street campaign is scoped around the audience, materials, locations, timings and practical delivery required.",
-    related: [["Explore Grassroots", "/services/grassroots"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"], ["Festival marketing", "/services/festival-marketing"]],
-    areaServed: "London, surrounding areas and Kent",
   },
   flyerDistribution: {
-    name: "Music & Event Flyer Distribution",
-    seoTitle: "Music & Event Flyer Distribution | Rolodex Rebels",
-    description: "Audience-led leaflet and flyer distribution for music and event campaigns, including hand-to-hand and targeted campaign support connected to wider marketing.",
+    name: "Flyer and Leaflet Distribution",
+    seoTitle: "Flyer & Leaflet Distribution London & Kent | Rolodex Rebels",
+    description: "Hand-to-hand flyer and leaflet distribution in London and Kent for gigs, events, venues and local campaigns, planned around audience, place and timing.",
     path: "/services/grassroots/flyer-distribution",
-    eyebrow: "Grassroots / Flyer Distribution",
-    title: "PUT THE MESSAGE WHERE THE AUDIENCE IS.",
-    intro: "Audience-led leaflet and flyer distribution for gigs, festivals, tours, releases, venues and music campaigns.",
+    eyebrow: "Grassroots / Flyer & Leaflet Distribution",
+    title: "FLYER AND LEAFLET DISTRIBUTION, PLANNED AROUND THE AUDIENCE.",
+    intro: "Hand-to-hand flyer and leaflet distribution across London and Kent for gigs, festivals, tours, releases, venues and local campaigns.",
     heroCta: "Plan a distribution campaign",
-    breadcrumbs: [...baseBreadcrumbs, { name: "Grassroots", path: "/services/grassroots" }, { name: "Flyer Distribution", path: "/services/grassroots/flyer-distribution" }],
+    breadcrumbs: [...baseBreadcrumbs, { name: "Grassroots", path: "/services/grassroots" }, { name: "Flyer & Leaflet Distribution", path: "/services/grassroots/flyer-distribution" }],
     problemEyebrow: "Plan before print meets pavement",
     problemTitle: "WE START WITH THE AUDIENCE. NOT THE BOX OF FLYERS.",
     problemCopy: [
       "Useful distribution begins with who the campaign needs to reach, where those people move, when the message will be relevant and what action the leaflet or flyer should support.",
-      "Our flyering campaigns include hand-to-hand flyer distribution around relevant events, venues and queues. Quantity matters only after audience, location, timing, message and campaign role are clear. We plan leaflet and flyer distribution to support the wider objective rather than competing on volume alone.",
+      "Our flyering campaigns are hand-to-hand: flyers and leaflets given to people around relevant events, venues, queues, nightlife areas and high streets. Quantity matters only after audience, location, timing, format, message and campaign role are clear. We plan leaflet and flyer distribution to support the wider objective rather than competing on volume alone.",
+      "The service runs in London and Kent. It is not a letterbox drop or a nationwide print run.",
     ],
     outcome: "Physical campaign reach planned around audience relevance, timing and a clear next action.",
-    serves: "Promoters, venues, festivals, tours, artists, labels and other music campaigns with a credible physical audience opportunity.",
+    serves: "Promoters, venues, festivals, tours, artists, labels and other music and event campaigns with a credible physical audience opportunity in London or Kent.",
     journeyTitle: "MAKE EVERY FLYER WORK HARDER.",
-    journeyIntro: "The plan connects the audience to the place, message and action.",
-    journey: ["Who", "Where", "When", "Message", "Quantity", "Action"],
+    journeyIntro: "The plan connects the audience to the place, the moment, the message and the action — and quantity comes after all of that.",
+    journey: ["Who", "Where", "When", "Format", "Message", "Quantity", "Action", "Learn"],
     capabilities: [
       ["Flyering Campaigns", "Direct distribution around relevant events, venues and queues, taking your campaign straight to your target audience, where one of our skilled flyerers can add value."],
-      ["Targeted distribution", "Plan placement and distribution around agreed locations, timings and audience contexts."],
-      ["Campaign support", "Use leaflets and flyers alongside posters, PR, digital activity, ticket campaigns and other grassroots work."],
+      ["Targeted distribution", "Plan distribution around agreed locations, timings and audience contexts rather than the busiest pavement."],
       ["Gig & tour campaigns", "Support priority dates and local demand with distribution shaped around the event and audience."],
       ["Festival & venue campaigns", "Build awareness around programmes, on-sales and seasonal moments in relevant physical environments."],
       ["Release campaigns", "Connect a physical piece of the artist campaign to listening, content, live dates or another useful destination."],
+      ["Print coordination", "Flyers and leaflets can be coordinated as part of the campaign — production and supply, not a print shop."],
     ],
     connectionEyebrow: "Physical to digital — where useful",
     connectionTitle: "GIVE THE MESSAGE A NEXT STEP.",
-    connectionCopy: "Where it helps, a QR code or dedicated campaign URL can give the leaflet or flyer a clear digital next step — tickets, a release, RSVP, content or sign-up — and provide additional response signals where measurable.",
+    connectionCopy: "Where it helps, a QR code or dedicated campaign URL can give the leaflet or flyer a clear digital next step — tickets, a release, RSVP, content or sign-up — and provide additional response signals where measurable. A scan can be counted. It does not prove that every ticket or stream came from the flyer.",
     connectionPoints: ["QR code or dedicated URL", "Ticket destination", "Release or content destination", "RSVP or landing page", "Mailing list sign-up, where it fits"],
     secondaryTitle: "DISTRIBUTION THAT FITS THE CAMPAIGN.",
     secondaryCopy: [
       "Flyer distribution can work independently or as part of a connected PR, digital, poster, ticket or grassroots campaign. Leaflet and flyer activity is scoped to the brief — not treated as unrestricted flyposting or a nationwide print drop.",
-      "Coverage and delivery geography are agreed for each brief based on operational fit.",
+      "London and Kent are the two territories for this service. Exact places are agreed for each brief based on the audience and operational fit, so no fixed list of locations is published. In Kent, a brief is usually one local catchment and one date rather than the whole county.",
+      "Posters are a separate job. A flyer is handed to a person; a poster stays in a permitted place. Poster distribution has its own page.",
     ],
     assuranceTitle: "AUDIENCE. PLACE. TIMING. ACTION.",
     assuranceCopy: "We scope the right distribution approach after understanding the campaign, materials, quantity, audience and practical delivery area.",
-    related: [["Explore Grassroots", "/services/grassroots"], ["Music Street Teams", "/services/grassroots/music-street-teams"], ["Sell the show", "/services/sell-the-show"]],
-    areaServed: false,
+    related: [
+      ["Flyer distribution in Kent", "/services/grassroots/flyer-distribution/kent"],
+      ["Poster distribution", "/services/grassroots/poster-distribution"],
+      ["What flyer distribution costs", "/guides/how-much-does-flyer-distribution-cost"],
+      ["Flyer vs poster distribution", "/guides/flyer-vs-poster-distribution"],
+      ["Plan a flyer or poster campaign", "/guides/how-to-plan-a-flyer-poster-distribution-campaign"],
+    ],
+    areaServed: "London and Kent",
+    distributionHero: true,
+    questionsTitle: "Questions about flyer distribution?",
+    questionsIntro: "Short answers. The longer versions live in the guides, where a distribution decision needs more than a paragraph.",
+    questions: [
+      {
+        question: "Where do you distribute flyers and leaflets?",
+        answer: "In London and Kent. The exact places are agreed on the brief, around where the audience will actually be: outside venues, in queues, in nightlife areas, on high streets and around the show. We do not publish a fixed list of locations, because the right places depend on the campaign.",
+        link: ["Flyer distribution in Kent", "/services/grassroots/flyer-distribution/kent"],
+      },
+      {
+        question: "Do you deliver leaflets door to door?",
+        answer: "No. The service is hand-to-hand distribution in agreed places, where a person takes a flyer at a moment that makes sense for the campaign. A letterbox drop is a different job with different costs, and it is not what this service offers.",
+      },
+      {
+        question: "How much does flyer distribution cost?",
+        answer: "There is no useful price without the quantity, the geography and the method. Timing, duration, the size of the flyer and how tightly the audience is targeted change it too. A professional quote shows those assumptions before you compare it with anything else.",
+        link: ["What flyer distribution costs", "/guides/how-much-does-flyer-distribution-cost"],
+      },
+      {
+        question: "Should I use flyers or posters?",
+        answer: "Flyers travel with the person who takes one. Posters stay visible in a permitted place for whoever passes. A show night with a queue suits flyers; somewhere the audience keeps returning to can suit a poster. Some campaigns use both.",
+        link: ["Flyer vs poster distribution", "/guides/flyer-vs-poster-distribution"],
+      },
+      {
+        question: "How will I know whether the flyers worked?",
+        answer: "Decide that before the flyers are printed. A QR code or dedicated URL gives a countable signal, and ticket or sign-up numbers around the dates add context. None of that proves every sale came from the flyer. Any reporting or campaign evidence is agreed on the brief.",
+        link: ["Plan a flyer or poster campaign", "/guides/how-to-plan-a-flyer-poster-distribution-campaign"],
+      },
+    ],
+  },
+  posterDistribution: {
+    name: "Poster Distribution",
+    seoTitle: "Poster Distribution London & Kent | Rolodex Rebels",
+    description: "Poster distribution for music and event campaigns in London and Kent — posters placed in shops, music stores and other suitable locations agreed per brief.",
+    path: "/services/grassroots/poster-distribution",
+    eyebrow: "Grassroots / Poster Distribution",
+    title: "POSTER DISTRIBUTION THAT STAYS IN THE RIGHT PLACE.",
+    intro: "Targeted poster campaigns across London and Kent — placed in shops, music stores and other suitable locations agreed around the brief.",
+    heroCta: "Plan a poster campaign",
+    breadcrumbs: [...baseBreadcrumbs, { name: "Grassroots", path: "/services/grassroots" }, { name: "Poster Distribution", path: "/services/grassroots/poster-distribution" }],
+    problemEyebrow: "A flyer travels. A poster stays.",
+    problemTitle: "THE POSTER HAS TO EARN ITS SPACE.",
+    problemCopy: [
+      "A flyer is handed to a person and goes wherever they go. A poster stays in one permitted place and is seen by whoever passes it. That changes the job: the location, the message and who walks past matter more than how many posters are printed.",
+      "Rolodex Rebels places posters in shops, music stores and other suitable locations where the campaign has a reason to be seen. Locations are agreed for each brief across London and Kent. We do not publish a fixed list of sites, and this is not an exclusive poster network.",
+    ],
+    outcome: "Posters placed in relevant, permitted locations where the right audience has a reason to look.",
+    serves: "Promoters, venues, festivals, artists, labels and other music and event campaigns with a local audience to reach in London or Kent.",
+    journeyTitle: "FROM AUDIENCE TO PLACEMENT.",
+    journeyIntro: "Choose the location because of who sees it, not because there is space on a wall.",
+    journey: ["Who", "Where", "When", "Format", "Message", "Placement", "Action", "Learn"],
+    capabilities: [
+      ["Poster campaigns", "Targeted poster placement for gigs, tours, festivals, releases and venue programmes."],
+      ["Shops & music stores", "Posters placed in shops, music stores and other suitable locations where the audience has a reason to look."],
+      ["Location planning", "Agree the locations around the audience, the area and the date — not around how many spaces happen to be free."],
+      ["Message for a fixed site", "A poster is read in passing. Keep the name, date, place and next step legible from a distance."],
+      ["Print coordination", "Posters can be coordinated as part of the campaign — production and supply, not a print shop."],
+      ["Alongside flyers", "Leaflet and flyer distribution can be added where a person-to-person moment would help the same campaign."],
+    ],
+    connectionEyebrow: "Physical to digital — where useful",
+    connectionTitle: "A POSTER CAN STILL POINT SOMEWHERE.",
+    connectionCopy: "A QR code or short campaign URL can give a poster a next step — tickets, a release, RSVP or sign-up. A scan is a countable signal. It does not prove that every ticket sold came from the poster.",
+    connectionPoints: ["QR code or short URL", "Ticket destination", "Release or content destination", "RSVP or landing page", "Mailing list sign-up, where it fits"],
+    secondaryTitle: "PERMITTED PLACES ONLY.",
+    secondaryCopy: [
+      "Poster distribution here means posters displayed where they are allowed to be — shops, music stores and other suitable locations agreed on the brief. It is not unauthorised flyposting.",
+      "Placement depends on each location agreeing to display the poster. Rules on advertising and fly-posting vary by area; this page describes the service and is not legal advice.",
+    ],
+    assuranceTitle: "RIGHT PLACE. RIGHT MESSAGE. RIGHT MOMENT.",
+    assuranceCopy: "We scope placements after understanding the campaign, the audience, the materials and the practical area across London and Kent.",
+    related: [
+      ["Flyer & leaflet distribution", "/services/grassroots/flyer-distribution"],
+      ["Flyer distribution in Kent", "/services/grassroots/flyer-distribution/kent"],
+      ["Flyer vs poster distribution", "/guides/flyer-vs-poster-distribution"],
+      ["Plan a flyer or poster campaign", "/guides/how-to-plan-a-flyer-poster-distribution-campaign"],
+    ],
+    areaServed: "London and Kent",
+    distributionHero: true,
+    questionsTitle: "Questions about poster distribution?",
+    questionsIntro: "Short answers. The guides cover the choice between posters and flyers in more detail.",
+    questions: [
+      {
+        question: "Where do you put posters?",
+        answer: "In shops, music stores and other suitable locations across London and Kent, agreed for each brief around the audience and the date. There is no published list of sites and no exclusive network — the locations follow the campaign.",
+      },
+      {
+        question: "Is poster distribution the same as flyposting?",
+        answer: "No. Posters go where a location has agreed to display them. Unauthorised flyposting is not part of this service.",
+      },
+      {
+        question: "Should I use posters or flyers?",
+        answer: "A poster suits a place the audience keeps returning to, with a message short enough to read in passing. A flyer suits a moment when people gather, like a queue or a show night. Many live campaigns use both at different points.",
+        link: ["Flyer vs poster distribution", "/guides/flyer-vs-poster-distribution"],
+      },
+    ],
   },
   festivalMarketing: {
     name: "Festival Marketing",
@@ -200,7 +295,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
       ["Announcement & on-sale", "Give line-up, launch and ticket moments the right story, destinations, content and media support."],
       ["PR, content & discovery", "Connect publicity, organic content, search and audience communication around what people need to know and do."],
       ["Paid digital & ticket pages", "Use paid activity and landing pages to support a defined ticket action, with the response guiding the next move."],
-      ["Grassroots promotion", "Put the festival into relevant physical places through planned teams, distribution and local activity where it adds value."],
+      ["Grassroots promotion", "Put the festival into relevant physical places through flyer and poster distribution and local activity where it adds value."],
       ["Guests & industry", "Connect invitations, RSVP, reminders and follow-up to the wider campaign and live experience."],
       ["Audience growth", "Give people a reason to stay in touch before and after the festival."],
       ["See what's working", "Use available audience, channel, creative, landing-page and ticket signals to decide what the campaign needs next."],
@@ -217,7 +312,7 @@ export const commercialServices: Record<string, CommercialServiceData> = {
     ],
     assuranceTitle: "ONE FESTIVAL. A CAMPAIGN THAT CHANGES WITH THE MOMENT.",
     assuranceCopy: "Not every festival needs every capability. We build the mix around the proposition, sales position, audience, internal team and budget.",
-    related: [["Explore Sell The Show", "/services/sell-the-show"], ["Event & Festival Websites", "/services/event-festival-websites"], ["For promoters, venues & festivals", "/who-we-help/promoters-venues-festivals"]],
+    related: [["Explore Sell The Show", "/services/sell-the-show"], ["Event & Festival Websites", "/services/event-festival-websites"], ["Leaflet & flyer distribution", "/services/grassroots/flyer-distribution"], ["For promoters, venues & festivals", "/who-we-help/promoters-venues-festivals"]],
   },
   artistWebsiteDesign: {
     name: "Artist Website Design",
@@ -270,7 +365,9 @@ export function commercialServiceMetadata(data: CommercialServiceData): Metadata
 }
 
 export function CommercialServicePage({ data }: { data: CommercialServiceData }) {
-  const journeyId = `${data.path.slice(1).replaceAll("/", "-")}-journey`;
+  const pathId = data.path.slice(1).replaceAll("/", "-");
+  const journeyId = `${pathId}-journey`;
+  const questionsId = data.path === "/services/music-pr" ? "music-pr-questions" : `${pathId}-questions`;
 
   return (
     <InternalPage
@@ -278,9 +375,11 @@ export function CommercialServicePage({ data }: { data: CommercialServiceData })
       title={<>{data.title}</>}
       intro={data.intro}
       heroCta={{ label: data.heroCta, href: "/start-a-project" }}
+      heroMedia={data.distributionHero ? <DistributionHeroImage /> : undefined}
       breadcrumbs={data.breadcrumbs}
     >
       <JsonLd data={serviceJsonLd({ name: data.name, description: data.description, path: data.path, areaServed: data.areaServed })} />
+      {data.questions && <JsonLd data={faqJsonLd(data.questions)} />}
 
       <section className="inner-split commercial-intro">
         <div><p className="eyebrow pink">{data.problemEyebrow}</p><h2>{data.problemTitle}</h2></div>
@@ -325,6 +424,29 @@ export function CommercialServicePage({ data }: { data: CommercialServiceData })
         <h2>{data.assuranceTitle}</h2>
         <p>{data.assuranceCopy}</p>
       </aside>
+
+      {data.questions && (
+        <section className="service-questions" aria-labelledby={questionsId}>
+          <h2 id={questionsId}>{data.questionsTitle ?? "Questions about music PR?"}</h2>
+          <p className="service-questions-intro">{data.questionsIntro ?? "Short answers. The longer versions live in the guides, where a campaign decision needs more than a paragraph."}</p>
+          {data.questions.map((item) => (
+            <article className="service-question" key={item.question}>
+              <h3>{item.question}</h3>
+              <div>
+                <p>{item.answer}</p>
+                {item.link && <Link href={item.link[1]}>{item.link[0]} <Arrow /></Link>}
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
+
+      {data.path === "/services/music-pr" && (
+        <nav className="related-links" aria-label="Music PR guides">
+          <h2>READ THE GUIDES.</h2>
+          {guidePages.map((guide) => <Link href={guide.path} key={guide.path}>{guide.navLabel} <Arrow /></Link>)}
+        </nav>
+      )}
 
       <nav className="related-links" aria-label={`Related to ${data.name}`}>
         <h2>KEEP BUILDING THE CAMPAIGN.</h2>

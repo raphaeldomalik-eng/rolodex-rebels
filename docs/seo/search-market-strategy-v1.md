@@ -2,6 +2,8 @@
 
 > Supersession notice (11 September 2026): this V1 document is retained as the evidence and search-market baseline. Where positioning, offer design, operating model, or implementation guidance conflicts with the V2 strategy, `../strategy/rolodex-rebels-strategy-v2.md` is the controlling document.
 
+**Offer update (17 September 2026):** Music Street Teams is retired. Do not recreate `/services/grassroots/music-street-teams`, do not publish Street Teams Insights, and do not treat the Street Teams keyword sections below as a live implementation brief. Grassroots search ownership now sits on `/services/grassroots` and `/services/grassroots/flyer-distribution`. Historical Street Teams research remains useful as context only.
+
 **Status:** Definitive strategy — approved for implementation planning  
 **Version:** 1.0  
 **Date:** 11 September 2026  
@@ -253,7 +255,7 @@ This is the first definitive ownership map. Future changes require evidence and 
 | music release marketing | `/services/get-heard` | **LIVE** initially |
 | digital music marketing | `/services/get-seen` | **LIVE** |
 | grassroots music promotion | `/services/grassroots` | **LIVE** |
-| music street teams London / street team agency London | `/services/grassroots/music-street-teams` | **PLANNED — P1** |
+| music street teams London / street team agency London | `/services/grassroots/music-street-teams` | **RETIRED — do not restore** |
 | flyer distribution for music events | `/services/grassroots/flyer-distribution` | **PLANNED — P1** |
 | poster distribution for gigs | `/services/grassroots` | **LIVE** initially; dedicated page **POSSIBLE — P2** |
 | concert marketing / ticket sales marketing | `/services/sell-the-show` | **LIVE** |
@@ -300,10 +302,10 @@ These pages are justified opportunities, not authorisation to publish thin conte
 
 ### Music Street Teams
 
-- **Status:** **PLANNED — P1**
-- **URL:** `/services/grassroots/music-street-teams`
-- **Coverage:** London, surrounding areas and Kent
-- **Required substance:** professional staffing; briefing; audience targeting; geographic planning; venue, queue, nightlife and campus deployment; hand-to-hand activation; evidence; accountability; digital/ticket integration; accurate coverage; CTA.
+- **Status:** **RETIRED — do not restore**
+- **URL:** `/services/grassroots/music-street-teams` now permanently redirects to `/services/grassroots`
+- **Coverage:** Retired. Do not recreate a London / Kent Street Teams offer.
+- **Required substance:** None. Historical research only.
 
 ### Flyer Distribution
 
@@ -394,7 +396,7 @@ Insights must contain real Rolodex Rebels experience, examples, opinions and pra
 | 3 | What should a promoter do when ticket sales slow down? | Sell The Show; high commercial problem-solving intent |
 | 4 | What should a six-week ticket-sales campaign look like? | Sell The Show; live-marketing authority |
 | 5 | How should an independent artist market a new single? | Get Heard + Artists |
-| 6 | When should a promoter use street teams? | Grassroots + Sell The Show |
+| 6 | When should a promoter use street teams? | **RETIRED — do not publish** |
 | 7 | How should an artist build a fan database? | Build Your Audience |
 | 8 | How do you turn gig attendees into an audience for the next show? | Build Your Audience + Sell The Show |
 | 9 | What should a festival marketing campaign include? | Festival Marketing + Sell The Show |
@@ -462,7 +464,7 @@ The authority model is:
 
 Do not launch a generic city-page strategy.
 
-Street Teams is currently the only service with a specifically defined delivery area: **London + surrounding areas + Kent**. Other services must not be artificially localised.
+Street Teams is retired and is not a current service. Do not recreate a London / Kent Street Teams page or treat that geography as a live service boundary. Other services must not be artificially localised.
 
 Any future geographic page requires:
 
@@ -597,9 +599,10 @@ Search optimisation must strengthen the brand, not replace it.
 Do not build the P1 commercial pages until the operational handover is closed and enough genuine evidence exists. Recommended sequence after the first Results are ready:
 
 1. Music PR
-2. Music Street Teams — London, surrounding areas and Kent
-3. Flyer Distribution
-4. Festival Marketing
-5. Artist Website Design
+2. Flyer Distribution
+3. Festival Marketing
+4. Artist Website Design
+
+Do not restore Music Street Teams.
 
 Then publish the priority Insights using real Rolodex Rebels experience, develop off-site authority and use Search Console, Bing and AI referral evidence to decide what to optimise or split next.

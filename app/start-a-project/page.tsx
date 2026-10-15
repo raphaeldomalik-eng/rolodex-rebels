@@ -30,7 +30,7 @@ export default function StartProject() {
               07934 419 997
             </a>
           </h2>
-          <p>Need to move quickly? Call to talk through a release, live show, street campaign or website.</p>
+          <p>Need to move quickly? Call to talk through a release, live show, flyer campaign or website.</p>
           <a className="text-link" href="tel:+447934419997">Call now <Arrow /></a>
         </div>
       </section>
