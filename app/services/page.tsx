@@ -46,7 +46,7 @@ export default function Services() {
           {specialistServiceLinks.map(([label, href]) => <Link href={href} key={href}>{label} <Arrow /></Link>)}
         </div>
       </nav>
-      <section className="pink-panel"><p className="eyebrow">Ways to work with us</p><h2>LAUNCH. GROW. SELL. ACTIVATE.</h2><p>Need a release campaign, artist growth, a tour, promoter or festival support, or a guest list handled properly? Those sit inside the six services above.</p></section>
+      <section className="pink-panel"><div><p className="eyebrow">Ways to work with us</p><h2>LAUNCH. GROW. SELL. ACTIVATE.</h2></div><p>Need a release campaign, artist growth, a tour, promoter or festival support, or a guest list handled properly? Those sit inside the six services above.</p></section>
     </InternalPage>
   );
 }
